@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Relative 예제</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* 1. 기본 상태 (position: static) */
+        .static-box {
+            background: #e74c3c;
+            position: static; /* 기본값 */
+        }
+        
+        /* 2. relative 상태 */
+        .relative-box {
+            background: #3498db;
+            position: relative;
+            /* 원래 자리에서 오른쪽으로 20px, 아래로 10px 이동 */
+            left: 20px;
+            top: 10px;
+        }
+        
+        /* 3. relative + z-index */
+        .relative-zindex {
+            background: #2ecc71;
+            position: relative;
+            z-index: 10; /* z-index가 작동함! */
+            left: -30px;
+            top: -20px;
+        }
+        
+        /* 4. 부모 역할하는 relative */
+        .parent-relative {
+            position: relative;
+            background: #f39c12;
+            width: 300px;
+            height: 200px;
+            margin: 20px 0;
+        }
+        
+        .child-absolute {
+            position: absolute;
+            background: #9b59b6;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            /* 부모(relative)를 기준으로 위치 설정 */
+            right: 10px;
+            bottom: 10px;
+        }
+        
+        .explanation {
+            background: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Position: Relative 완전 정복!</h1>
+    
+    <!-- 예제 1: 기본 비교 -->
+    <div class="container">
+        <h2>📌 예제 1: 기본 상태 vs Relative</h2>
+        <div class="box static-box">Static</div>
+        <div class="box relative-box">Relative</div>
+        <div class="box static-box">Static</div>
+        
+        <div class="explanation">
+            <strong>🔍 관찰해보세요:</strong><br>
+            • 빨간색 박스들(Static)은 원래 자리에 그대로<br>
+            • 파란색 박스(Relative)는 원래 자리에서 살짝 이동했지만, <strong>원래 공간은 그대로 유지</strong><br>
+            • 다른 박스들이 파란색 박스의 원래 자리를 침범하지 않음
+        </div>
+    </div>
+    
+    <!-- 예제 2: Z-index 작동 -->
+    <div class="container">
+        <h2>📌 예제 2: Z-index 마법!</h2>
+        <div class="box static-box">Static</div>
+        <div class="box relative-zindex">Relative<br>z-index</div>
+        <div class="box static-box">Static</div>
+        
+        <div class="explanation">
+            <strong>🎨 z-index의 비밀:</strong><br>
+            • <code>position: static</code>에서는 z-index가 작동하지 않음<br>
+            • <code>position: relative</code>에서는 z-index가 작동함!<br>
+            • 초록색 박스가 다른 박스들 위에 떠있는 것을 확인하세요
+        </div>
+    </div>
+    
+    <!-- 예제 3: 부모 역할 -->
+    <div class="container">
+        <h2>📌 예제 3: 부모 역할하는 Relative</h2>
+        <div class="parent-relative">
+            부모 (relative)
+            <div class="child-absolute">자식<br>(absolute)</div>
+        </div>
+        
+        <div class="explanation">
+            <strong>👨‍👩‍👧‍👦 부모-자식 관계:</strong><br>
+            • 부모가 <code>position: relative</code>일 때<br>
+            • 자식의 <code>position: absolute</code>는 부모를 기준으로 위치 설정<br>
+            • 보라색 박스가 오렌지 박스의 오른쪽 아래 모서리에 위치함
+        </div>
+    </div>
+    
+    <!-- 예제 4: KB 프로젝트에서의 활용 -->
+    <div class="container">
+        <h2>📌 KB 프로젝트에서 왜 사용했을까?</h2>
+        <div class="explanation">
+            <strong>🏢 KyongBo Electric 웹사이트에서의 역할:</strong><br><br>
+            
+            <code>.main-content { position: relative; z-index: 1; }</code><br><br>
+            
+            <strong>1️⃣ Z-index 활성화:</strong> 다른 요소들과의 레이어 순서 관리<br>
+            <strong>2️⃣ 기준점 제공:</strong> 내부 absolute 요소들의 부모 역할<br>
+            <strong>3️⃣ 안전장치:</strong> 헤더나 다른 고정 요소들과의 충돌 방지<br><br>
+            
+            <em>"원래 자리는 지키면서, 필요할 때 앞뒤로 나설 수 있는 능력을 준 것!"</em>
+        </div>
+    </div>
+    
+    <!-- 요약 -->
+    <div class="container" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2>🎓 핵심 정리</h2>
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+            <strong>Position: Relative = "착한 이동"</strong><br><br>
+            ✅ 원래 자리는 그대로 유지 (다른 요소들이 침범 안함)<br>
+            ✅ top, right, bottom, left로 미세 조정 가능<br>
+            ✅ z-index 사용 가능 (레이어 순서 조정)<br>
+            ✅ 자식 absolute 요소들의 기준점 역할<br>
+            ✅ 전체 레이아웃을 깨뜨리지 않음<br><br>
+            
+            <em>💡 기억하세요: "내 자리는 지키면서, 조금씩 움직일 수 있는 마법!"</em>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-PAM 150 Series - 경보전자</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Color System */
+            --primary-900: #1e3a8a;
+            --primary-800: #1e40af;
+            --primary-700: #1d4ed8;
+            --primary-600: #2563eb;
+            --primary-500: #3b82f6;
+            --primary-400: #60a5fa;
+            --accent-500: #f97316;
+            --accent-400: #fb923c;
+            --accent-300: #fdba74;
+            
+            /* Glass & Neo Colors */
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-bg-strong: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --neo-light: rgba(255, 255, 255, 0.9);
+            --neo-dark: rgba(0, 0, 0, 0.15);
+            
+            /* Text Colors */
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+            
+            /* Background */
+            --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --bg-card: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+        }
+
+        [data-theme="dark"] {
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --glass-bg: rgba(0, 0, 0, 0.4);
+            --glass-bg-strong: rgba(0, 0, 0, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --bg-primary: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            --bg-card: linear-gradient(145deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+            line-height: 1.6;
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--accent-500);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) rotate(0deg); 
+                opacity: 0.4;
+            }
+            25% { 
+                transform: translateY(-30px) translateX(10px) rotate(90deg); 
+                opacity: 0.8;
+            }
+            50% { 
+                transform: translateY(-15px) translateX(-10px) rotate(180deg); 
+                opacity: 0.6;
+            }
+            75% { 
+                transform: translateY(-25px) translateX(15px) rotate(270deg); 
+                opacity: 0.7;
+            }
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            transition: width 0.3s ease;
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px var(--accent-500));
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            background: var(--glass-bg-strong);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.2),
+                0 0 20px rgba(249, 115, 22, 0.3);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: var(--glass-bg-strong);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-15px) scale(0.95);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.3),
+                0 0 30px rgba(0,0,0,0.1);
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .dropdown-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--accent-500);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255,255,255,0.1);
+            padding-left: 2.5rem;
+            color: var(--accent-300);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 0 25px var(--accent-500);
+            background: var(--glass-bg-strong);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: flex;
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            width: 320px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border-right: 1px solid var(--glass-border);
+            padding: 2rem 0;
+            position: fixed;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            z-index: 100;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 5px 0 25px rgba(0,0,0,0.1);
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--accent-500);
+            border-radius: 3px;
+        }
+
+        .sidebar-title {
+            padding: 0 2rem;
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 1.25rem 2rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            border-left: 4px solid transparent;
+            font-weight: 500;
+        }
+
+        .sidebar-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--accent-500), transparent);
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+
+        .sidebar-link:hover::before,
+        .sidebar-link.active::before {
+            width: 100%;
+            opacity: 0.15;
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-left-color: var(--accent-500);
+            padding-left: 2.5rem;
+            transform: translateX(5px);
+            box-shadow: 
+                inset 0 0 20px rgba(249, 115, 22, 0.1),
+                5px 0 15px rgba(0,0,0,0.1);
+            color: var(--accent-300);
+        }
+
+        /* Submenu */
+        .sidebar-submenu {
+            list-style: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar-item.active .sidebar-submenu {
+            max-height: 400px;
+        }
+
+        .sidebar-submenu .sidebar-link {
+            padding-left: 3.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .sidebar-submenu .sidebar-link:hover {
+            padding-left: 4rem;
+        }
+
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            z-index: 200;
+            background: var(--glass-bg-strong);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .sidebar-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px var(--accent-500);
+        }
+
+        /* Content Area */
+        .content {
+            flex: 1;
+            margin-left: 320px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.25rem 2rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-light);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-300);
+            background: rgba(255,255,255,0.1);
+            transform: scale(1.05);
+        }
+
+        .breadcrumb-separator {
+            opacity: 0.6;
+            font-weight: bold;
+        }
+
+        /* Product Header */
+        .product-header {
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.15),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--accent-500) 0%, transparent 70%);
+            opacity: 0.05;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .product-header:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 30px 70px rgba(0,0,0,0.2),
+                0 0 40px rgba(249, 115, 22, 0.1);
+        }
+
+        .product-header-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-info h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            position: relative;
+        }
+
+        .product-info h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            border-radius: 2px;
+        }
+
+        .product-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-400);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .product-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            color: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Product Image */
+        .product-image-container {
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.2),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .product-image-container:hover {
+            transform: scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.3),
+                0 0 30px var(--accent-500);
+        }
+
+        .product-image-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 15s linear infinite;
+        }
+
+        .product-image {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Tabs */
+        .tabs-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .tab-button::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .tab-button.active::after,
+        .tab-button:hover::after {
+            width: 80%;
+        }
+
+        .tab-button.active,
+        .tab-button:hover {
+            color: var(--accent-300);
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* Specifications Table */
+        .spec-table-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .spec-table th,
+        .spec-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .spec-table th {
+            background: rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+            color: var(--accent-300);
+            font-size: 1.1rem;
+        }
+
+        .spec-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: scale(1.01);
+        }
+
+        .spec-table tr:hover td {
+            color: var(--accent-300);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--accent-500) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.2),
+                0 0 30px rgba(249, 115, 22, 0.2);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            border-radius: 2px;
+        }
+
+        /* Download Section */
+        .download-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .download-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .download-item:hover::before {
+            left: 100%;
+        }
+
+        .download-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px) translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .download-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .download-info p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .product-header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .product-info h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .sidebar-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .product-header {
+                padding: 2rem;
+            }
+
+            .product-info h1 {
+                font-size: 2rem;
+            }
+
+            .tab-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .spec-table th,
+            .spec-table td {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        *:focus {
+            outline: 3px solid var(--accent-500);
+            outline-offset: 2px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading states */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-500);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Parallax effect */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            z-index: -1;
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header-container">
+            <a href="#" class="logo" aria-label="경보전자 홈페이지">경보전자</a>
+            
+            <nav class="nav" role="navigation" aria-label="주 메뉴">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">회사소개</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">회사개요</a>
+                        <a href="#" class="dropdown-item">연혁</a>
+                        <a href="#" class="dropdown-item">조직도</a>
+                        <a href="#" class="dropdown-item">찾아오시는 길</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link">제품소개</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">K-PAM 시리즈</a>
+                        <a href="#" class="dropdown-item">전력계측기</a>
+                        <a href="#" class="dropdown-item">보호계전기</a>
+                        <a href="#" class="dropdown-item">변환기</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link">기술지원</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">기술자료</a>
+                        <a href="#" class="dropdown-item">소프트웨어</a>
+                        <a href="#" class="dropdown-item">매뉴얼</a>
+                        <a href="#" class="dropdown-item">FAQ</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link">고객지원</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">공지사항</a>
+                        <a href="#" class="dropdown-item">문의하기</a>
+                        <a href="#" class="dropdown-item">A/S 신청</a>
+                    </div>
+                </div>
+            </nav>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="다크모드 토글">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="사이드바 토글">
+        ☰
+    </button>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar" role="navigation" aria-label="제품 메뉴">
+            <h2 class="sidebar-title">제품 카테고리</h2>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active">
+                    <a href="#" class="sidebar-link active">K-PAM 시리즈</a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#" class="sidebar-link">K-PAM 150</a></li>
+                        <li><a href="#" class="sidebar-link">K-PAM 200</a></li>
+                        <li><a href="#" class="sidebar-link">K-PAM 300</a></li>
+                        <li><a href="#" class="sidebar-link">K-PAM 500</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">전력계측기</a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#" class="sidebar-link">디지털 계측기</a></li>
+                        <li><a href="#" class="sidebar-link">아날로그 계측기</a></li>
+                        <li><a href="#" class="sidebar-link">멀티미터</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">보호계전기</a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#" class="sidebar-link">과전류 계전기</a></li>
+                        <li><a href="#" class="sidebar-link">지락 계전기</a></li>
+                        <li><a href="#" class="sidebar-link">전압 계전기</a></li>
+                        <li><a href="#" class="sidebar-link">주파수 계전기</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">변환기</a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#" class="sidebar-link">변류기 (CT)</a></li>
+                        <li><a href="#" class="sidebar-link">변압기 (PT)</a></li>
+                        <li><a href="#" class="sidebar-link">로고스키 코일</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">통신 모듈</a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#" class="sidebar-link">RS-485 모듈</a></li>
+                        <li><a href="#" class="sidebar-link">이더넷 모듈</a></li>
+                        <li><a href="#" class="sidebar-link">무선 모듈</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">액세서리</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content" role="main">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="페이지 위치">
+                <a href="#">홈</a>
+                <span class="breadcrumb-separator">›</span>
+                <a href="#">제품소개</a>
+                <span class="breadcrumb-separator">›</span>
+                <a href="#">K-PAM 시리즈</a>
+                <span class="breadcrumb-separator">›</span>
+                <span>K-PAM 150</span>
+            </nav>
+
+            <!-- Product Header -->
+            <section class="product-header">
+                <div class="product-header-content">
+                    <div class="product-info">
+                        <div class="product-subtitle">디지털 전력계측기</div>
+                        <h1>K-PAM 150 Series</h1>
+                        <p class="product-description">
+                            고정밀 전력계측기로 다양한 전력 파라미터를 정확하게 측정하고 모니터링할 수 있습니다. 
+                            산업용 전력 시스템에서 요구되는 모든 계측 기능을 제공하며, 통신 기능을 통해 원격 모니터링이 가능합니다.
+                        </p>
+                        <div class="product-badges">
+                            <span class="badge">신제품</span>
+                            <span class="badge">고정밀</span>
+                            <span class="badge">통신지원</span>
+                            <span class="badge">0.2급 정확도</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#specifications" class="btn btn-primary">
+                                📋 상세 사양 보기
+                            </a>
+                            <a href="#downloads" class="btn btn-secondary">
+                                📥 자료 다운로드
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-image-container">
+                        <div class="product-image">K-PAM 150</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabs Container -->
+            <section class="tabs-container">
+                <div class="tab-buttons" role="tablist">
+                    <button class="tab-button active" data-tab="overview" role="tab" aria-selected="true">개요</button>
+                    <button class="tab-button" data-tab="specifications" role="tab" aria-selected="false">기술사양</button>
+                    <button class="tab-button" data-tab="features" role="tab" aria-selected="false">주요특징</button>
+                    <button class="tab-button" data-tab="dimensions" role="tab" aria-selected="false">외형치수</button>
+                    <button class="tab-button" data-tab="wiring" role="tab" aria-selected="false">결선도</button>
+                    <button class="tab-button" data-tab="downloads" role="tab" aria-selected="false">다운로드</button>
+                </div>
+
+                <!-- Overview Tab -->
+                <div class="tab-content active" id="overview" role="tabpanel">
+                    <h3 class="section-title">제품 개요</h3>
+                    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 3rem; font-size: 1.1rem;">
+                        K-PAM 150 시리즈는 최신 디지털 기술을 적용한 고정밀 전력계측기입니다. 
+                        전압, 전류, 전력, 역률, 주파수 등 다양한 전력 파라미터를 실시간으로 측정하고 
+                        표시할 수 있으며, RS-485 통신을 통해 상위 시스템과 연동이 가능합니다.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-title">고정밀 측정</div>
+                            <div class="feature-description">0.2급 정확도로 정밀한 전력 측정이 가능하며, IEC 61557 국제 표준을 준수합니다.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-title">다양한 파라미터</div>
+                            <div class="feature-description">전압, 전류, 전력, 역률, 주파수, 전력량 등 모든 전력 파라미터를 동시 측정합니다.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔗</div>
+                            <div class="feature-title">통신 기능</div>
+                            <div class="feature-description">RS-485, Modbus RTU 프로토콜을 지원하여 원격 모니터링 및 제어가 가능합니다.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💾</div>
+                            <div class="feature-title">데이터 저장</div>
+                            <div class="feature-description">최대/최소값, 적산 전력량을 내부 메모리에 저장하여 데이터 분석이 가능합니다.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🖥️</div>
+                            <div class="feature-title">컬러 디스플레이</div>
+                            <div class="feature-description">4.3인치 컬러 TFT LCD로 직관적인 정보 표시 및 사용자 친화적 인터페이스를 제공합니다.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🛡️</div>
+                            <div class="feature-title">보호 기능</div>
+                            <div class="feature-description">과전압, 과전류, 주파수 이상 등 다양한 알람 기능으로 시스템을 보호합니다.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specifications Tab -->
+                <div class="tab-content" id="specifications" role="tabpanel">
+                    <h3 class="section-title">기술 사양</h3>
+                    
+                    <div class="spec-table-container">
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">항목</th>
+                                    <th style="width: 45%;">사양</th>
+                                    <th style="width: 30%;">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>측정 전압</strong></td>
+                                    <td>AC 0~600V (L-L), 0~347V (L-N)</td>
+                                    <td>3상 4선식 지원</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>측정 전류</strong></td>
+                                    <td>AC 0~5A (직접), CT 사용시 확장 가능</td>
+                                    <td>CT 비율 1~9999 설정</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>정확도</strong></td>
+                                    <td>전압/전류: ±0.2%, 전력: ±0.5%</td>
+                                    <td>IEC 61557-12 준수</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>주파수 범위</strong></td>
+                                    <td>45~65Hz</td>
+                                    <td>정확도 ±0.01Hz</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>디스플레이</strong></td>
+                                    <td>4.3" 컬러 TFT LCD (480×272)</td>
+                                    <td>터치스크린 지원</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>통신 인터페이스</strong></td>
+                                    <td>RS-485 (Modbus RTU)</td>
+                                    <td>이더넷 옵션 가능</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>통신 속도</strong></td>
+                                    <td>1200~115200 bps</td>
+                                    <td>자동 인식</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>전원</strong></td>
+                                    <td>AC/DC 85~265V, 50/60Hz</td>
+                                    <td>Wide range 입력</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>소비전력</strong></td>
+                                    <td>≤ 8VA</td>
+                                    <td>저전력 설계</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>동작온도</strong></td>
+                                    <td>-10°C ~ +55°C</td>
+                                    <td>상대습도 85% 이하</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>보관온도</strong></td>
+                                    <td>-25°C ~ +70°C</td>
+                                    <td>상대습도 95% 이하</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>보호등급</strong></td>
+                                    <td>전면 IP65, 후면 IP20</td>
+                                    <td>산업용 등급</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>외형치수</strong></td>
+                                    <td>96 × 96 × 110mm (W×H×D)</td>
+                                    <td>DIN 표준 사이즈</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>패널 컷아웃</strong></td>
+                                    <td>92 × 92mm</td>
+                                    <td>패널 두께 1.5~10mm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>무게</strong></td>
+                                    <td>약 0.8kg</td>
+                                    <td>경량 설계</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>인증</strong></td>
+                                    <td>KC, CE, RoHS</td>
+                                    <td>국제 안전 인증</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Features Tab -->
+                <div class="tab-content" id="features" role="tabpanel">
+                    <h3 class="section-title">주요 특징</h3>
+                    
+                    <div style="display: grid; gap: 3rem;">
+                        <div class="feature-section" style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">📊 측정 기능</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                                <ul style="color: var(--text-muted); line-height: 2; padding-left: 1.5rem;">
+                                    <li>3상 전압 (L-L, L-N) 실효값 측정</li>
+                                    <li>3상 전류 실효값 측정</li>
+                                    <li>유효전력, 무효전력, 피상전력 측정</li>
+                                    <li>역률 및 위상각 측정</li>
+                                </ul>
+                                <ul style="color: var(--text-muted); line-height: 2; padding-left: 1.5rem;">
+                                    <li>주파수 측정</li>
+                                    <li>전력량 적산 (유효, 무효)</li>
+                                    <li>최대/최소값 기록 및 표시</li>
+                                    <li>THD (Total Harmonic Distortion) 측정</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-section" style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">🖥️ 표시 기능</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                                <ul style="color: var(--text-muted); line-height: 2; padding-left: 1.5rem;">
+                                    <li>4.3인치 컬러 TFT LCD 디스플레이</li>
+                                    <li>다국어 지원 (한국어, 영어, 중국어)</li>
+                                    <li>사용자 정의 화면 구성</li>
+                                    <li>실시간 트렌드 그래프 표시</li>
+                                </ul>
+                                <ul style="color: var(--text-muted); line-height: 2; padding-left: 1.5rem;">
+                                    <li>알람 상태 표시</li>
+                                    <li>백라이트 자동 조절</li>
+                                    <li>화면 보호기 기능</li>
+                                    <li>터치스크린 인터페이스</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-section" style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">🔗 통신 기능</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                                <ul style="color: var(--text-muted); line-height: 2; padding-left: 1.5rem;">
+                                    <li>RS-485 통신 인터페이스</li>
+                                    <li>Modbus RTU 프로토콜 지원</li>
+                                    <li>최대 247개 기기 연결 가능</li>
+                                    <li>통신 속도: 1200~115200 bps</li>
+                                </ul>
+                                <ul style="color: var(--text-muted); line-height: 2; padding-left: 1.5rem;">
+                                    <li>원격 설정 및 제어</li>
+                                    <li>데이터 로깅 기능</li>
+                                    <li>이더넷 통신 (옵션)</li>
+                                    <li>SNMP 프로토콜 지원 (옵션)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="feature-section" style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700;">🛡️ 보호 기능</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                                <ul style="color: var(--text-muted); line-height: 2; padding-left: 1.5rem;">
+                                    <li>과전압/저전압 알람</li>
+                                    <li>과전류 알람</li>
+                                    <li>주파수 이상 알람</li>
+                                    <li>역률 이상 알람</li>
+                                </ul>
+                                <ul style="color: var(--text-muted); line-height: 2; padding-left: 1.5rem;">
+                                    <li>통신 이상 알람</li>
+                                    <li>접점 출력 (옵션)</li>
+                                    <li>이벤트 로그 기능</li>
+                                    <li>자가진단 기능</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dimensions Tab -->
+                <div class="tab-content" id="dimensions" role="tabpanel">
+                    <h3 class="section-title">외형 치수</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+                        <div class="dimension-card" style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem; text-align: center;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 2rem; font-size: 1.3rem; font-weight: 700;">전면도</h4>
+                            <div style="width: 100%; height: 250px; background: linear-gradient(135deg, var(--primary-700), var(--primary-500)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 1.5rem; font-size: 1.2rem; position: relative; overflow: hidden;">
+                                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 10s linear infinite;"></div>
+                                <div style="position: relative; z-index: 1;">96mm × 96mm</div>
+                            </div>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                                <strong>패널 컷아웃:</strong> 92mm × 92mm<br>
+                                <strong>패널 두께:</strong> 1.5~10mm
+                            </p>
+                        </div>
+
+                        <div class="dimension-card" style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem; text-align: center;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 2rem; font-size: 1.3rem; font-weight: 700;">측면도</h4>
+                            <div style="width: 100%; height: 250px; background: linear-gradient(135deg, var(--primary-700), var(--primary-500)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 1.5rem; font-size: 1.2rem; position: relative; overflow: hidden;">
+                                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 10s linear infinite;"></div>
+                                <div style="position: relative; z-index: 1;">깊이: 110mm</div>
+                            </div>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                                <strong>설치 깊이:</strong> 110mm<br>
+                                <strong>무게:</strong> 약 0.8kg
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem;">
+                        <h4 style="color: var(--accent-400); margin-bottom: 2rem; font-size: 1.3rem; font-weight: 700;">설치 정보</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+                                <strong style="color: var(--text-light); display: block; margin-bottom: 0.5rem;">설치 방식</strong>
+                                <p style="color: var(--text-muted);">패널 매입형 (DIN 표준)</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+                                <strong style="color: var(--text-light); display: block; margin-bottom: 0.5rem;">보호 등급</strong>
+                                <p style="color: var(--text-muted);">전면 IP65, 후면 IP20</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+                                <strong style="color: var(--text-light); display: block; margin-bottom: 0.5rem;">재질</strong>
+                                <p style="color: var(--text-muted);">난연성 플라스틱 (UL94-V0)</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+                                <strong style="color: var(--text-light); display: block; margin-bottom: 0.5rem;">색상</strong>
+                                <p style="color: var(--text-muted);">블랙 (RAL 9005)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wiring Tab -->
+                <div class="tab-content" id="wiring" role="tabpanel">
+                    <h3 class="section-title">결선도</h3>
+                    
+                    <div style="display: grid; gap: 3rem;">
+                        <div style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 2rem; font-size: 1.3rem; font-weight: 700;">전력 결선도</h4>
+                            <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--primary-700), var(--primary-500)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 2rem; font-size: 1.5rem; position: relative; overflow: hidden;">
+                                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 15s linear infinite;"></div>
+                                <div style="position: relative; z-index: 1;">3상 4선식 결선도</div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
+                                <div>
+                                    <strong style="color: var(--text-light);">전압 입력:</strong><br>
+                                    L1, L2, L3, N
+                                </div>
+                                <div>
+                                    <strong style="color: var(--text-light);">전류 입력:</strong><br>
+                                    I1, I2, I3 (CT 연결)
+                                </div>
+                                <div>
+                                    <strong style="color: var(--text-light);">보조 전원:</strong><br>
+                                    AC/DC 85~265V
+                                </div>
+                                <div>
+                                    <strong style="color: var(--text-light);">통신:</strong><br>
+                                    RS-485 (A+, B-)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: var(--glass-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 2rem; font-size: 1.3rem; font-weight: 700;">단자 배치도</h4>
+                            <div style="width: 100%; height: 350px; background: linear-gradient(135deg, var(--primary-700), var(--primary-500)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 2rem; font-size: 1.5rem; position: relative; overflow: hidden;">
+                                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 15s linear infinite;"></div>
+                                <div style="position: relative; z-index: 1;">후면 단자 배치</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                                <div>
+                                    <h5 style="color: var(--accent-300); margin-bottom: 1rem; font-weight: 600;">전력 측정 단자</h5>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+                                        <table style="width: 100%; color: var(--text-muted); font-size: 0.9rem;">
+                                            <tr><td style="padding: 0.25rem 0;"><strong>1, 2, 3:</strong></td><td>L1, L2, L3 (전압)</td></tr>
+                                            <tr><td style="padding: 0.25rem 0;"><strong>4:</strong></td><td>N (중성선)</td></tr>
+                                            <tr><td style="padding: 0.25rem 0;"><strong>5, 6:</strong></td><td>I1 (CT 1차)</td></tr>
+                                            <tr><td style="padding: 0.25rem 0;"><strong>7, 8:</strong></td><td>I2 (CT 2차)</td></tr>
+                                            <tr><td style="padding: 0.25rem 0;"><strong>9, 10:</strong></td><td>I3 (CT 3차)</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h5 style="color: var(--accent-300); margin-bottom: 1rem; font-weight: 600;">보조 전원 및 통신</h5>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+                                        <table style="width: 100%; color: var(--text-muted); font-size: 0.9rem;">
+                                            <tr><td style="padding: 0.25rem 0;"><strong>11, 12:</strong></td><td>보조전원 (AC/DC)</td></tr>
+                                            <tr><td style="padding: 0.25rem 0;"><strong>13:</strong></td><td>RS-485 A+</td></tr>
+                                            <tr><td style="padding: 0.25rem 0;"><strong>14:</strong></td><td>RS-485 B-</td></tr>
+                                            <tr><td style="padding: 0.25rem 0;"><strong>15:</strong></td><td>GND (접지)</td></tr>
+                                            <tr><td style="padding: 0.25rem 0;"><strong>16, 17:</strong></td><td>접점 출력 (옵션)</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Downloads Tab -->
+                <div class="tab-content" id="downloads" role="tabpanel">
+                    <div class="download-section">
+                        <h3 class="section-title">기술 자료 다운로드</h3>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 2.5rem; font-size: 1.1rem;">
+                            K-PAM 150 시리즈와 관련된 모든 기술 자료를 다운로드하실 수 있습니다. 
+                            설치, 운영, 유지보수에 필요한 모든 정보를 제공합니다.
+                        </p>
+                        
+                        <div class="download-grid">
+                            <a href="#" class="download-item">
+                                <div class="download-icon">PDF</div>
+                                <div class="download-info">
+                                    <h4>제품 카탈로그</h4>
+                                    <p>상세 사양 및 특징 (2.3MB)</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="download-item">
+                                <div class="download-icon">PDF</div>
+                                <div class="download-info">
+                                    <h4>사용자 매뉴얼</h4>
+                                    <p>설치 및 운영 가이드 (4.1MB)</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="download-item">
+                                <div class="download-icon">PDF</div>
+                                <div class="download-info">
+                                    <h4>빠른 시작 가이드</h4>
+                                    <p>설치 및 초기 설정 (1.2MB)</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="download-item">
+                                <div class="download-icon">ZIP</div>
+                                <div class="download-info">
+                                    <h4>CAD 도면</h4>
+                                    <p>DWG, DXF 파일 (850KB)</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="download-item">
+                                <div class="download-icon">EXE</div>
+                                <div class="download-info">
+                                    <h4>설정 소프트웨어</h4>
+                                    <p>PC 연결 프로그램 (12.5MB)</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="download-item">
+                                <div class="download-icon">PDF</div>
+                                <div class="download-info">
+                                    <h4>통신 매뉴얼</h4>
+                                    <p>Modbus 프로토콜 가이드 (1.8MB)</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="download-item">
+                                <div class="download-icon">PDF</div>
+                                <div class="download-info">
+                                    <h4>인증서</h4>
+                                    <p>KC, CE, RoHS 인증 (2.1MB)</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="download-item">
+                                <div class="download-icon">PDF</div>
+                                <div class="download-info">
+                                    <h4>데이터시트</h4>
+                                    <p>기술 사양서 (1.5MB)</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div style="margin-top: 3rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 16px; padding: 2.5rem;">
+                            <h4 style="color: var(--accent-400); margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 700;">기술 지원</h4>
+                            <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">
+                                제품 사용 중 문의사항이나 기술적 지원이 필요하시면 언제든지 연락주시기 바랍니다. 
+                                전문 엔지니어가 신속하고 정확한 기술 지원을 제공해드립니다.
+                            </p>
+                            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                                <a href="tel:02-1234-5678" class="btn btn-primary">
+                                    📞 전화 문의
+                                </a>
+                                <a href="mailto:support@kyongbo.co.kr" class="btn btn-secondary">
+                                    ✉️ 이메일 문의
+                                </a>
+                                <a href="#" class="btn btn-secondary">
+                                    💬 온라인 채팅
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', savedTheme);
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Floating Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 60;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Sidebar Toggle
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Sidebar Menu Interactions
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            const link = item.querySelector('.sidebar-link');
+            const submenu = item.querySelector('.sidebar-submenu');
+            
+            if (submenu) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Close other open menus
+                    document.querySelectorAll('.sidebar-item.active').forEach(activeItem => {
+                        if (activeItem !== item) {
+                            activeItem.classList.remove('active');
+                        }
+                    });
+                    
+                    item.classList.toggle('active');
+                });
+            }
+        });
+
+        // Tab Functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                button.setAttribute('aria-selected', 'true');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Download Item Interactions
+        document.querySelectorAll('.download-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Add loading state
+                const originalContent = item.innerHTML;
+                const loadingHTML = `
+                    <div class="download-icon">⏳</div>
+                    <div class="download-info">
+                        <h4>다운로드 중...</h4>
+                        <p>잠시만 기다려주세요</p>
+                    </div>
+                `;
+                
+                item.innerHTML = loadingHTML;
+                item.style.pointerEvents = 'none';
+                
+                // Simulate download
+                setTimeout(() => {
+                    item.innerHTML = originalContent;
+                    item.style.pointerEvents = 'auto';
+                    
+                    // Show success toast
+                    showToast('다운로드가 완료되었습니다.', 'success');
+                }, 2000);
+            });
+        });
+
+        // Toast Notification
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--glass-bg-strong);
+                backdrop-filter: blur(25px);
+                border: 1px solid var(--glass-border);
+                color: var(--text-light);
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                max-width: 300px;
+            `;
+            
+            if (type === 'success') {
+                toast.innerHTML = `✅ ${message}`;
+            } else if (type === 'error') {
+                toast.innerHTML = `❌ ${message}`;
+            } else {
+                toast.innerHTML = `ℹ️ ${message}`;
+            }
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Parallax Effect
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxBg = document.querySelector('.parallax-bg');
+            if (parallaxBg) {
+                parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.header');
+
+        function updateHeader() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            // Add blur effect based on scroll
+            const blurAmount = Math.min(currentScrollY / 10, 25);
+            header.style.backdropFilter = `blur(${blurAmount}px)`;
+            
+            lastScrollY = currentScrollY;
+        }
+
+        // Debounced scroll handler
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        const debouncedScrollHandler = debounce(() => {
+            updateHeader();
+            updateParallax();
+        }, 10);
+
+        // Event Listeners
+        window.addEventListener('scroll', debouncedScrollHandler);
+
+        // Responsive Sidebar
+        function handleResize() {
+            if (window.innerWidth > 1024) {
+                sidebar.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('resize', debounce(handleResize, 250));
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            // Alt + S for sidebar toggle
+            if (e.altKey && e.key === 's') {
+                e.preventDefault();
+                sidebar.classList.toggle('active');
+            }
+            
+            // Escape to close sidebar
+            if (e.key === 'Escape') {
+                sidebar.classList.remove('active');
+            }
+            
+            // Arrow keys for tab navigation
+            if (e.target.classList.contains('tab-button')) {
+                const currentIndex = Array.from(tabButtons).indexOf(e.target);
+                let newIndex;
+                
+                if (e.key === 'ArrowLeft') {
+                    newIndex = currentIndex > 0 ? currentIndex - 1 : tabButtons.length - 1;
+                } else if (e.key === 'ArrowRight') {
+                    newIndex = currentIndex < tabButtons.length - 1 ? currentIndex + 1 : 0;
+                }
+                
+                if (newIndex !== undefined) {
+                    e.preventDefault();
+                    tabButtons[newIndex].focus();
+                    tabButtons[newIndex].click();
+                }
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .spec-table-container, .download-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            
+            // Set initial active states
+            document.querySelector('.tab-button[data-tab="overview"]').classList.add('active');
+            document.getElementById('overview').classList.add('active');
+            
+            // Performance monitoring
+            if ('performance' in window) {
+                window.addEventListener('load', () => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+                });
+            }
+        });
+
+        // Service Worker registration (for PWA support)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+    </script>
+</body>
+</html>

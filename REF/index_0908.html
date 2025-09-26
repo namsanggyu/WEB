@@ -1,0 +1,1189 @@
+<!--작성자 : 남상규 -->
+<!--작성일 : 2025.08.29 -->
+<!--주요기능 : 인터렉티브, 크로스 브라우징, 모바일 대응 -->
+<!--고정일정 : 2025.01.01 ~ 2025.12.31 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyongBo Electric - 전력 보호의 혁신</title>
+    <link rel="stylesheet" href="./COMMON/kb.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- 네비게이션 헤더 -->
+     <header class="header" id="header">
+        <div class="top-bar">
+            <div class="container">
+                <span class="top-bar-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-envelope"></i> webmaster@kyongbo.co.kr</span>
+                        <span><i class="fas fa-phone"></i> 02-465-1133</span>
+                    </div>
+                    <div class="top-bar-links">
+                        <a href="#" class="top-link">HOME</a>
+                        <a href="#" class="top-link">SITEMAP</a>
+                        <a href="#" class="top-link">LOGIN</a>
+                        <a href="#" class="top-link">JOIN</a>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-container">
+                    <!-- 실제 로고 사용-->
+                     <div class="nav-brand">
+                        <a href="#" class="logo-container">
+                            <img src="./IMAGES/KBLOGO.png" alt="KyongBo Electric" class="logo-image">
+                        </a>
+                    </div>
+
+                    <!-- 메인 네비게이션 메뉴 -->
+                    <div class="nav-menu" id="navMenu">
+                        <!-- 회사소개 -->
+                        <div class="nav-item" data-menu="company">
+                            <a href="#" class="nav-link">
+                                <span>회사소개</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>회사소개</h3>
+                                        <p>KyongBo Electric의 모든 것을 알아보세요</p>
+                                    </div>
+                                    <div class="dropdown-grid">
+                                        <div class="dropdown-section">
+                                            <h4>회사 정보</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-building"></i>회사개요</a></li>
+                                                <li><a href="#"><i class="fas fa-history"></i>연혁</a></li>
+                                                <li><a href="#"><i class="fas fa-sitemap"></i>조직도</a></li>
+                                                <li><a href="#"><i class="fas fa-lightbulb"></i>경영이념</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>경영 시스템</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-award"></i>품질경영</a></li>
+                                                <li><a href="#"><i class="fas fa-chart-line"></i>사업분야</a></li>
+                                                <li><a href="#"><i class="fas fa-map-marker-alt"></i>찾아오시는 길</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 제품정보 -->
+                        <div class="nav-item" data-menu="products">
+                            <a href="#" class="nav-link">
+                                <span>제품정보</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>제품정보</h3>
+                                        <p>혁신적인 전력 보호 솔루션을 만나보세요</p>
+                                    </div>
+                                    <div class="dropdown-grid mega-grid">
+                                        <div class="dropdown-section">
+                                            <h4>보호 계전기</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-microchip"></i>디지털 계전기</a></li>
+                                                <li><a href="#"><i class="fas fa-cog"></i>유도형 계전기</a></li>
+                                                <li><a href="#"><i class="fas fa-shield-alt"></i>누전 경보기/G.F.R</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>계측 장비</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-tachometer-alt"></i>지시전기 계기</a></li>
+                                                <li><a href="#"><i class="fas fa-calculator"></i>디지털 계기</a></li>
+                                                <li><a href="#"><i class="fas fa-exchange-alt"></i>전력용 변환기</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>변성기</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-plug"></i>계기용 변압기(V.T/MOF)</a></li>
+                                                <li><a href="#"><i class="fas fa-bolt"></i>계기용 변류기(C.T)</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section featured">
+                                            <div class="featured-product">
+                                                <img src="./IMAGES/main_hero01.jpg" alt="K-PAM 5500">
+                                                <h5>K-PAM 5500</h5>
+                                                <p>차세대 디지털<BR>보호 계전기</p>
+                                                <a href="#">자세히 보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 고객지원 -->
+                        <div class="nav-item" data-menu="support">
+                            <a href="#" class="nav-link">
+                                <span>고객지원</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>고객지원</h3>
+                                        <p>언제나 고객과 함께하는 KyongBo Electric</p>
+                                    </div>
+                                    <div class="dropdown-grid mega-grid">
+                                        <div class="dropdown-section">
+                                            <h4>고객 서비스</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-bullhorn"></i>공지사항</a></li>
+                                                <li><a href="#"><i class="fas fa-star"></i>신제품 소개</a></li>
+                                                <li><a href="#"><i class="fas fa-question-circle"></i>자주묻는질문</a></li>
+                                                <li><a href="#"><i class="fas fa-comments"></i>고객문의</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>서비스 신청</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-tools"></i>A/S 신청</a></li>
+                                                <li><a href="#"><i class="fas fa-file-invoice"></i>견적서 신청</a></li>
+                                                <li><a href="#"><i class="fas fa-clipboard-list"></i>성적서 신청</a></li>
+                                                <li><a href="#"><i class="fas fa-book"></i>카탈로그 신청</a></li>
+                                                <li><a href="#"><i class="fas fa-drafting-compass"></i>생산중지 제품</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>파트너 정보</h4>
+                                            <ul>                                                
+                                                <li><a href="#"><i class="fas fa-store"></i>판매처 안내</a></li>
+                                            </ul>
+                                        </div>                                        
+                                        <div class="dropdown-section contact-section">
+                                            <div class="contact-card">
+                                                <i class="fas fa-headset"></i>
+                                                <h5>고객센터</h5>
+                                                <p><strong>02-465-1133</strong></p>
+                                                <p>평일 09:00 - 18:00</p>
+                                                <div class="emergency">
+                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                    <p>비상연락처</p>
+                                                    <p><strong>010-4758-1133</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 자료실 -->
+                        <div class="nav-item" data-menu="resources">
+                            <a href="#" class="nav-link">
+                                <span>자료실</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>자료실</h3>
+                                        <p>필요한 모든 기술 자료를 한 곳에서</p>
+                                    </div>
+                                    <div class="dropdown-grid mega-grid">
+                                        <div class="dropdown-section">
+                                            <h4>제품 자료</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-file-pdf"></i>카탈로그</a></li>
+                                                <li><a href="#"><i class="fas fa-certificate"></i>인증서</a></li>
+                                                <li><a href="#"><i class="fas fa-drafting-compass"></i>CAD 도면</a></li>
+                                                <li><a href="#"><i class="fas fa-file-alt"></i>사양서</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>기술 문서</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-book"></i>사용설명서</a></li>
+                                                <li><a href="#"><i class="fas fa-chart-bar"></i>개발시험성적서</a></li>
+                                                <li><a href="#"><i class="fas fa-code"></i>소프트웨어</a></li>
+                                                <li><a href="#"><i class="fas fa-database"></i>기술자료실</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>멀티미디어</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-play-circle"></i>동영상가이드</a></li>
+                                                <li><a href="#"><i class="fas fa-exchange-alt"></i>지명원 바로기</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="download-section">
+                                            <div class="download-card">
+                                                <i class="fas fa-download"></i>
+                                                <h5>다운로드 센터</h5>
+                                                <p>모든 자료를 한 번에</p>
+                                                <a href="#" class="download-btn">
+                                                    <i class="fas fa-cloud-download-alt"></i>
+                                                    <span>통합 카탈로그</span>
+                                                </a>                                         
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 채용정보 -->
+                        <div class="nav-item" data-menu="careers">
+                            <a href="#" class="nav-link">
+                                <span>채용정보</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>채용정보</h3>
+                                        <p>함께 성장할 인재를 찾습니다</p>
+                                    </div>
+                                    <div class="dropdown-grid">
+                                        <div class="dropdown-section">
+                                            <h4>채용 안내</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-user-tie"></i>인재상</a></li>
+                                                <li><a href="#"><i class="fas fa-heart"></i>복리후생</a></li>
+                                                <li><a href="#"><i class="fas fa-clipboard-check"></i>채용절차</a></li>
+                                                <!--<li><a href="#"><i class="fas fa-briefcase"></i>채용공고</a></li>-->
+                                            </ul>
+                                        </div>
+                                        <div class="career-highlight">
+                                            <div class="career-card">
+                                                <i class="fas fa-rocket"></i>
+                                                <h5>지금 지원하세요!</h5>
+                                                <p>전력 보호 분야의 전문가</p>
+                                                <a href="#" class="career-btn">
+                                                    <i class="fas fa-external-link-alt"></i>
+                                                    <span>채용공고 보기</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <div class="nav-toggle" id="navToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Mobile Menu -->
+                    <div class="mobile-menu" id="mobileMenu">
+                        <div class="mobile-menu-header">
+                            <img src="./IMAGES/KBLOGO.png" alt="KyongBo Electric" class="mobile-logo">
+                            <button class="mobile-close" id="mobileClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="mobile-nav">
+                            <!-- 회사소개 -->
+                            <div class="mobile-nav-item">
+                                <div class="mobile-nav-header" data-toggle="company">
+                                    <span>회사소개</span>
+                                    <i class="fas fa-chevron-down mobile-arrow"></i>
+                                </div>
+                                <div class="mobile-dropdown" id="mobile-company">
+                                    <div class="mobile-section">
+                                        <h4>회사 정보</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-building"></i>회사개요</a></li>
+                                            <li><a href="#"><i class="fas fa-history"></i>연혁</a></li>
+                                            <li><a href="#"><i class="fas fa-sitemap"></i>조직도</a></li>
+                                            <li><a href="#"><i class="fas fa-lightbulb"></i>경영이념</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-section">
+                                        <h4>경영 시스템</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-award"></i>품질경영</a></li>
+                                            <li><a href="#"><i class="fas fa-chart-line"></i>사업분야</a></li>
+                                            <li><a href="#"><i class="fas fa-map-marker-alt"></i>찾아오시는 길</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 제품정보 -->
+                            <div class="mobile-nav-item">
+                                <div class="mobile-nav-header" data-toggle="products">
+                                    <span>제품정보</span>
+                                    <i class="fas fa-chevron-down mobile-arrow"></i>
+                                </div>
+                                <div class="mobile-dropdown" id="mobile-products">
+                                    <div class="mobile-section">
+                                        <h4>보호 계전기</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-microchip"></i>디지털 계전기</a></li>
+                                            <li><a href="#"><i class="fas fa-cog"></i>유도형 계전기</a></li>
+                                            <li><a href="#"><i class="fas fa-shield-alt"></i>누전 경보기/G.F.R</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-section">
+                                        <h4>계측 장비</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-tachometer-alt"></i>지시전기 계기</a></li>
+                                            <li><a href="#"><i class="fas fa-digital-tachograph"></i>디지털 계기</a></li>
+                                            <li><a href="#"><i class="fas fa-exchange-alt"></i>전력용 변환기</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-section">
+                                        <h4>변성기</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-plug"></i>계기용 변압기(V.T/MOF)</a></li>
+                                            <li><a href="#"><i class="fas fa-bolt"></i>계기용 변류기(C.T)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-featured">
+                                        <div class="mobile-featured-product">
+                                            <img src="./IMAGES/5500TS.png" alt="K-PAM 5500">
+                                            <h5>K-PAM 5500</h5>
+                                            <p>차세대 디지털 보호 계전기</p>
+                                            <a href="#" class="mobile-featured-btn">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 고객지원 -->
+                            <div class="mobile-nav-item">
+                                <div class="mobile-nav-header" data-toggle="support">
+                                    <span>고객지원</span>
+                                    <i class="fas fa-chevron-down mobile-arrow"></i>
+                                </div>
+                                <div class="mobile-dropdown" id="mobile-support">
+                                    <div class="mobile-section">
+                                        <h4>고객 서비스</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-bullhorn"></i>공지사항</a></li>
+                                            <li><a href="#"><i class="fas fa-star"></i>신제품 소개</a></li>
+                                            <li><a href="#"><i class="fas fa-question-circle"></i>자주묻는질문</a></li>
+                                            <li><a href="#"><i class="fas fa-comments"></i>고객문의</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-section">
+                                        <h4>서비스 신청</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-tools"></i>A/S 신청</a></li>
+                                            <li><a href="#"><i class="fas fa-file-invoice"></i>견적서 신청</a></li>
+                                            <li><a href="#"><i class="fas fa-clipboard-list"></i>성적서 신청</a></li>
+                                            <li><a href="#"><i class="fas fa-book"></i>카탈로그 신청</a></li>
+                                            <li><a href="#"><i class="fas fa-drafting-compass"></i>생산중지 제품</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-section">
+                                        <h4>파트너 정보</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-store"></i>판매처 안내</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-contact">
+                                        <div class="mobile-contact-card">
+                                            <i class="fas fa-headset"></i>
+                                            <h5>고객센터</h5>
+                                            <p><strong>02-465-1133</strong></p>
+                                            <p>평일 09:00 - 18:00</p>
+                                            <div class="mobile-emergency">
+                                                <p>비상연락처: <strong>010-4758-1133</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 자료실 -->
+                            <div class="mobile-nav-item">
+                                <div class="mobile-nav-header" data-toggle="resources">
+                                    <span>자료실</span>
+                                    <i class="fas fa-chevron-down mobile-arrow"></i>
+                                </div>
+                                <div class="mobile-dropdown" id="mobile-resources">
+                                    <div class="mobile-section">
+                                        <h4>제품 자료</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-file-pdf"></i>카탈로그</a></li>
+                                            <li><a href="#"><i class="fas fa-certificate"></i>인증서</a></li>
+                                            <li><a href="#"><i class="fas fa-drafting-compass"></i>CAD 도면</a></li>
+                                            <li><a href="#"><i class="fas fa-file-alt"></i>사양서</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-section">
+                                        <h4>기술 문서</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-book"></i>사용설명서</a></li>
+                                            <li><a href="#"><i class="fas fa-chart-bar"></i>개발시험성적서</a></li>
+                                            <li><a href="#"><i class="fas fa-code"></i>소프트웨어</a></li>
+                                            <li><a href="#"><i class="fas fa-database"></i>기술자료실</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-section">
+                                        <h4>멀티미디어</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-play-circle"></i>동영상가이드</a></li>
+                                            <li><a href="#"><i class="fas fa-exchange-alt"></i>지명원 바로기</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-download">
+                                        <div class="mobile-download-card">
+                                            <i class="fas fa-download"></i>
+                                            <h5>다운로드 센터</h5>
+                                            <a href="#" class="mobile-download-btn">
+                                                <i class="fas fa-cloud-download-alt"></i>
+                                                <span>통합 카탈로그</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 채용정보 -->
+                            <div class="mobile-nav-item">
+                                <div class="mobile-nav-header" data-toggle="careers">
+                                    <span>채용정보</span>
+                                    <i class="fas fa-chevron-down mobile-arrow"></i>
+                                </div>
+                                <div class="mobile-dropdown" id="mobile-careers">
+                                    <div class="mobile-section">
+                                        <h4>채용 안내</h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-user-tie"></i>인재상</a></li>
+                                            <li><a href="#"><i class="fas fa-heart"></i>복리후생</a></li>
+                                            <li><a href="#"><i class="fas fa-clipboard-check"></i>채용절차</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mobile-career">
+                                        <div class="mobile-career-card">
+                                            <i class="fas fa-rocket"></i>
+                                            <h5>지금 지원하세요!</h5>
+                                            <p>전력 보호 분야의 전문가</p>
+                                            <a href="#" class="mobile-career-btn">
+                                                <i class="fas fa-external-link-alt"></i>
+                                                <span>채용공고 보기</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Contact Info -->
+                        <div class="mobile-footer">
+                            <div class="mobile-contact-info">
+                                <p><i class="fas fa-envelope"></i> webmaster@kyongbo.co.kr</p>
+                                <p><i class="fas fa-phone"></i> 02-465-1133</p>
+                            </div>
+                            <div class="mobile-links">
+                                <a href="#">HOME</a>
+                                <a href="#">SITEMAP</a>
+                                <a href="#">LOGIN</a>
+                                <a href="#">JOIN</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search & Language -->
+                    <div class="nav-actions">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="language-selector">
+                            <button class="lang-btn">
+                                <span>KOR</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="lang-dropdown">
+                                <a href="#">한국어</a>
+                                <a href="#">English</a>
+                                <a href="#">中文</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+     </header>
+
+
+     <!-- 메인 컨텐츠 -->
+     <main class="main-content">
+        <!--신뢰감 있는 히어로 섹션-->
+        <section class="hero-section" id="heroSection">
+            <!-- 랜덤 배경 영상 컨테이너 -->
+            <div class="hero-video-container">
+                <video class="hero-video" autoplay muted playsinline preload="metadata" id="heroVideo">
+                    <source src="./kyongbo-hero-bg.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hero-video-overlay"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>전력 보호의<br>새로운 기준</h1>
+                        <p>1978년부터 축적된 전문성과 혁신 기술로 안전하고 신뢰할 수 있는 전력 보호 솔루션을 제공합니다.</p>
+
+                        <div class="hero-features">
+                            <div class="hero-feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>40년간 축적된 전력 보호 전문성</span>
+                            </div>
+                            <div class="hero-feature">
+                                <i class="fas fa-award"></i>
+                                <span>국내외 인증 완료된 신뢰성</span>
+                            </div>
+                            <div class="hero-feature">
+                                <i class="fas fa-cogs"></i>
+                                <span>차세대 디지털 기술 적용</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <a href="#" class="hero-btn primary">
+                                <span>제품 카탈로그</span>
+                                <i class="fas fa-download"></i>
+                            </a>
+                            <a href="#" class="hero-btn secondary">
+                                <span>회사 소개</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-product-showcase">
+                            <a href="#digital-relay" class="hero-product-card">
+                                <img src="./IMAGES/main_hero01.jpg" alt="K-PAM 5500">
+                                <h4>K-PAM 5500</h4>
+                                <p>디지털 보호 계전기</p>
+                            </a>
+                            <a href="#digital-meter" class="hero-product-card">
+                                <img src="./IMAGES/main_hero02.jpg" alt="K-PAM 5500">
+                                <h4>디지털 계측기</h4>
+                                <p>고정밀 전력 측정</p>
+                            </a>
+                            <a href="#voltage-transformer" class="hero-product-card">
+                                <img src="./IMAGES/main_hero03.jpg" alt="K-PAM 5500">
+                                <h4>계기용 변압기</h4>
+                                <p>안전한 전압 변환</p>
+                            </a>
+                            <a href="#current-transformer" class="hero-product-card">
+                                <img src="./IMAGES/main_hero04.jpg" alt="K-PAM 5500">
+                                <h4>계기용 변류기</h4>
+                                <p>정확한 전류 측정</p>
+                            </a>                                                                                                
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 제품 인덱스 & 자료실 섹션 -->
+        <section class="product-resources-section">
+            <div class="container">
+                <!-- 제품 인덱스 네비게이션-->
+                <div class="product-index-nav">
+                    <div class="product-nav-left">
+                        <h2><i class="fas fa-th-large"></i> Product Index 바로가기</h2>                        
+                    </div>
+                    <div class="product-nav-categories">
+                        <a href="#" class="category-btn">RELAY</a>
+                        <a href="#" class="category-btn">ELD/GFR</a>
+                        <a href="#" class="category-btn">METER</a>
+                        <a href="#" class="category-btn">TRANSDUCER</a>
+                        <a href="#" class="category-btn">V.T/C.T</a>
+                        <button class="search-product-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="content-more">
+                        <button class="content-more-btn">
+                            <span>컨텐츠 더보기</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resources-content">
+                    <!--자료실 섹션-->
+                    <div class="resources-left">
+                        <div class="section-header">
+                            <h3>자료실</h3>
+                        </div>
+                        <div class="resources-grid">
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <span>카탈로그</span>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <span>인증서</span>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-drafting-compass"></i>
+                                </div>
+                                <span>CAD 도면</span>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <span>사양서</span>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <span>사용설명서</span>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <span>소프트웨어</span>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <span>개발성적서</span>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <span>기술자료실</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 신제품 섹션-->
+                        <div class="section-header">
+                            <h3>신제품</h3>                            
+                        </div>
+                        <div class="new-product-banner">
+                            <div class="banner-content">
+                                <div class="banner-text">
+                                    <h4>광각형 멀티 파워 미터</h4>
+                                    <h2>K-MAC MDM100</h2>
+                                    <p>Digital Multi Power Meter</p>
+                                    <p>차기전력 표기 시 소수점 둘째 자리까지 표시</p>
+                                    <button class="detail-btn">자세히 보기</button>
+                                </div>
+                                <div class="banner-image">
+                                    <img src="./IMAGES/MDM100_370.png" alt="K-MAC MDM100">
+                                </div>
+                            </div>                            
+                        </div>
+
+                        <!-- 주요제품 섹션 -->
+                        <div class="section-header">
+                            <h3>주요제품</h3>                                                
+                        </div>
+                        <div class="main-products-grid">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="./IMAGES/thmb_main1.jpg" alt="K-PAM 5500">
+                                </div>
+                                <h4>k-PAM 5500</h4>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="./IMAGES/thmb_main2.jpg" alt="K-PAM 5500">
+                                </div>
+                                <h4>유도형 계전기</h4>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="./IMAGES/thmb_main3.jpg" alt="K-PAM 5500">
+                                </div>
+                                <h4>누전경보기</h4>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="./IMAGES/thmb_main4.jpg" alt="K-PAM 5500">
+                                </div>
+                                <h4>누전계전기</h4>
+                            </div>                                                                                    
+                        </div>
+                    </div>
+
+                    <!-- 우측 사이드바 -->
+                    <div class="sidebar-right">
+                        <!-- 고객센터 -->
+                        <div class="sidebar-section customer-center">
+                            <h3>고객센터</h3>
+                            <div class="contact-main">
+                                <div class="phone-icon">
+                                    <i class="fas fa-phone"></i>                         
+                                </div>
+                                <div class="contact-details">
+                                    <div class="main-phone">02-465-1133</div>
+                                    <div class="fax">FAX: 02-465-1333</div>
+                                    <div class="emergency2">
+                                        <span class="emergency2-label">비상연락망</span>
+                                        <span class="emergency2-number">010-4758-1133</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-buttons">
+                                <button class="contact-btn primary">찾아오는 길</button>
+                                <button class="contact-btn secondary">판매처 안내</button>
+                            </div>
+                        </div>
+
+                        <!-- 공지사항 -->
+                        <div class="sidebar-section notice-section">
+                            <div class="section-title">
+                                <h3>공지사항</h3>
+                                <div class="nav-arrows">
+                                    <button class="nav-arrow"><i class="fas fa-chevron-up"></i></button>
+                                    <button class="nav-arrow"><i class="fas fa-chevron-down"></i></button>
+                                </div>
+                            </div>
+                            <ul class="notice-list">
+                                <li><span class="notice-dot">●</span> 2025년 여름휴가 안내</li>
+                                <li><span class="notice-dot">●</span> 2025년 5월 2일(금) 휴무</li>
+                                <li><span class="notice-dot">●</span> 2025년 설 연휴 휴무안내</li>
+                                <li><span class="notice-dot">●</span> 10월1일(화) 임시업무 휴일</li>
+                            </ul>
+                        </div>
+
+                        <!-- QUICK MENU -->
+                        <div class="sidebar-section quick-menu">
+                            <h3>QUICK MENU</h3>
+                            <div class="quick-menu-grid">
+                                <div class="quick-item">
+                                    <div class="quick-icon">
+                                        <i class="fas fa-question-circle"></i>                                
+                                    </div>
+                                    <span>자주묻는 질문</span>
+                                </div>
+                                <div class="quick-item">
+                                    <div class="quick-icon">
+                                        <i class="fas fa-file-invoice"></i>
+                                    </div>
+                                    <span>견적서 신청</span>
+                                </div>
+                                <div class="quick-item">
+                                    <div class="quick-icon">
+                                        <i class="fas fa-microphone"></i>
+                                    </div>
+                                    <span>고객의 소리</span>
+                                </div>
+                                <div class="quick-item">
+                                    <div class="quick-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <span>카탈로그신청</span>
+                                </div>
+                                <div class="quick-item">
+                                    <div class="quick-icon">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <span>A/S 신청</span>
+                                </div>
+                                <div class="quick-item">
+                                    <div class="quick-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <span>성적서 신청</span>
+                                </div>
+                                <div class="quick-item">
+                                    <div class="quick-icon">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <span>카카오톡 상담</span>
+                                </div>
+                                <div class="quick-item">
+                                    <div class="quick-icon">
+                                        <i class="fab fa-youtube"></i>
+                                    </div>
+                                    <span>동영상 가이드</span>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>            
+     </main>
+     <!-- 신뢰감 있는 푸터 -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <!-- 회사 정보 -->
+                    <div class="footer-section">
+                        <div class="company-info">
+                            <div class="logo-footer">
+                                <img src="./IMAGES/KBLOGO2.png" alt="KyongBo Electric" class="logo-image">
+                                <div class="logo-text">
+                                    <span class="logo-main">경보전기</span>
+                                    <span class="logo-sub">전력 보호의 혁신</span>
+                                </div>
+                            </div>
+                            <p>1978년 설립 이래 전력 보호 분야의 선도기업으로서 혁신적인 기술과 신뢰할 수 있는 제품을 제공하고 있습니다. 고객의 안전과 만족을 최우선으로 하는 KyongBo Electric입니다.</p>
+                            <div class="contact-info-footer">
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>서울특별시 성동구 성수일로 12가길 5(성수동 2가)</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>02-465-1133</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-fax"></i>
+                                    <span>02-465-1134</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>webmaster@kyongbo.co.kr</span>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="social-link kakao"><i class="fas fa-comment"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 제품 카테고리 -->
+                    <div class="footer-section">
+                        <h3>제품 카테고리</h3>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-microchip"></i>디지털 계전기</a></li>
+                            <li><a href="#"><i class="fas fa-cogs"></i>유도형 계전기</a></li>
+                            <li><a href="#"><i class="fas fa-exclamation-triangle"></i>누전 경보기/G.F.R</a></li>
+                            <li><a href="#"><i class="fas fa-tachometer-alt"></i>지시전기 계기</a></li>
+                            <li><a href="#"><i class="fas fa-calculator"></i>디지털 계기</a></li>
+                            <li><a href="#"><i class="fas fa-sync-alt"></i>전력용 변환기</a></li>
+                            <li><a href="#"><i class="fas fa-arrow-up"></i>계기용 변압기</a></li>
+                            <li><a href="#"><i class="fas fa-arrow-down"></i>계기용 변류기</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 고객 지원 -->
+                    <div class="footer-section">
+                        <h3>고객 지원</h3>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bell"></i>공지사항</a></li>
+                            <li><a href="#"><i class="fas fa-question-circle"></i>자주묻는질문</a></li>
+                            <li><a href="#"><i class="fas fa-headset"></i>고객문의</a></li>
+                            <li><a href="#"><i class="fas fa-wrench"></i>A/S 신청</a></li>
+                            <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>견적서 신청</a></li>
+                            <li><a href="#"><i class="fas fa-file-pdf"></i>카탈로그 신청</a></li>
+                            <li><a href="#"><i class="fas fa-ban"></i>생산중지 제품</a></li>
+                            <li><a href="#"><i class="fas fa-map-marker-alt"></i>판매처 안내</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 회사 안내 -->
+                    <div class="footer-section">
+                        <h3>회사 안내</h3>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-building"></i>회사 개요</a></li>
+                            <li><a href="#"><i class="fas fa-history"></i>연혁</a></li>
+                            <li><a href="#"><i class="fas fa-sitemap"></i>조직도</a></li>
+                            <li><a href="#"><i class="fas fa-lightbulb"></i>경영이념</a></li>
+                            <li><a href="#"><i class="fas fa-award"></i>품질경영</a></li>
+                            <li><a href="#"><i class="fas fa-map-marker-alt"></i>찾아오시는 길</a></li>
+                            <li><a href="#"><i class="fas fa-briefcase"></i>채용정보</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-links">
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">이용약관</a>
+                        <a href="#">사이트맵</a>
+                        <a href="#">이메일무단수집거부</a>
+                    </div>
+                    <p>&copy; 2025 KyongBo Electric Co., Ltd. All rights reserved. | 사업자등록번호: 218-81-00537</p>
+                </div>
+            </div>  
+        </div>
+     </footer>
+
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        // Mobile Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+        const body = document.body;
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            navToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            navToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.style.overflow = '';
+        }
+
+        // Event listeners
+        navToggle.addEventListener('click', toggleMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+
+        // Mobile dropdown functionality
+        const mobileNavHeaders = document.querySelectorAll('.mobile-nav-header');
+        
+        mobileNavHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const toggleTarget = header.getAttribute('data-toggle');
+                const dropdown = document.getElementById(`mobile-${toggleTarget}`);
+                
+                // Close other dropdowns
+                mobileNavHeaders.forEach(otherHeader => {
+                    if (otherHeader !== header) {
+                        otherHeader.classList.remove('active');
+                        const otherToggle = otherHeader.getAttribute('data-toggle');
+                        const otherDropdown = document.getElementById(`mobile-${otherToggle}`);
+                        if (otherDropdown) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    }
+                });
+                
+                // Toggle current dropdown
+                header.classList.toggle('active');
+                if (dropdown) {
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close mobile menu on window resize if screen becomes large
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                closeMobileMenu();
+            }
+        });
+
+        // Prevent body scroll when mobile menu is open
+        document.addEventListener('touchmove', (e) => {
+            if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target)) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // ========================================
+        // 랜덤 배경 영상 재생 시스템
+        // ========================================
+        
+        class RandomVideoPlayer {
+            constructor() {
+                // 영상 파일 목록 (VIDEO 폴더 경로)
+                this.videoSources = [
+                    './VIDEO/kyongbo-hero-bg9.mp4',
+                    './VIDEO/kyongbo-hero-bg2.mp4',
+                    './VIDEO/kyongbo-hero-bg3.mp4',
+                    './VIDEO/kyongbo-hero-bg4.mp4',
+                    './VIDEO/kyongbo-hero-bg5.mp4',
+                    './VIDEO/kyongbo-hero-bg6.mp4',
+                    './VIDEO/kyongbo-hero-bg7.mp4',
+                    './VIDEO/kyongbo-hero-bg8.mp4',
+                    './VIDEO/kyongbo-hero-bg.mp4'
+                ];
+                
+                this.currentVideoIndex = 0;
+                this.videoElement = document.getElementById('heroVideo');
+                this.playedVideos = []; // 재생된 영상 추적
+                
+                this.init();
+            }
+            
+            init() {
+                if (!this.videoElement) {
+                    console.error('Hero video element not found');
+                    return;
+                }
+                
+                // 첫 번째 영상을 랜덤으로 선택
+                this.playRandomVideo();
+                
+                            // 영상이 끝났을 때 다음 영상 재생
+            this.videoElement.addEventListener('ended', () => {
+                console.log('🎬 Video ended, playing next random video');
+                this.playNextRandomVideo();
+            });
+            
+            // 추가: loop 속성 제거 (자동 반복 방지)
+            this.videoElement.removeAttribute('loop');
+                
+                // 영상 로드 에러 처리
+                this.videoElement.addEventListener('error', (e) => {
+                    console.warn('Video load error:', e);
+                    this.playNextRandomVideo();
+                });
+                
+                // 영상이 성공적으로 로드되었을 때
+                this.videoElement.addEventListener('loadeddata', () => {
+                    console.log('Video loaded successfully:', this.getCurrentVideoPath());
+                });
+            }
+            
+            // 랜덤 인덱스 생성 (중복 방지)
+            getRandomVideoIndex() {
+                // 모든 영상이 재생되었으면 리셋
+                if (this.playedVideos.length >= this.videoSources.length) {
+                    this.playedVideos = [];
+                }
+                
+                // 아직 재생되지 않은 영상들 중에서 선택
+                const availableIndices = this.videoSources
+                    .map((_, index) => index)
+                    .filter(index => !this.playedVideos.includes(index));
+                
+                const randomIndex = Math.floor(Math.random() * availableIndices.length);
+                return availableIndices[randomIndex];
+            }
+            
+            // 랜덤 영상 재생
+            playRandomVideo() {
+                const randomIndex = this.getRandomVideoIndex();
+                this.currentVideoIndex = randomIndex;
+                this.playedVideos.push(randomIndex);
+                
+                const videoPath = this.videoSources[randomIndex];
+                this.changeVideoSource(videoPath);
+            }
+            
+            // 다음 랜덤 영상 재생
+            playNextRandomVideo() {
+                // 부드러운 페이드 아웃 효과
+                this.fadeOut(() => {
+                    this.playRandomVideo();
+                    this.fadeIn();
+                });
+            }
+            
+            // 영상 소스 변경
+            changeVideoSource(newSource) {
+                try {
+                    // 기존 source 태그들 제거
+                    const sources = this.videoElement.querySelectorAll('source');
+                    sources.forEach(source => source.remove());
+                    
+                    // 새로운 source 태그 추가
+                    const sourceElement = document.createElement('source');
+                    sourceElement.src = newSource;
+                    sourceElement.type = 'video/mp4';
+                    this.videoElement.appendChild(sourceElement);
+                    
+                    // 영상 로드 및 재생
+                    this.videoElement.load();
+                    
+                    // 로드 완료 후 자동 재생
+                    const playPromise = this.videoElement.play();
+                    if (playPromise !== undefined) {
+                        playPromise
+                            .then(() => {
+                                console.log('Video playing:', newSource);
+                            })
+                            .catch(error => {
+                                console.warn('Video play failed:', error);
+                            });
+                    }
+                } catch (error) {
+                    console.error('Error changing video source:', error);
+                }
+            }
+            
+            // 현재 재생 중인 영상 경로
+            getCurrentVideoPath() {
+                return this.videoSources[this.currentVideoIndex];
+            }
+            
+            // 페이드 아웃 효과
+            fadeOut(callback) {
+                this.videoElement.style.transition = 'opacity 0.5s ease-in-out';
+                this.videoElement.style.opacity = '0.3';
+                
+                setTimeout(() => {
+                    if (callback) callback();
+                }, 500);
+            }
+            
+            // 페이드 인 효과
+            fadeIn() {
+                setTimeout(() => {
+                    this.videoElement.style.opacity = '1';
+                }, 100);
+            }
+            
+            // 특정 영상으로 바로 변경 (선택적 기능)
+            playSpecificVideo(index) {
+                if (index >= 0 && index < this.videoSources.length) {
+                    this.currentVideoIndex = index;
+                    this.changeVideoSource(this.videoSources[index]);
+                }
+            }
+            
+            // 현재 재생 상태 정보
+            getStatus() {
+                return {
+                    currentIndex: this.currentVideoIndex,
+                    currentVideo: this.getCurrentVideoPath(),
+                    playedVideos: [...this.playedVideos],
+                    totalVideos: this.videoSources.length
+                };
+            }
+        }
+        
+        // 페이지 로드 완료 후 랜덤 영상 플레이어 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            // 영상 플레이어 인스턴스 생성
+            window.randomVideoPlayer = new RandomVideoPlayer();
+            
+            // 디버그용 - 콘솔에서 상태 확인 가능
+            console.log('🎬 Random Video Player Initialized');
+            console.log('📹 Available videos:', window.randomVideoPlayer.videoSources);
+            
+            // 선택적: 키보드 단축키로 수동 영상 변경 (개발/테스트용)
+            document.addEventListener('keydown', (e) => {
+                if (e.ctrlKey && e.key === 'v') {
+                    console.log('🔄 Manual video change triggered');
+                    window.randomVideoPlayer.playNextRandomVideo();
+                }
+            });
+        });
+        
+    </script>
+    
+</html>

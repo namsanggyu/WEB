@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이드메뉴 히어로 오버레이 가이드 📋</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title i {
+            font-size: 1.8rem;
+            color: #3498db;
+        }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .concept-card {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            position: relative;
+        }
+        
+        .concept-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .concept-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .method-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .method-list li {
+            background: #f8f9fa;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+            position: relative;
+        }
+        
+        .method-list li::before {
+            content: attr(data-step);
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e74c3c;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .method-list li h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .method-list li p {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .code-example::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .code-example pre {
+            margin: 0;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .highlight-box h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .highlight-box p {
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
+        .demo-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            position: relative;
+            border: 2px dashed #3498db;
+        }
+        
+        .demo-container h4 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .demo-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .demo-before, .demo-after {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .demo-before h5, .demo-after h5 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .demo-hero {
+            height: 100px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 6px;
+            position: relative;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .demo-sidebar {
+            width: 80px;
+            height: 120px;
+            background: #ecf0f1;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            position: relative;
+        }
+        
+        .demo-after .demo-sidebar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(236, 240, 241, 0.9);
+            border: 2px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .pros, .cons {
+            padding: 25px;
+            border-radius: 12px;
+        }
+        
+        .pros {
+            background: linear-gradient(45deg, #d4edda, #c3e6cb);
+            border-left: 5px solid #28a745;
+        }
+        
+        .cons {
+            background: linear-gradient(45deg, #f8d7da, #f5c6cb);
+            border-left: 5px solid #dc3545;
+        }
+        
+        .pros h4, .cons h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .pros h4 {
+            color: #155724;
+        }
+        
+        .cons h4 {
+            color: #721c24;
+        }
+        
+        .pros ul, .cons ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pros li, .cons li {
+            margin: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .pros li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .cons li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .warning-box {
+            background: linear-gradient(45deg, #fff3cd, #ffeaa7);
+            border: 1px solid #ffeaa7;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .warning-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .warning-box p {
+            color: #856404;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .concept-grid,
+            .demo-layout,
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            
+            .code-example {
+                padding: 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <div class="header">
+            <h1><i class="fas fa-layer-group"></i> 사이드메뉴 히어로 오버레이 가이드</h1>
+            <p>제품정보 사이드메뉴를 히어로 영역 위로 올리는 완벽한 방법론 📋</p>
+        </div>
+
+        <div class="content-grid">
+            <!-- 1. 기본 개념 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-lightbulb"></i>
+                    1. 기본 개념 이해하기
+                </h2>
+                
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>🎯 오버레이 (Overlay) 개념</h3>
+                        <p>사이드메뉴가 히어로 영역 "위에 떠있는" 효과를 만드는 것입니다. 마치 투명한 유리판 위에 메뉴를 올려놓은 것처럼 뒷배경이 살짝 보이면서도 메뉴는 선명하게 표시됩니다.</p>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>📐 Position 속성 활용</h3>
+                        <p>CSS의 position 속성을 absolute나 fixed로 설정하여 일반적인 문서 흐름에서 벗어나게 만들고, z-index로 레이어 순서를 조정하여 히어로 영역 위에 배치합니다.</p>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>🌟 글래스모피즘 (Glassmorphism)</h3>
+                        <p>반투명한 배경색과 backdrop-filter: blur() 효과를 사용하여 뒷배경이 흐릿하게 보이면서도 메뉴는 선명하게 보이는 현대적인 디자인 트렌드입니다.</p>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>⚖️ 레이어 관리 (Z-index)</h3>
+                        <p>여러 요소들이 겹칠 때 어떤 것이 위에 보일지 결정하는 순서입니다. 히어로(z-index: 0) < 사이드메뉴(z-index: 10) < 모달(z-index: 100) 순으로 관리합니다.</p>
+                    </div>
+                </div>
+
+                <div class="demo-container">
+                    <h4>🔍 Before vs After 비교</h4>
+                    <div class="demo-layout">
+                        <div class="demo-before">
+                            <h5>❌ Before (일반 레이아웃)</h5>
+                            <div class="demo-hero">Hero 영역</div>
+                            <div class="demo-sidebar"></div>
+                            <p style="text-align: center; font-size: 0.9rem; color: #666;">사이드바가 히어로 아래에 위치</p>
+                        </div>
+                        
+                        <div class="demo-after">
+                            <h5>✅ After (오버레이 효과)</h5>
+                            <div class="demo-hero">Hero 영역</div>
+                            <div class="demo-sidebar"></div>
+                            <p style="text-align: center; font-size: 0.9rem; color: #666;">사이드바가 히어로 위에 떠있음</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. 기본 흐름 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-route"></i>
+                    2. 기본 구현 흐름
+                </h2>
+                
+                <ol class="method-list">
+                    <li data-step="1">
+                        <h4>HTML 구조 설계</h4>
+                        <p>히어로 영역과 사이드메뉴의 부모-자식 관계를 설정하거나, 동일한 레벨에서 위치 조정이 가능하도록 구조를 만듭니다.</p>
+                    </li>
+                    
+                    <li data-step="2">
+                        <h4>히어로 영역 기준점 설정</h4>
+                        <p>히어로 영역에 position: relative를 설정하여 사이드메뉴의 absolute 위치 계산 기준점을 만듭니다.</p>
+                    </li>
+                    
+                    <li data-step="3">
+                        <h4>사이드메뉴 절대 위치 지정</h4>
+                        <p>사이드메뉴에 position: absolute를 설정하고 top, left 값으로 히어로 영역 내 원하는 위치에 배치합니다.</p>
+                    </li>
+                    
+                    <li data-step="4">
+                        <h4>레이어 순서 조정</h4>
+                        <p>z-index를 사용하여 사이드메뉴가 히어로 영역보다 위에 표시되도록 설정합니다.</p>
+                    </li>
+                    
+                    <li data-step="5">
+                        <h4>시각적 효과 적용</h4>
+                        <p>반투명 배경, 블러 효과, 그림자 등을 추가하여 오버레이 느낌을 강화합니다.</p>
+                    </li>
+                    
+                    <li data-step="6">
+                        <h4>반응형 대응</h4>
+                        <p>다양한 화면 크기에서 적절한 위치와 크기로 조정되도록 미디어 쿼리를 설정합니다.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- 3. 상세 처리 방법 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    3. 상세 처리 방법들
+                </h2>
+                
+                <div class="highlight-box">
+                    <h4>📋 방법 1: 히어로 내부 절대 위치</h4>
+                    <p>히어로 영역 내부에 사이드메뉴를 절대 위치로 배치하는 가장 일반적인 방법입니다.</p>
+                </div>
+                
+                <div class="code-example" data-lang="HTML">
+                    <pre>&lt;section class="product-hero"&gt;
+    &lt;!-- 히어로 배경 이미지/영상 --&gt;
+    &lt;div class="hero-background"&gt;&lt;/div&gt;
+    
+    &lt;!-- 히어로 콘텐츠 --&gt;
+    &lt;div class="hero-content"&gt;
+        &lt;h1&gt;ABOUT PRODUCT&lt;/h1&gt;
+        &lt;p&gt;제품 설명...&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- 오버레이 사이드메뉴 --&gt;
+    &lt;aside class="product-sidebar overlay-style"&gt;
+        &lt;!-- 사이드메뉴 내용 --&gt;
+    &lt;/aside&gt;
+&lt;/section&gt;</pre>
+                </div>
+                
+                <div class="code-example" data-lang="CSS">
+                    <pre>/* 히어로 영역 - 기준점 설정 */
+.product-hero {
+    position: relative;      /* 사이드메뉴의 기준점 */
+    height: 500px;          /* 적절한 높이 */
+    overflow: hidden;       /* 넘치는 부분 숨김 */
+}
+
+/* 오버레이 사이드메뉴 */
+.product-sidebar.overlay-style {
+    position: absolute;                    /* 절대 위치 */
+    top: 50%;                             /* 세로 중앙 */
+    left: 30px;                           /* 왼쪽에서 30px */
+    transform: translateY(-50%);           /* 정확한 중앙 정렬 */
+    z-index: 10;                          /* 히어로 위에 표시 */
+    
+    /* 글래스모피즘 효과 */
+    background: rgba(255, 255, 255, 0.9); /* 반투명 흰색 */
+    backdrop-filter: blur(10px);           /* 뒷배경 블러 */
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 15px;                   /* 둥근 모서리 */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    
+    /* 크기 제한 */
+    width: 280px;
+    max-height: 70vh;
+    overflow-y: auto;
+}</pre>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📋 방법 2: 고정 위치 (Fixed Position)</h4>
+                    <p>화면에 고정되어 스크롤해도 항상 같은 위치에 표시되는 방법입니다.</p>
+                </div>
+                
+                <div class="code-example" data-lang="CSS">
+                    <pre>/* 고정 위치 사이드메뉴 */
+.product-sidebar.fixed-style {
+    position: fixed;         /* 화면에 고정 */
+    top: 20%;               /* 화면 상단에서 20% */
+    left: 30px;             /* 왼쪽에서 30px */
+    z-index: 15;            /* 높은 우선순위 */
+    
+    /* 나머지 스타일 동일 */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    /* ... */
+}</pre>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📋 방법 3: 그리드 레이아웃 활용</h4>
+                    <p>CSS Grid를 사용하여 히어로와 사이드메뉴를 겹치게 배치하는 방법입니다.</p>
+                </div>
+                
+                <div class="code-example" data-lang="CSS">
+                    <pre>/* 그리드 컨테이너 */
+.hero-container {
+    display: grid;
+    grid-template-areas: "hero hero hero"
+                        "hero hero hero";
+    grid-template-columns: 300px 1fr 100px;
+    position: relative;
+}
+
+/* 히어로 영역 */
+.product-hero {
+    grid-area: hero;        /* 전체 영역 차지 */
+    z-index: 1;
+}
+
+/* 오버레이 사이드메뉴 */
+.product-sidebar {
+    grid-column: 1;         /* 첫 번째 컬럼 */
+    grid-row: 1;            /* 첫 번째 행 */
+    z-index: 10;            /* 히어로 위에 */
+    align-self: center;     /* 세로 중앙 정렬 */
+    justify-self: start;    /* 왼쪽 정렬 */
+    margin-left: 30px;      /* 여백 */
+}</pre>
+                </div>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> 주의사항</h4>
+                    <p><strong>Footer 충돌 방지:</strong> 사이드메뉴가 페이지 하단 footer 영역과 겹치지 않도록 max-height 제한이나 bottom 값 설정이 필요합니다.</p>
+                </div>
+            </div>
+
+            <!-- 4. 반응형 대응 전략 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-mobile-alt"></i>
+                    4. 반응형 대응 전략
+                </h2>
+                
+                <div class="code-example" data-lang="CSS">
+                    <pre>/* 데스크톱 (기본) */
+.product-sidebar.overlay-style {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    width: 280px;
+}
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    .product-sidebar.overlay-style {
+        position: fixed;     /* 고정 위치로 변경 */
+        left: 15px;         /* 더 가까이 */
+        width: 260px;       /* 조금 작게 */
+        max-height: 60vh;   /* 높이 제한 */
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    .product-sidebar.overlay-style {
+        width: 240px;           /* 더 작게 */
+        left: 10px;             /* 더 가까이 */
+        max-height: 50vh;       /* 더 제한 */
+        background: rgba(255,255,255,0.98); /* 더 불투명 */
+    }
+}
+
+/* 초소형 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .product-sidebar.overlay-style {
+        /* 필요시 완전히 숨기거나 다른 UI로 대체 */
+        display: none;
+    }
+    
+    /* 대신 햄버거 메뉴나 다른 방식 사용 */
+    .mobile-menu-toggle {
+        display: block;
+    }
+}</pre>
+                </div>
+            </div>
+
+            <!-- 5. 장단점 분석 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-balance-scale"></i>
+                    5. 장단점 분석
+                </h2>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4><i class="fas fa-thumbs-up"></i> 장점들</h4>
+                        <ul>
+                            <li>시각적으로 매우 세련되고 모던한 느낌</li>
+                            <li>공간 활용도가 높아 컴팩트한 레이아웃</li>
+                            <li>히어로 영역의 배경이 살아있어 시각적 풍부함</li>
+                            <li>사용자 시선을 메뉴에 집중시키는 효과</li>
+                            <li>글래스모피즘 트렌드에 부합하는 디자인</li>
+                            <li>스크롤 시에도 메뉴가 고정되어 접근성 좋음</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cons">
+                        <h4><i class="fas fa-thumbs-down"></i> 단점들</h4>
+                        <ul>
+                            <li>복잡한 CSS 구조로 유지보수 어려움</li>
+                            <li>다양한 화면 크기 대응이 까다로움</li>
+                            <li>일부 구형 브라우저에서 호환성 문제</li>
+                            <li>backdrop-filter 미지원 브라우저 이슈</li>
+                            <li>메뉴가 히어로 콘텐츠를 가릴 수 있음</li>
+                            <li>Footer나 다른 요소와 충돌 가능성</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. 구현 시 고려사항 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-clipboard-check"></i>
+                    6. 구현 시 고려사항
+                </h2>
+                
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>🎨 디자인 일관성</h3>
+                        <p>사이트 전체의 디자인 톤앤매너와 조화를 이루도록 색상, 투명도, 모서리 둥글기 등을 일관되게 적용해야 합니다.</p>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>⚡ 성능 최적화</h3>
+                        <p>backdrop-filter와 같은 CSS 필터 효과는 GPU 연산이 필요하므로, 과도한 사용은 성능 저하를 일으킬 수 있습니다.</p>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>♿ 접근성 고려</h3>
+                        <p>시각 장애인을 위한 스크린 리더 호환성, 키보드 내비게이션, 충분한 색상 대비를 확보해야 합니다.</p>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>🔧 브라우저 호환성</h3>
+                        <p>backdrop-filter는 IE에서 지원되지 않으므로, 폴백(fallback) 스타일을 준비해야 합니다.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🚀 권장 구현 순서</h4>
+                    <p>
+                        <strong>1단계:</strong> 기본 레이아웃 완성 → 
+                        <strong>2단계:</strong> 오버레이 위치 조정 → 
+                        <strong>3단계:</strong> 시각적 효과 추가 → 
+                        <strong>4단계:</strong> 반응형 대응 → 
+                        <strong>5단계:</strong> 브라우저 테스트 및 최적화
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-lightbulb"></i> 핵심 팁</h4>
+                    <p>오버레이 효과는 "덜 하는 것이 더 좋다"는 원칙을 따르세요. 과도한 효과보다는 절제된 우아함이 사용자 경험을 향상시킵니다.</p>
+                </div>
+            </div>
+
+            <!-- 7. 최종 체크리스트 -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-tasks"></i>
+                    7. 최종 구현 체크리스트
+                </h2>
+                
+                <div class="method-list">
+                    <li data-step="✓">
+                        <h4>HTML 구조 검토</h4>
+                        <p>히어로 영역과 사이드메뉴의 관계가 명확하고 시맨틱하게 구성되어 있는가?</p>
+                    </li>
+                    
+                    <li data-step="✓">
+                        <h4>CSS 위치 설정</h4>
+                        <p>position, z-index, top, left 값이 모든 화면에서 적절하게 작동하는가?</p>
+                    </li>
+                    
+                    <li data-step="✓">
+                        <h4>시각적 효과</h4>
+                        <p>backdrop-filter, 투명도, 그림자 효과가 자연스럽고 과하지 않은가?</p>
+                    </li>
+                    
+                    <li data-step="✓">
+                        <h4>반응형 테스트</h4>
+                        <p>데스크톱, 태블릿, 모바일에서 모두 적절한 크기와 위치로 표시되는가?</p>
+                    </li>
+                    
+                    <li data-step="✓">
+                        <h4>브라우저 호환성</h4>
+                        <p>Chrome, Firefox, Safari, Edge에서 모두 정상 작동하는가?</p>
+                    </li>
+                    
+                    <li data-step="✓">
+                        <h4>성능 확인</h4>
+                        <p>애니메이션이 부드럽고 페이지 로딩 속도에 영향을 주지 않는가?</p>
+                    </li>
+                    
+                    <li data-step="✓">
+                        <h4>접근성 검증</h4>
+                        <p>키보드 내비게이션, 스크린 리더, 색상 대비가 적절한가?</p>
+                    </li>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🎯 성공적인 구현을 위한 마지막 조언</h4>
+                    <p>사용자 테스트를 통해 실제 사용성을 검증하고, 필요에 따라 조정하세요. 기술적으로 완벽한 것보다 사용자가 편리하게 느끼는 것이 더 중요합니다!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

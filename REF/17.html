@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조직도 - KyongBo Electric Co., Ltd.</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-900: #1e3a8a;
+            --primary-800: #1e40af;
+            --primary-700: #1d4ed8;
+            --primary-600: #2563eb;
+            --primary-500: #3b82f6;
+            --primary-400: #60a5fa;
+            --primary-300: #93c5fd;
+            --primary-200: #bfdbfe;
+            --primary-100: #dbeafe;
+            --primary-50: #eff6ff;
+            --accent-500: #f97316;
+            --accent-600: #ea580c;
+            --success-500: #10b981;
+            --success-600: #059669;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --neo-light: rgba(255, 255, 255, 0.8);
+            --neo-dark: rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: auto;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .logo-text h1 {
+            background: linear-gradient(135deg, var(--primary-700), var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff, var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        /* Organization Chart Container */
+        .org-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Chart Styles */
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Node Styles */
+        .org-node {
+            background: white;
+            border-radius: 20px;
+            padding: 20px 30px;
+            margin: 15px;
+            box-shadow: 
+                20px 20px 60px rgba(0, 0, 0, 0.1),
+                -20px -20px 60px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            min-width: 140px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .org-node:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 
+                25px 25px 80px rgba(0, 0, 0, 0.15),
+                -25px -25px 80px rgba(255, 255, 255, 0.9);
+        }
+
+        .org-node.ceo {
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 25px 40px;
+        }
+
+        .org-node.executive {
+            background: linear-gradient(135deg, var(--success-500), var(--success-600));
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 22px 35px;
+        }
+
+        .org-node.department {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            font-weight: 600;
+            min-width: 120px;
+        }
+
+        .org-node.section {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-700);
+            font-weight: 500;
+            min-width: 100px;
+            font-size: 0.9rem;
+        }
+
+        .org-node.special {
+            background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
+            color: white;
+            font-weight: 600;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            height: 120px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 10px;
+        }
+
+        /* Connection Lines */
+        .connection-line {
+            position: absolute;
+            background: linear-gradient(90deg, var(--primary-300), var(--primary-400));
+            z-index: -1;
+            border-radius: 2px;
+        }
+
+        .vertical-line {
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-300), var(--primary-400));
+        }
+
+        .horizontal-line {
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-300), var(--primary-400));
+        }
+
+        /* Level Containers */
+        .level {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .level-1 {
+            justify-content: center;
+        }
+
+        .level-2 {
+            justify-content: center;
+        }
+
+        .level-3 {
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .level-4 {
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .department-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 30px;
+        }
+
+        .sections-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .special-departments {
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Info Panel */
+        .info-panel {
+            position: fixed;
+            top: 50%;
+            right: -400px;
+            transform: translateY(-50%);
+            width: 350px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 
+                20px 20px 60px rgba(0, 0, 0, 0.1),
+                -20px -20px 60px rgba(255, 255, 255, 0.8);
+            transition: right 0.3s ease;
+            z-index: 200;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-panel.active {
+            right: 20px;
+        }
+
+        .info-panel h3 {
+            color: var(--primary-700);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .info-panel p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .info-panel .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .info-panel .close-btn:hover {
+            color: var(--primary-600);
+        }
+
+        .responsibilities {
+            list-style: none;
+        }
+
+        .responsibilities li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+        }
+
+        .responsibilities li:last-child {
+            border-bottom: none;
+        }
+
+        .responsibilities li::before {
+            content: '▸';
+            color: var(--primary-500);
+            margin-right: 10px;
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            box-shadow: 
+                10px 10px 30px rgba(0, 0, 0, 0.1),
+                -10px -10px 30px rgba(255, 255, 255, 0.8);
+            color: var(--primary-600);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: var(--primary-600);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .special-departments {
+                position: static;
+                transform: none;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 40px;
+            }
+
+            .org-node.special {
+                writing-mode: horizontal-tb;
+                text-orientation: mixed;
+                height: auto;
+                width: auto;
+                padding: 20px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2rem;
+            }
+
+            .level-3 {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .sections-row {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .org-node {
+                margin: 10px 5px;
+                padding: 15px 20px;
+                min-width: 100px;
+            }
+
+            .info-panel {
+                width: 300px;
+                right: -320px;
+            }
+
+            .info-panel.active {
+                right: 10px;
+            }
+
+            .controls {
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .org-container {
+                padding: 20px 10px;
+            }
+
+            .sections-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .org-node {
+                min-width: 80px;
+                padding: 12px 16px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animation Classes */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--accent-500), var(--accent-600)) !important;
+            color: white !important;
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">KB</div>
+                <div class="logo-text">
+                    <h1>KyongBo</h1>
+                    <p>KyongBo Electric Co., Ltd.</p>
+                </div>
+            </div>
+            <button class="control-btn" onclick="printChart()" title="인쇄">
+                <i class="fas fa-print"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <h1 data-aos="fade-up">조직도</h1>
+        <p data-aos="fade-up" data-aos-delay="100">전력산업의 리더, 경보전기를 소개합니다.</p>
+    </div>
+
+    <!-- Organization Chart -->
+    <div class="org-container">
+        <div class="org-chart">
+            <!-- Level 1: CEO -->
+            <div class="level level-1" data-aos="fade-up" data-aos-delay="200">
+                <div class="org-node ceo" onclick="showInfo('ceo')">
+                    <i class="fas fa-crown" style="margin-right: 8px;"></i>
+                    대표이사
+                </div>
+            </div>
+
+            <!-- Level 2: Executive -->
+            <div class="level level-2" data-aos="fade-up" data-aos-delay="300">
+                <div class="org-node executive" onclick="showInfo('executive')">
+                    <i class="fas fa-user-tie" style="margin-right: 8px;"></i>
+                    전무이사
+                </div>
+            </div>
+
+            <!-- Level 3: Main Departments -->
+            <div class="level level-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="department-group">
+                    <div class="org-node department" onclick="showInfo('general')">
+                        <i class="fas fa-building" style="margin-right: 8px;"></i>
+                        총무부
+                    </div>
+                    <div class="sections-row">
+                        <div class="org-node section" onclick="showInfo('general-affairs')">총무과</div>
+                        <div class="org-node section" onclick="showInfo('materials')">자재과</div>
+                    </div>
+                </div>
+
+                <div class="department-group">
+                    <div class="org-node department" onclick="showInfo('accounting')">
+                        <i class="fas fa-calculator" style="margin-right: 8px;"></i>
+                        경리부
+                    </div>
+                </div>
+
+                <div class="department-group">
+                    <div class="org-node department" onclick="showInfo('sales')">
+                        <i class="fas fa-chart-line" style="margin-right: 8px;"></i>
+                        영업부
+                    </div>
+                    <div class="sections-row">
+                        <div class="org-node section" onclick="showInfo('sales1')">영업1과</div>
+                        <div class="org-node section" onclick="showInfo('sales2')">영업2과</div>
+                        <div class="org-node section" onclick="showInfo('production1')">생산1과</div>
+                        <div class="org-node section" onclick="showInfo('production2')">생산2과</div>
+                        <div class="org-node section" onclick="showInfo('production3')">생산3과</div>
+                    </div>
+                </div>
+
+                <!-- Special Departments -->
+                <div class="special-departments" data-aos="fade-left" data-aos-delay="600">
+                    <div class="org-node special" onclick="showInfo('rnd')">
+                        <i class="fas fa-flask" style="margin-bottom: 8px;"></i>
+                        연구개발부
+                    </div>
+                    <div class="org-node special" onclick="showInfo('quality')">
+                        <i class="fas fa-award" style="margin-bottom: 8px;"></i>
+                        품질관리부
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="info-panel" id="infoPanel">
+        <button class="close-btn" onclick="closeInfo()">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3 id="infoTitle">부서 정보</h3>
+        <p id="infoDescription">부서를 클릭하여 상세 정보를 확인하세요.</p>
+        <ul class="responsibilities" id="infoResponsibilities"></ul>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" onclick="zoomIn()" title="확대">
+            <i class="fas fa-search-plus"></i>
+        </button>
+        <button class="control-btn" onclick="zoomOut()" title="축소">
+            <i class="fas fa-search-minus"></i>
+        </button>
+        <button class="control-btn" onclick="resetZoom()" title="원래 크기">
+            <i class="fas fa-expand-arrows-alt"></i>
+        </button>
+        <button class="control-btn" onclick="toggleFullscreen()" title="전체화면">
+            <i class="fas fa-expand"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Department Information Data
+        const departmentInfo = {
+            ceo: {
+                title: '대표이사',
+                description: '회사의 최고 경영자로서 전체적인 경영 방침을 결정하고 회사를 대표합니다.',
+                responsibilities: [
+                    '회사 전체 경영 방침 수립',
+                    '주요 의사결정 및 승인',
+                    '대외 업무 및 협력사 관계',
+                    '이사회 및 주주총회 주관',
+                    '회사 비전 및 전략 수립'
+                ]
+            },
+            executive: {
+                title: '전무이사',
+                description: '대표이사를 보좌하며 회사의 전반적인 업무를 총괄 관리합니다.',
+                responsibilities: [
+                    '대표이사 업무 보좌',
+                    '각 부서 간 업무 조정',
+                    '경영 계획 수립 및 실행',
+                    '주요 프로젝트 관리',
+                    '인사 및 조직 관리'
+                ]
+            },
+            general: {
+                title: '총무부',
+                description: '회사의 전반적인 관리 업무와 인사, 총무 업무를 담당합니다.',
+                responsibilities: [
+                    '인사 관리 및 채용',
+                    '급여 및 복리후생 관리',
+                    '사무용품 및 시설 관리',
+                    '법무 및 계약 업무',
+                    '회사 행사 및 교육 기획'
+                ]
+            },
+            accounting: {
+                title: '경리부',
+                description: '회사의 재무 관리와 회계 업무를 전담합니다.',
+                responsibilities: [
+                    '재무제표 작성 및 관리',
+                    '세무 신고 및 관리',
+                    '예산 수립 및 관리',
+                    '자금 운용 및 관리',
+                    '회계 감사 대응'
+                ]
+            },
+            sales: {
+                title: '영업부',
+                description: '제품 판매와 고객 관리, 시장 개발을 담당합니다.',
+                responsibilities: [
+                    '신규 고객 개발',
+                    '기존 고객 관리',
+                    '영업 전략 수립',
+                    '시장 조사 및 분석',
+                    '계약 체결 및 관리'
+                ]
+            },
+            rnd: {
+                title: '연구개발부',
+                description: '신제품 개발과 기술 혁신을 주도합니다.',
+                responsibilities: [
+                    '신제품 연구 개발',
+                    '기술 혁신 및 개선',
+                    '특허 출원 및 관리',
+                    '품질 개선 연구',
+                    '기술 동향 분석'
+                ]
+            },
+            quality: {
+                title: '품질관리부',
+                description: '제품의 품질 관리와 품질 보증을 담당합니다.',
+                responsibilities: [
+                    '품질 관리 시스템 운영',
+                    '제품 검사 및 테스트',
+                    '품질 개선 활동',
+                    'ISO 인증 관리',
+                    '고객 불만 처리'
+                ]
+            },
+            'general-affairs': {
+                title: '총무과',
+                description: '총무부 산하 부서로 일반 관리 업무를 담당합니다.',
+                responsibilities: [
+                    '사무 관리 업무',
+                    '시설 관리',
+                    '보안 관리',
+                    '차량 관리',
+                    '기타 총무 업무'
+                ]
+            },
+            materials: {
+                title: '자재과',
+                description: '원자재 구매와 재고 관리를 담당합니다.',
+                responsibilities: [
+                    '원자재 구매',
+                    '재고 관리',
+                    '공급업체 관리',
+                    '구매 계약 관리',
+                    '물류 관리'
+                ]
+            },
+            sales1: {
+                title: '영업1과',
+                description: '국내 영업을 담당하는 부서입니다.',
+                responsibilities: [
+                    '국내 고객 관리',
+                    '국내 시장 개발',
+                    '영업 활동',
+                    '고객 서비스',
+                    '계약 관리'
+                ]
+            },
+            sales2: {
+                title: '영업2과',
+                description: '해외 영업을 담당하는 부서입니다.',
+                responsibilities: [
+                    '해외 고객 관리',
+                    '수출 업무',
+                    '해외 시장 개발',
+                    '국제 계약 관리',
+                    '해외 파트너십'
+                ]
+            },
+            production1: {
+                title: '생산1과',
+                description: '주요 제품의 생산을 담당합니다.',
+                responsibilities: [
+                    '생산 계획 수립',
+                    '제품 생산 관리',
+                    '생산성 향상',
+                    '품질 관리',
+                    '안전 관리'
+                ]
+            },
+            production2: {
+                title: '생산2과',
+                description: '특수 제품의 생산을 담당합니다.',
+                responsibilities: [
+                    '특수 제품 생산',
+                    '맞춤형 제품 제작',
+                    '소량 생산 관리',
+                    '기술 지원',
+                    '품질 검증'
+                ]
+            },
+            production3: {
+                title: '생산3과',
+                description: '부품 및 부자재 생산을 담당합니다.',
+                responsibilities: [
+                    '부품 생산',
+                    '부자재 관리',
+                    '조립 작업',
+                    '포장 및 출하',
+                    '재고 관리'
+                ]
+            }
+        };
+
+        // Global variables
+        let currentZoom = 1;
+        let isFullscreen = false;
+
+        // Show department information
+        function showInfo(department) {
+            const info = departmentInfo[department];
+            if (!info) return;
+
+            const panel = document.getElementById('infoPanel');
+            const title = document.getElementById('infoTitle');
+            const description = document.getElementById('infoDescription');
+            const responsibilities = document.getElementById('infoResponsibilities');
+
+            title.textContent = info.title;
+            description.textContent = info.description;
+            
+            responsibilities.innerHTML = '';
+            info.responsibilities.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                responsibilities.appendChild(li);
+            });
+
+            panel.classList.add('active');
+
+            // Highlight clicked node
+            document.querySelectorAll('.org-node').forEach(node => {
+                node.classList.remove('highlight', 'pulse');
+            });
+            
+            event.target.classList.add('highlight', 'pulse');
+        }
+
+        // Close info panel
+        function closeInfo() {
+            document.getElementById('infoPanel').classList.remove('active');
+            document.querySelectorAll('.org-node').forEach(node => {
+                node.classList.remove('highlight', 'pulse');
+            });
+        }
+
+        // Zoom functions
+        function zoomIn() {
+            currentZoom = Math.min(currentZoom + 0.1, 2);
+            applyZoom();
+        }
+
+        function zoomOut() {
+            currentZoom = Math.max(currentZoom - 0.1, 0.5);
+            applyZoom();
+        }
+
+        function resetZoom() {
+            currentZoom = 1;
+            applyZoom();
+        }
+
+        function applyZoom() {
+            const orgChart = document.querySelector('.org-chart');
+            orgChart.style.transform = `scale(${currentZoom})`;
+            orgChart.style.transformOrigin = 'center top';
+        }
+
+        // Fullscreen toggle
+        function toggleFullscreen() {
+            if (!isFullscreen) {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                }
+                isFullscreen = true;
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                isFullscreen = false;
+            }
+        }
+
+        // Print chart
+        function printChart() {
+            window.print();
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeInfo();
+            } else if (e.key === '+' || e.key === '=') {
+                zoomIn();
+            } else if (e.key === '-') {
+                zoomOut();
+            } else if (e.key === '0') {
+                resetZoom();
+            } else if (e.key === 'F11') {
+                e.preventDefault();
+                toggleFullscreen();
+            }
+        });
+
+        // Touch gestures for mobile
+        let touchStartDistance = 0;
+        let touchStartZoom = 1;
+
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 2) {
+                touchStartDistance = Math.hypot(
+                    e.touches[0].pageX - e.touches[1].pageX,
+                    e.touches[0].pageY - e.touches[1].pageY
+                );
+                touchStartZoom = currentZoom;
+            }
+        });
+
+        document.addEventListener('touchmove', function(e) {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                const touchDistance = Math.hypot(
+                    e.touches[0].pageX - e.touches[1].pageX,
+                    e.touches[0].pageY - e.touches[1].pageY
+                );
+                const scale = touchDistance / touchStartDistance;
+                currentZoom = Math.max(0.5, Math.min(2, touchStartZoom * scale));
+                applyZoom();
+            }
+        });
+
+        // Auto-close info panel on outside click
+        document.addEventListener('click', function(e) {
+            const panel = document.getElementById('infoPanel');
+            if (!panel.contains(e.target) && !e.target.classList.contains('org-node')) {
+                closeInfo();
+            }
+        });
+
+        // Responsive adjustments
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                currentZoom = Math.min(currentZoom, 0.8);
+                applyZoom();
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Initial call
+    </script>
+</body>
+</html>

@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details - Steel Welding | Voldor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors - Industrial Theme */
+            --primary-900: #0a0a0a;
+            --primary-800: #1a1a1a;
+            --primary-700: #2a2a2a;
+            --primary-600: #3a3a3a;
+            --primary-500: #4a4a4a;
+            --primary-400: #6a6a6a;
+            --primary-300: #8a8a8a;
+            --primary-200: #aaaaaa;
+            --primary-100: #cccccc;
+            --primary-50: #f5f5f5;
+            
+            /* Accent Colors - Gold/Bronze */
+            --accent-900: #8b4513;
+            --accent-800: #a0522d;
+            --accent-700: #b8860b;
+            --accent-600: #cd853f;
+            --accent-500: #daa520;
+            --accent-400: #f4a460;
+            --accent-300: #ffd700;
+            --accent-200: #ffe55c;
+            --accent-100: #fff8dc;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #000000;
+            --gray-900: #111111;
+            --gray-800: #1f1f1f;
+            --gray-700: #2d2d2d;
+            --gray-600: #404040;
+            --gray-500: #525252;
+            --gray-400: #737373;
+            --gray-300: #a3a3a3;
+            --gray-200: #d4d4d4;
+            --gray-100: #e5e5e5;
+            --gray-50: #f9f9f9;
+            
+            /* Text Colors */
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --text-light: #ffffff;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.25);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-800), var(--primary-900));
+            --gradient-accent: linear-gradient(135deg, var(--accent-600), var(--accent-800));
+            --gradient-overlay: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header Top */
+        .header-top {
+            background: var(--primary-800);
+            color: var(--text-light);
+            padding: 0.75rem 0;
+            font-size: 0.875rem;
+        }
+
+        .header-top-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            background: var(--accent-500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-link {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover {
+            background: var(--accent-500);
+            transform: translateY(-2px);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .header-cta a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .header-cta a:hover {
+            color: var(--accent-300);
+        }
+
+        .cart-icon {
+            position: relative;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            color: var(--accent-300);
+        }
+
+        /* Header Main */
+        .header-main {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-600);
+            background: rgba(218, 165, 32, 0.1);
+        }
+
+        .contact-button {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mobile-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-nav {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .mobile-nav .nav-link {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 400px;
+            background: var(--gradient-overlay), url('/images/voldor-service-page.png') center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-overlay);
+            z-index: 1;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ffffff, var(--accent-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-300);
+        }
+
+        .breadcrumb-separator {
+            color: var(--accent-300);
+            font-weight: bold;
+        }
+
+        .breadcrumb-current {
+            color: var(--accent-300);
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 6rem 0;
+            background: var(--gray-50);
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 4rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-section {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-section:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .sidebar-header {
+            background: var(--primary-800);
+            color: var(--text-light);
+            padding: 1.5rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .sidebar-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 2rem;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--primary-800);
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .service-item {
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 2rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .service-link:hover,
+        .service-link.active {
+            background: var(--accent-100);
+            color: var(--accent-800);
+            padding-left: 2.5rem;
+        }
+
+        .service-link.active {
+            background: var(--accent-500);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .service-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover .service-arrow {
+            transform: translateX(5px);
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: var(--gradient-accent);
+            color: var(--text-light);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button {
+            background: var(--white);
+            color: var(--accent-800);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background: var(--gray-100);
+        }
+
+        /* Content Area */
+        .content-area {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .content-image {
+            width: 100%;
+            height: 400px;
+            background: url('/images/voldor-service-page.png') center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(218, 165, 32, 0.1), transparent);
+        }
+
+        .content-body {
+            padding: 3rem;
+        }
+
+        .content-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .content-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .content-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: var(--accent-100);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .content-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-300);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+
+        .content-cta {
+            text-align: center;
+            padding: 2rem;
+            background: var(--accent-100);
+            border-radius: 8px;
+        }
+
+        .content-cta h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-800);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .content-cta p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .content-cta-button {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .content-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-800);
+            color: var(--text-light);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--primary-200);
+            text-decoration: none;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-300);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--primary-700);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-accent);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .sidebar {
+                order: 2;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+
+            .content-area {
+                order: 1;
+            }
+
+            .content-features,
+            .content-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .content-body {
+                padding: 2rem;
+            }
+
+            .content-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container,
+            .hero-container,
+            .content-container {
+                padding: 0 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .content-title {
+                font-size: 1.5rem;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-500);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            font-size: 1.2rem;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="header-top-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span>30 Commercial road friston, australia</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <span>needhelp@company.com</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">f</a>
+                    <a href="#" class="social-link" aria-label="Twitter">t</a>
+                    <a href="#" class="social-link" aria-label="Pinterest">p</a>
+                    <a href="#" class="social-link" aria-label="YouTube">y</a>
+                </div>
+                <div class="header-cta">
+                    <a href="#">WISHLIST</a>
+                    <a href="#">COMPARE</a>
+                    <a href="#">MY ACCOUNT</a>
+                    <div class="cart-icon">🛒</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Main -->
+    <header class="header-main">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">V</div>
+                <div class="logo-text">VOLDOR</div>
+            </a>
+
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">HOME</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">ABOUT</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">SERVICE</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">PAGES</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">SHOP</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">BLOG</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">CONTACT</a>
+                </div>
+            </nav>
+
+            <a href="#contact" class="contact-button">Contact Us</a>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                ☰
+            </button>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="#" class="nav-link">HOME</a>
+                    <a href="#" class="nav-link">ABOUT</a>
+                    <a href="#" class="nav-link active">SERVICE</a>
+                    <a href="#" class="nav-link">PAGES</a>
+                    <a href="#" class="nav-link">SHOP</a>
+                    <a href="#" class="nav-link">BLOG</a>
+                    <a href="#" class="nav-link">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">SERVICE DETAILS</h1>
+            <nav class="breadcrumb">
+                <a href="#">HOME</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">SERVICE</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- All Services -->
+                <div class="sidebar-section fade-in">
+                    <div class="sidebar-header">All Service</div>
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <a href="#" class="service-link active">
+                                <span>Steel Welding</span>
+                                <span class="service-arrow">→</span>
+                            </a>
+                        </li>
+                        <li class="service-item">
+                            <a href="#" class="service-link">
+                                <span>Metal Works</span>
+                                <span class="service-arrow">→</span>
+                            </a>
+                        </li>
+                        <li class="service-item">
+                            <a href="#" class="service-link">
+                                <span>Custom Welding</span>
+                                <span class="service-arrow">→</span>
+                            </a>
+                        </li>
+                        <li class="service-item">
+                            <a href="#" class="service-link">
+                                <span>Pipe Welding</span>
+                                <span class="service-arrow">→</span>
+                            </a>
+                        </li>
+                        <li class="service-item">
+                            <a href="#" class="service-link">
+                                <span>Aluminum System</span>
+                                <span class="service-arrow">→</span>
+                            </a>
+                        </li>
+                        <li class="service-item">
+                            <a href="#" class="service-link">
+                                <span>Manufacturing</span>
+                                <span class="service-arrow">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CTA Box -->
+                <div class="cta-box fade-in">
+                    <div class="cta-content">
+                        <h3 class="cta-title">Get A Free<br>Quick Solution</h3>
+                        <button class="cta-button">Get Quote</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="content-area fade-in">
+                <div class="content-image"></div>
+                <div class="content-body">
+                    <h2 class="content-title">Steel Welding</h2>
+                    <p class="content-description">
+                        Nam vel lacus eu nisl bibendum accumsan vitae vitae nibh. Nam nec eros id magna hendrerit sagittis. 
+                        Nullam sed mi non odio feugiat volutpat sit amet nec elit. Maecenas id hendrerit ipsum, a laoreet 
+                        massa. In hac habitasse platea dictumst. Suspendisse potenti.
+                    </p>
+
+                    <div class="content-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🔧</div>
+                            <div class="feature-content">
+                                <h4>Professional Equipment</h4>
+                                <p>State-of-the-art welding equipment and tools for precision work.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">👨‍🔧</div>
+                            <div class="feature-content">
+                                <h4>Certified Welders</h4>
+                                <p>Highly skilled and certified professionals with years of experience.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🏆</div>
+                            <div class="feature-content">
+                                <h4>Quality Assurance</h4>
+                                <p>Rigorous quality control processes to ensure perfect results.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-content">
+                                <h4>Fast Delivery</h4>
+                                <p>Quick turnaround times without compromising on quality.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+
+                    <div class="content-cta">
+                        <h3>Ready to Start Your Project?</h3>
+                        <p>Contact us today for a free consultation and quote for your steel welding needs.</p>
+                        <a href="#contact" class="content-cta-button">Get Started Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Voldor</h3>
+                    <p>
+                        We are a leading metalworking and welding company with over 25 years of experience. 
+                        Our certified professionals deliver high-quality steel welding, metal works, and custom fabrication services.
+                    </p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Twitter">t</a>
+                        <a href="#" class="social-link" aria-label="Pinterest">p</a>
+                        <a href="#" class="social-link" aria-label="YouTube">y</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Steel Welding</a></li>
+                        <li><a href="#">Metal Works</a></li>
+                        <li><a href="#">Custom Welding</a></li>
+                        <li><a href="#">Pipe Welding</a></li>
+                        <li><a href="#">Aluminum System</a></li>
+                        <li><a href="#">Manufacturing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Projects</a></li>
+                        <li><a href="#">Certifications</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Get Quote</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" id="contact">
+                    <h3>Contact Info</h3>
+                    <p>📍 30 Commercial road friston, australia</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>📧 needhelp@company.com</p>
+                    <p>🕒 Mon-Fri: 8AM-6PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">V</div>
+                    <div class="footer-logo-text">VOLDOR</div>
+                </div>
+                <p>&copy; 2025 Voldor. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Header Scroll Effect
+        const headerMain = document.querySelector('.header-main');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            // Add shadow on scroll
+            if (currentScrollY > 100) {
+                headerMain.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                headerMain.style.boxShadow = 'var(--shadow-sm)';
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = headerMain.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Service Link Interactions
+        document.querySelectorAll('.service-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.service-link').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                const serviceName = link.querySelector('span').textContent;
+                
+                // Update content title
+                const contentTitle = document.querySelector('.content-title');
+                contentTitle.textContent = serviceName;
+                
+                // Show toast notification
+                showToast(`Switched to ${serviceName} service`);
+                
+                // Animate content area
+                const contentArea = document.querySelector('.content-area');
+                contentArea.style.opacity = '0.5';
+                setTimeout(() => {
+                    contentArea.style.opacity = '1';
+                }, 300);
+            });
+        });
+
+        // Stats Counter Animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/[^\d]/g, ''));
+                const suffix = stat.textContent.replace(/[\d]/g, '');
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + suffix;
+                }, 20);
+            });
+        }
+
+        // Trigger stats animation when in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.content-stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Feature Item Interactions
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // CTA Button Interactions
+        document.querySelectorAll('.cta-button, .content-cta-button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Add click animation
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    btn.style.transform = '';
+                }, 150);
+                
+                const btnText = btn.textContent.trim();
+                showToast(`${btnText} clicked! We'll contact you soon.`);
+            });
+        });
+
+        // Social Link Interactions
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const platform = link.getAttribute('aria-label');
+                showToast(`Opening ${platform} page`);
+            });
+        });
+
+        // Navigation Link Interactions
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (!link.classList.contains('active')) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    link.classList.add('active');
+                    
+                    const linkText = link.textContent;
+                    showToast(`Navigating to ${linkText}`);
+                }
+            });
+        });
+
+        // Cart Icon Interaction
+        document.querySelector('.cart-icon').addEventListener('click', () => {
+            showToast('Shopping cart opened');
+        });
+
+        // Header CTA Links
+        document.querySelectorAll('.header-cta a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkText = link.textContent;
+                showToast(`${linkText} page opened`);
+            });
+        });
+
+        // Footer Link Interactions
+        document.querySelectorAll('.footer-section a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkText = link.textContent;
+                showToast(`Navigating to ${linkText}`);
+            });
+        });
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 120px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--accent-600), var(--accent-800));
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+                box-shadow: var(--shadow-lg);
+                max-width: 300px;
+                font-size: 0.9rem;
+                font-weight: 600;
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Add CSS animations for toast
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Performance Optimization
+        let ticking = false;
+
+        function updateOnScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateOnScroll);
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            // ESC to close mobile menu
+            if (e.key === 'Escape') {
+                mobileMenu.classList.remove('active');
+            }
+            
+            // Space or Enter to scroll to top
+            if ((e.key === ' ' || e.key === 'Enter') && e.target === scrollToTopBtn) {
+                e.preventDefault();
+                scrollToTopBtn.click();
+            }
+        });
+
+        // Initialize on DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in, .scale-in').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 500);
+
+            console.log('Voldor Service Details page loaded successfully');
+        });
+
+        // Service Worker Registration (PWA Support)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Error Handling
+        window.addEventListener('error', (e) => {
+            console.error('JavaScript Error:', e.error);
+        });
+
+        // Accessibility Improvements
+        document.addEventListener('focusin', (e) => {
+            if (e.target.matches('button, a, input, [tabindex]')) {
+                e.target.style.outline = '3px solid var(--accent-500)';
+                e.target.style.outlineOffset = '2px';
+            }
+        });
+
+        document.addEventListener('focusout', (e) => {
+            if (e.target.matches('button, a, input, [tabindex]')) {
+                e.target.style.outline = '';
+                e.target.style.outlineOffset = '';
+            }
+        });
+
+        // Responsive Menu Handling
+        function handleResize() {
+            if (window.innerWidth > 1024) {
+                mobileMenu.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loadingScreen = document.createElement('div');
+            loadingScreen.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--gradient-primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            `;
+            
+            const logo = document.createElement('div');
+            logo.style.cssText = `
+                width: 100px;
+                height: 100px;
+                background: var(--gradient-accent);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                font-weight: bold;
+                color: white;
+                animation: pulse 1s infinite;
+            `;
+            logo.textContent = 'V';
+            
+            loadingScreen.appendChild(logo);
+            document.body.appendChild(loadingScreen);
+            
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }, 1000);
+        });
+
+        // Dynamic Content Loading
+        function loadServiceContent(serviceName) {
+            const contentData = {
+                'Steel Welding': {
+                    description: 'Nam vel lacus eu nisl bibendum accumsan vitae vitae nibh. Nam nec eros id magna hendrerit sagittis. Professional steel welding services with certified welders and state-of-the-art equipment.',
+                    features: [
+                        { icon: '🔧', title: 'Professional Equipment', desc: 'State-of-the-art welding equipment and tools for precision work.' },
+                        { icon: '👨‍🔧', title: 'Certified Welders', desc: 'Highly skilled and certified professionals with years of experience.' },
+                        { icon: '🏆', title: 'Quality Assurance', desc: 'Rigorous quality control processes to ensure perfect results.' },
+                        { icon: '⚡', title: 'Fast Delivery', desc: 'Quick turnaround times without compromising on quality.' }
+                    ]
+                },
+                'Metal Works': {
+                    description: 'Comprehensive metal fabrication and finishing services. From custom designs to large-scale production, we handle all your metalworking needs with precision and expertise.',
+                    features: [
+                        { icon: '🔨', title: 'Custom Fabrication', desc: 'Tailored metal solutions for your specific requirements.' },
+                        { icon: '📐', title: 'Precision Cutting', desc: 'Advanced cutting techniques for accurate results.' },
+                        { icon: '🎨', title: 'Finishing Services', desc: 'Professional finishing and coating applications.' },
+                        { icon: '📦', title: 'Assembly Services', desc: 'Complete assembly and installation support.' }
+                    ]
+                },
+                'Custom Welding': {
+                    description: 'Specialized custom welding solutions for unique projects. Our expert team works with various materials and techniques to deliver exceptional results.',
+                    features: [
+                        { icon: '🎯', title: 'Specialized Techniques', desc: 'Advanced welding methods for complex projects.' },
+                        { icon: '🔬', title: 'Material Expertise', desc: 'Experience with diverse materials and alloys.' },
+                        { icon: '📋', title: 'Project Planning', desc: 'Comprehensive planning and consultation services.' },
+                        { icon: '🛠️', title: 'Custom Solutions', desc: 'Tailored approaches for unique challenges.' }
+                    ]
+                }
+            };
+
+            const data = contentData[serviceName] || contentData['Steel Welding'];
+            
+            // Update description
+            document.querySelector('.content-description').textContent = data.description;
+            
+            // Update features
+            const featuresContainer = document.querySelector('.content-features');
+            featuresContainer.innerHTML = '';
+            
+            data.features.forEach(feature => {
+                const featureElement = document.createElement('div');
+                featureElement.className = 'feature-item';
+                featureElement.innerHTML = `
+                    <div class="feature-icon">${feature.icon}</div>
+                    <div class="feature-content">
+                        <h4>${feature.title}</h4>
+                        <p>${feature.desc}</p>
+                    </div>
+                `;
+                featuresContainer.appendChild(featureElement);
+            });
+        }
+
+        // Update service links to use dynamic content
+        document.querySelectorAll('.service-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.service-link').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                const serviceName = link.querySelector('span').textContent;
+                
+                // Update content title
+                const contentTitle = document.querySelector('.content-title');
+                contentTitle.textContent = serviceName;
+                
+                // Load dynamic content
+                loadServiceContent(serviceName);
+                
+                // Show toast notification
+                showToast(`Switched to ${serviceName} service`);
+                
+                // Animate content area
+                const contentArea = document.querySelector('.content-area');
+                contentArea.style.opacity = '0.5';
+                setTimeout(() => {
+                    contentArea.style.opacity = '1';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

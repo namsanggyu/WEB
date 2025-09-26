@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyongBo Electric Co., Ltd. - 전력기기 분야의 글로벌 강소기업</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-900: #1e3a8a;
+            --primary-800: #1e40af;
+            --primary-700: #1d4ed8;
+            --primary-600: #2563eb;
+            --primary-500: #3b82f6;
+            --accent-500: #f97316;
+            --accent-600: #ea580c;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --neo-light: rgba(255, 255, 255, 0.8);
+            --neo-dark: rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Neomorphism Utilities */
+        .neo {
+            background: #f0f0f0;
+            box-shadow: 
+                20px 20px 60px var(--neo-dark),
+                -20px -20px 60px var(--neo-light);
+            border-radius: 20px;
+        }
+
+        .neo-inset {
+            background: #f0f0f0;
+            box-shadow: 
+                inset 20px 20px 60px var(--neo-dark),
+                inset -20px -20px 60px var(--neo-light);
+            border-radius: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-bar {
+            background: var(--primary-800);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar a:hover {
+            color: var(--accent-500);
+        }
+
+        .main-nav {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .logo-text h1 {
+            background: linear-gradient(135deg, var(--primary-700), var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-600);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-600), var(--accent-500));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            min-width: 800px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 10px;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .dropdown-section h3 {
+            color: var(--primary-700);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-500);
+        }
+
+        .dropdown-section ul {
+            list-style: none;
+        }
+
+        .dropdown-section li {
+            margin-bottom: 8px;
+        }
+
+        .dropdown-section a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .dropdown-section a:hover {
+            color: var(--primary-600);
+            padding-left: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-600) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202025-07-11%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2012.06.29-iKagoEJY4R4bKRLBVNz8XWAEOEn2rp.png') center/cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Product Section */
+        .product-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-700), var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 
+                20px 20px 60px rgba(0, 0, 0, 0.1),
+                -20px -20px 60px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-600), var(--accent-500));
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                25px 25px 80px rgba(0, 0, 0, 0.15),
+                -25px -25px 80px rgba(255, 255, 255, 0.9);
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-700);
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            left: -300px;
+            top: 0;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-header {
+            background: var(--primary-700);
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-link:hover {
+            background: var(--primary-50);
+            color: var(--primary-600);
+            padding-left: 30px;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-600);
+            cursor: pointer;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .dropdown {
+                min-width: 300px;
+                left: 0;
+                transform: none;
+            }
+
+            .dropdown-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <a href="#home">HOME</a>
+                <a href="#sitemap">SITE MAP</a>
+                <a href="#login">LOGIN</a>
+                <a href="#join">JOIN</a>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">KB</div>
+                    <div class="logo-text">
+                        <h1>KyongBo</h1>
+                        <p>KyongBo Electric Co., Ltd.</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#company" class="nav-link">회사소개</a>
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h3>회사개요</h3>
+                                    <ul>
+                                        <li><a href="#about">회사개요</a></li>
+                                        <li><a href="#history">연혁</a></li>
+                                        <li><a href="#organization">조직도</a></li>
+                                        <li><a href="#philosophy">경영이념</a></li>
+                                        <li><a href="#quality">품질경영</a></li>
+                                        <li><a href="#business">사업분야</a></li>
+                                        <li><a href="#location">찾아오시는 길</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">제품정보</a>
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h3>디지털 계전기</h3>
+                                    <ul>
+                                        <li><a href="#digital-relay">디지털 계전기</a></li>
+                                        <li><a href="#protection-relay">유도형 계전기</a></li>
+                                        <li><a href="#earth-leakage">누전 경보기/G.F.R</a></li>
+                                        <li><a href="#auto-switch">자시전기 계기</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-section">
+                                    <h3>계기용 변압기</h3>
+                                    <ul>
+                                        <li><a href="#instrument-transformer">계기용 변압기(V.T/MOF)</a></li>
+                                        <li><a href="#current-transformer">계기용 변류기(C.T)</a></li>
+                                        <li><a href="#digital-meter">디지털 계기</a></li>
+                                        <li><a href="#analog-meter">전력용 변압기</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-section">
+                                    <h3>전력용 변압기</h3>
+                                    <ul>
+                                        <li><a href="#power-transformer">전력용 변압기</a></li>
+                                        <li><a href="#distribution">배전용 변압기</a></li>
+                                        <li><a href="#special">특수 변압기</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#support" class="nav-link">고객지원</a>
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h3>고객서비스</h3>
+                                    <ul>
+                                        <li><a href="#technical-support">공지사항</a></li>
+                                        <li><a href="#as-service">신제품 소개</a></li>
+                                        <li><a href="#manual">자주묻는질문</a></li>
+                                        <li><a href="#download">고객의견</a></li>
+                                        <li><a href="#inquiry">국제인증</a></li>
+                                        <li><a href="#warranty">A/S 신청</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resources" class="nav-link">자료실</a>
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h3>기술자료</h3>
+                                    <ul>
+                                        <li><a href="#catalog">카탈로그</a></li>
+                                        <li><a href="#manual">인증서</a></li>
+                                        <li><a href="#specification">CAD 도면</a></li>
+                                        <li><a href="#certificate">사양서</a></li>
+                                        <li><a href="#video">사용설명서</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#careers" class="nav-link">채용정보</a>
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h3>채용안내</h3>
+                                    <ul>
+                                        <li><a href="#recruitment">인재상</a></li>
+                                        <li><a href="#benefits">복리후생</a></li>
+                                        <li><a href="#application">채용절차</a></li>
+                                        <li><a href="#notice">채용공고</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Mobile Toggle -->
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            제품정보
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="#digital-relay" class="sidebar-link">디지털 계전기</a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#protection-relay" class="sidebar-link">유도형 계전기</a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#earth-leakage" class="sidebar-link">누전 경보기/G.F.R</a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#auto-switch" class="sidebar-link">자시전기 계기</a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#digital-meter" class="sidebar-link">디지털 계기</a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#analog-meter" class="sidebar-link">전력용 변압기</a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#instrument-transformer" class="sidebar-link">계기용 변압기(V.T/MOF)</a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#current-transformer" class="sidebar-link">계기용 변류기(C.T)</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">전력기기 분야의<br>글로벌 강소기업을<br>꿈꾸다</h1>
+            <p class="hero-subtitle">Have a Dream of Global Hidden Champion</p>
+            <p class="hero-description">In Electric Power Equipment Field</p>
+            <a href="#products" class="cta-button">제품 둘러보기</a>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section" id="products">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">제품정보</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">최신의 기술, 최고의 품질을 자랑하는 전보전기의 제품입니다</p>
+            
+            <div class="product-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="product-title">디지털 계전기</h3>
+                    <p class="product-description">최첨단 디지털 기술을 적용한 고성능 보호계전기로 전력계통의 안정성을 보장합니다.</p>
+                </div>
+                
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="product-title">누전 경보기/G.F.R</h3>
+                    <p class="product-description">누전사고를 미연에 방지하는 고감도 누전경보기로 전기안전을 책임집니다.</p>
+                </div>
+                
+                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="product-title">계기용 변압기</h3>
+                    <p class="product-description">정밀한 계측과 보호를 위한 고품질 계기용 변압기 및 변류기를 제공합니다.</p>
+                </div>
+                
+                <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="product-title">디지털 계기</h3>
+                    <p class="product-description">정확한 전력량 측정과 모니터링을 위한 첨단 디지털 계측기기입니다.</p>
+                </div>
+                
+                <div class="product-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="product-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="product-title">전력용 변압기</h3>
+                    <p class="product-description">안정적인 전력공급을 위한 고효율, 고신뢰성 전력용 변압기를 생산합니다.</p>
+                </div>
+                
+                <div class="product-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="product-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="product-title">보호계전기</h3>
+                    <p class="product-description">전력계통 보호를 위한 다양한 보호계전기로 시스템의 안전성을 확보합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Parallax Effect
+        const hero = document.getElementById('hero');
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            hero.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Floating Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        mobileToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!sidebar.contains(e.target) && !mobileToggle.contains(e.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize particles
+        createParticles();
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // Performance optimization - Debounced scroll
+        let ticking = false;
+        function updateOnScroll() {
+            // Scroll-based animations here
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateOnScroll);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+        // Theme toggle functionality (for future implementation)
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+    </script>
+</body>
+</html>

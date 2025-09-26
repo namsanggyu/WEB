@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volupe - Ultimate Metalcraft Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors - Industrial Dark Theme */
+            --primary-900: #0a0a0a;
+            --primary-800: #1a1a1a;
+            --primary-700: #2a2a2a;
+            --primary-600: #3a3a3a;
+            --primary-500: #4a4a4a;
+            --primary-400: #6a6a6a;
+            --primary-300: #8a8a8a;
+            --primary-200: #aaaaaa;
+            --primary-100: #cccccc;
+            --primary-50: #f5f5f5;
+            
+            /* Accent Colors - Industrial Gold/Bronze */
+            --accent-900: #8b4513;
+            --accent-800: #a0522d;
+            --accent-700: #b8860b;
+            --accent-600: #cd853f;
+            --accent-500: #daa520;
+            --accent-400: #f4a460;
+            --accent-300: #ffd700;
+            --accent-200: #ffe55c;
+            --accent-100: #fff8dc;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #000000;
+            --gray-900: #111111;
+            --gray-800: #1f1f1f;
+            --gray-700: #2d2d2d;
+            --gray-600: #404040;
+            --gray-500: #525252;
+            --gray-400: #737373;
+            --gray-300: #a3a3a3;
+            --gray-200: #d4d4d4;
+            --gray-100: #e5e5e5;
+            
+            /* Text Colors */
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --text-muted: #999999;
+            --text-dark: #333333;
+            
+            /* Shadows */
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.6);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-800), var(--primary-900));
+            --gradient-accent: linear-gradient(135deg, var(--accent-600), var(--accent-800));
+            --gradient-overlay: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--primary-900);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--primary-700);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(26, 26, 26, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-top {
+            background: var(--primary-800);
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .header-top .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-500);
+        }
+
+        .header-main {
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-500);
+            background: rgba(218, 165, 32, 0.1);
+        }
+
+        .cta-button {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--primary-800);
+            border-top: 1px solid var(--primary-700);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mobile-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-nav {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .mobile-nav .nav-link {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--primary-700);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: var(--gradient-overlay), url('/images/metalcraft-website.png') center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-overlay);
+            z-index: 1;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ffffff, var(--accent-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-800);
+            transform: translateY(-3px);
+        }
+
+        .hero-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: fadeInRight 1s ease 0.3s both;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .gallery-item {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-indicators {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 3;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--accent-500);
+            transform: scale(1.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: var(--primary-50);
+            position: relative;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            color: white;
+        }
+
+        .feature-card:hover::before {
+            left: 0;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .feature-card:hover .feature-title {
+            color: white;
+        }
+
+        .feature-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .feature-card:hover .feature-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Project Section */
+        .project {
+            padding: 6rem 0;
+            background: var(--primary-50);
+        }
+
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .project-gallery {
+            position: relative;
+        }
+
+        .project-main-image {
+            width: 100%;
+            height: 400px;
+            background: url('/images/metalcraft-website.png') center/cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-thumb {
+            width: 100%;
+            height: 120px;
+            background: var(--gray-300);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-thumb:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .experience-number {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .experience-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-content {
+            color: var(--text-dark);
+        }
+
+        .project-label {
+            color: var(--accent-600);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            color: var(--gray-600);
+        }
+
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .stat-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+
+        .stat-content p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .project-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--gray-600);
+        }
+
+        .project-features li::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: var(--accent-500);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: var(--primary-50);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--accent-600);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gray-300);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-icon {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--accent-600);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: var(--accent-800);
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 6rem 0;
+            background: var(--gradient-primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-choose::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/images/metalcraft-website.png') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .why-choose-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-choose-image {
+            width: 100%;
+            height: 500px;
+            background: url('/images/metalcraft-website.png') center/cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .why-choose-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .why-choose-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .why-choose-features {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .why-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .why-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .why-feature-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .why-feature-content p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-300);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background: var(--primary-50);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .testimonials-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -1rem;
+            left: 2rem;
+            font-size: 4rem;
+            color: var(--accent-500);
+            font-weight: bold;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: var(--gray-600);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .author-info p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .testimonials-image {
+            width: 100%;
+            height: 400px;
+            background: url('/images/metalcraft-website.png') center/cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: var(--accent-500);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-800);
+            color: var(--text-secondary);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-500);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--primary-700);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-accent);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .project-container,
+            .why-choose-container,
+            .testimonials-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .features-grid,
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .features-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container,
+            .header-container,
+            .hero-container {
+                padding: 0 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            font-size: 1.2rem;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-500);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Particle Animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-500);
+            border-radius: 50%;
+            animation: float 8s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span>📧 contact@volupe.com</span>
+                    <span>📞 +1 (555) 123-4567</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">V</div>
+                    <div class="logo-text">VOLUPE</div>
+                </a>
+
+                <nav class="nav">
+                    <div class="nav-item">
+                        <a href="#" class="nav-link active">HOME</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">ABOUT</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">SERVICE</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">PAGES</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">SHOP</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">BLOG</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">CONTACT</a>
+                    </div>
+                </nav>
+
+                <a href="#contact" class="cta-button">Contact Us</a>
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    ☰
+                </button>
+
+                <div class="mobile-menu" id="mobileMenu">
+                    <nav class="mobile-nav">
+                        <a href="#" class="nav-link">HOME</a>
+                        <a href="#" class="nav-link">ABOUT</a>
+                        <a href="#" class="nav-link">SERVICE</a>
+                        <a href="#" class="nav-link">PAGES</a>
+                        <a href="#" class="nav-link">SHOP</a>
+                        <a href="#" class="nav-link">BLOG</a>
+                        <a href="#" class="nav-link">CONTACT</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">ULTIMATE<br>METALCRAFT<br>SOLUTIONS</h1>
+                <p class="hero-subtitle">
+                    From structural steelwork to bespoke metalwork, we deliver best-in-class projects.<br>
+                    Fully qualified professionals with over 30 years of combined experience.
+                </p>
+                <div class="hero-cta">
+                    <a href="#services" class="btn btn-primary">
+                        Discover More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-gallery">
+                <div class="gallery-item">🔧</div>
+                <div class="gallery-item">⚡</div>
+                <div class="gallery-item">🔥</div>
+            </div>
+        </div>
+
+        <div class="hero-indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features fade-in">
+        <div class="features-container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">QUALITY<br>WORKMANSHIP</h3>
+                    <p class="feature-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">CERTIFICATION<br>COMPLIANCE</h3>
+                    <p class="feature-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">AFFORDABLE<br>PRICING</h3>
+                    <p class="feature-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section class="project fade-in">
+        <div class="project-container">
+            <div class="project-gallery">
+                <div class="project-main-image"></div>
+                <div class="project-thumbnails">
+                    <div class="project-thumb"></div>
+                    <div class="project-thumb"></div>
+                </div>
+                <div class="experience-badge">
+                    <div class="experience-number">30+</div>
+                    <div class="experience-text">YEAR EXPERIENCE</div>
+                </div>
+            </div>
+            <div class="project-content">
+                <div class="project-label">EXPERIENCE</div>
+                <h2 class="project-title">PROJECT WITH EXPERT & METAL WELDING COLLABORATION</h2>
+                <p class="project-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                </p>
+                
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-content">
+                            <h4>CERTIFIED EXPERT & TEAM</h4>
+                            <p>Professional certified team</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <h4>FAST RELIABLE SERVICES</h4>
+                            <p>Quick and efficient delivery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="project-features">
+                    <li>Years of experience of Prestigious Awards</li>
+                    <li>More applications of Prestigious Awards</li>
+                    <li>Expert Heavy Welding Services</li>
+                </ul>
+
+                <a href="#" class="btn btn-primary">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services fade-in" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <div class="section-label">SERVICES</div>
+                <h2 class="section-title">SERVICES WE'RE PROVIDING TO<br>OUR CUSTOMERS</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <div class="service-icon">⚡</div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">STEEL WELDING</h3>
+                        <p class="service-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="service-link">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <div class="service-icon">🔧</div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">METAL WORKS</h3>
+                        <p class="service-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="service-link">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <div class="service-icon">🔥</div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">CUSTOM WELDING</h3>
+                        <p class="service-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="service-link">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <div class="service-icon">🔩</div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">PIPE WELDING</h3>
+                        <p class="service-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="service-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose fade-in">
+        <div class="why-choose-container">
+            <div class="why-choose-image"></div>
+            <div class="why-choose-content">
+                <h2>WHY YOU SHOULD CHOOSE<br>OUR WELDING COMPANY?</h2>
+                <p>
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                </p>
+                
+                <div class="why-choose-features">
+                    <div class="why-feature">
+                        <div class="why-feature-icon">💪</div>
+                        <div class="why-feature-content">
+                            <h4>STRONG PROJECTS</h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature">
+                        <div class="why-feature-icon">👥</div>
+                        <div class="why-feature-content">
+                            <h4>WORK EXPERIENCE</h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">120K</div>
+                        <div class="stat-label">PROJECTS</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30K</div>
+                        <div class="stat-label">HAPPY CLIENTS</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">AWARDS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in">
+        <div class="testimonials-container">
+            <div class="testimonials-content">
+                <h2>WHAT THEY'RE TALKING<br>ABOUT THE WORK</h2>
+                
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        A testimonial is effectively a review or recommendation from a client, letting other people know how your products or services benefited them. Customer testimonials can take multiple forms, but the goal is always the same: to showcase how great your brand is.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>John Doe</h4>
+                            <p>CEO, Company Name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-image"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Volupe</h3>
+                    <p>
+                        We are a leading metalcraft solutions company with over 30 years of experience in steel welding, metal works, and custom fabrication. Our certified team delivers quality workmanship with affordable pricing.
+                    </p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Steel Welding</a></li>
+                        <li><a href="#">Metal Works</a></li>
+                        <li><a href="#">Custom Welding</a></li>
+                        <li><a href="#">Pipe Welding</a></li>
+                        <li><a href="#">Fabrication</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Projects</a></li>
+                        <li><a href="#">Certifications</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Get Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" id="contact">
+                    <h3>Contact Info</h3>
+                    <p>📍 123 Industrial Ave, Steel City, SC 12345</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>📧 contact@volupe.com</p>
+                    <p>🕒 Mon-Fri: 8AM-6PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">V</div>
+                    <div class="footer-logo-text">VOLUPE</div>
+                </div>
+                <p>&copy; 2025 Volupe. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Hide header on scroll down, show on scroll up
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Hero Indicators
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+
+        function updateIndicators() {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateIndicators();
+            });
+        });
+
+        // Auto-rotate hero indicators
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % indicators.length;
+            updateIndicators();
+        }, 5000);
+
+        // Particle Animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Service Card Interactions
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Feature Card Interactions
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.feature-title').textContent;
+                showToast(`Learn more about ${title}`);
+            });
+        });
+
+        // Gallery Item Interactions
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.style.transform = 'scale(1.2) rotate(10deg)';
+                setTimeout(() => {
+                    item.style.transform = 'scale(1) rotate(0deg)';
+                }, 300);
+            });
+        });
+
+        // Project Thumbnail Interactions
+        document.querySelectorAll('.project-thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                // Simulate image change
+                const mainImage = document.querySelector('.project-main-image');
+                mainImage.style.opacity = '0.5';
+                setTimeout(() => {
+                    mainImage.style.opacity = '1';
+                }, 300);
+                showToast('Project image updated');
+            });
+        });
+
+        // Stats Counter Animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/[^\d]/g, ''));
+                const suffix = stat.textContent.replace(/[\d]/g, '');
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + suffix;
+                }, 20);
+            });
+        }
+
+        // Trigger stats animation when in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-grid');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 120px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--accent-600), var(--accent-800));
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+                box-shadow: var(--shadow-lg);
+                max-width: 300px;
+                font-size: 0.9rem;
+                font-weight: 600;
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Add CSS animations for toast
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Navigation Link Interactions
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                const linkText = link.textContent;
+                showToast(`Navigating to ${linkText}`);
+            });
+        });
+
+        // CTA Button Interactions
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (!btn.getAttribute('href') || btn.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                }
+                
+                // Add click animation
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    btn.style.transform = '';
+                }, 150);
+                
+                const btnText = btn.textContent.trim();
+                showToast(`${btnText} clicked!`);
+            });
+        });
+
+        // Service Link Interactions
+        document.querySelectorAll('.service-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const serviceTitle = link.closest('.service-card').querySelector('.service-title').textContent;
+                showToast(`Learn more about ${serviceTitle}`);
+            });
+        });
+
+        // Testimonial Card Interaction
+        document.querySelector('.testimonial-card').addEventListener('click', () => {
+            showToast('View full testimonial');
+        });
+
+        // Footer Link Interactions
+        document.querySelectorAll('.footer-section a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkText = link.textContent;
+                showToast(`Navigating to ${linkText}`);
+            });
+        });
+
+        // Performance Optimization
+        let ticking = false;
+
+        function updateOnScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    // Update scroll-dependent elements here
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateOnScroll);
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            // ESC to close mobile menu
+            if (e.key === 'Escape') {
+                mobileMenu.classList.remove('active');
+            }
+            
+            // Space or Enter to scroll to top
+            if ((e.key === ' ' || e.key === 'Enter') && e.target === scrollToTopBtn) {
+                e.preventDefault();
+                scrollToTopBtn.click();
+            }
+        });
+
+        // Initialize on DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create particles
+            createParticles();
+            
+            // Add initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in, .scale-in').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 500);
+
+            console.log('Volupe Metalcraft website loaded successfully');
+        });
+
+        // Service Worker Registration (PWA Support)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Error Handling
+        window.addEventListener('error', (e) => {
+            console.error('JavaScript Error:', e.error);
+        });
+
+        // Accessibility Improvements
+        document.addEventListener('focusin', (e) => {
+            if (e.target.matches('button, a, input, [tabindex]')) {
+                e.target.style.outline = '3px solid var(--accent-500)';
+                e.target.style.outlineOffset = '2px';
+            }
+        });
+
+        document.addEventListener('focusout', (e) => {
+            if (e.target.matches('button, a, input, [tabindex]')) {
+                e.target.style.outline = '';
+                e.target.style.outlineOffset = '';
+            }
+        });
+
+        // Responsive Menu Handling
+        function handleResize() {
+            if (window.innerWidth > 1024) {
+                mobileMenu.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Dynamic Background Effects
+        function createSparkles() {
+            const hero = document.querySelector('.hero');
+            const sparkle = document.createElement('div');
+            sparkle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: var(--accent-300);
+                border-radius: 50%;
+                pointer-events: none;
+                animation: sparkle 2s ease-out forwards;
+            `;
+            
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            
+            hero.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+
+        // Add sparkle animation CSS
+        const sparkleStyle = document.createElement('style');
+        sparkleStyle.textContent = `
+            @keyframes sparkle {
+                0% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+                50% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+            }
+        `;
+        document.head.appendChild(sparkleStyle);
+
+        // Create sparkles periodically
+        setInterval(createSparkles, 3000);
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loadingScreen = document.createElement('div');
+            loadingScreen.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--gradient-primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            `;
+            
+            const logo = document.createElement('div');
+            logo.style.cssText = `
+                width: 100px;
+                height: 100px;
+                background: var(--gradient-accent);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                font-weight: bold;
+                color: white;
+                animation: pulse 1s infinite;
+            `;
+            logo.textContent = 'V';
+            
+            loadingScreen.appendChild(logo);
+            document.body.appendChild(loadingScreen);
+            
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

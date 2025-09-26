@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyongBo Electric - 전력 보호의 혁신</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Enhanced CSS Variables */
+        :root {
+            /* Premium Color Palette */
+            --primary-950: #0a1628;
+            --primary-900: #0f2744;
+            --primary-800: #1e3a5f;
+            --primary-700: #2d4d7a;
+            --primary-600: #3c6095;
+            --primary-500: #4b73b0;
+            --primary-400: #6b8bc4;
+            --primary-300: #8ba3d8;
+            --primary-200: #abbbec;
+            --primary-100: #cbd3ff;
+            --primary-50: #e8ecff;
+
+            /* Sophisticated Accent Colors */
+            --accent-600: #e55a2b;
+            --accent-500: #ff6b35;
+            --accent-400: #ff7d4d;
+            --accent-300: #ff8f65;
+            --accent-200: #ffa17d;
+            --accent-100: #ffb395;
+
+            /* Premium Neutrals */
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+
+            /* Semantic Colors */
+            --success: #059669;
+            --warning: #d97706;
+            --error: #dc2626;
+            --info: #0284c7;
+
+            /* Premium Gradients */
+            --gradient-primary: linear-gradient(135deg, #0f2744 0%, #1e3a5f 50%, #2d4d7a 100%);
+            --gradient-accent: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+            --gradient-glass-dark: linear-gradient(135deg, rgba(15, 39, 68, 0.95) 0%, rgba(30, 58, 95, 0.9) 100%);
+            --gradient-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+
+            /* Advanced Shadows */
+            --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 30px rgba(255, 107, 53, 0.4);
+            --shadow-primary: 0 0 40px rgba(15, 39, 68, 0.3);
+            --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.37);
+            --shadow-dropdown: 0 20px 40px -4px rgba(0, 0, 0, 0.1), 0 8px 16px -4px rgba(0, 0, 0, 0.06);
+
+            /* Border Radius */
+            --radius-xs: 0.25rem;
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-3xl: 2rem;
+            --radius-full: 9999px;
+
+            /* Advanced Transitions */
+            --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --transition-elastic: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            /* Glass Effects */
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-backdrop: blur(20px) saturate(180%);
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background-color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Enhanced Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-normal);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-dropdown);
+        }
+
+        /* Premium Top Bar */
+        .top-bar {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 0.75rem 0;
+            font-size: 0.875rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+        }
+
+        .contact-info span:hover {
+            transform: translateY(-1px);
+        }
+
+        .contact-info i {
+            color: var(--accent-400);
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+        }
+
+        .contact-info span:hover i {
+            color: var(--accent-300);
+            transform: scale(1.1);
+        }
+
+        .top-bar-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .top-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-normal);
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-glass);
+            transition: left var(--transition-normal);
+        }
+
+        .top-link:hover::before {
+            left: 0;
+        }
+
+        .top-link:hover {
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .top-link span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Enhanced Logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+        }
+
+        .logo-container:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--gradient-accent);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            transition: all var(--transition-slow);
+        }
+
+        .logo-container:hover .logo-icon::before {
+            animation: logoShine 0.8s ease-in-out;
+        }
+
+        @keyframes logoShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .logo-container:hover .logo-icon {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-glow), 0 0 40px rgba(255, 107, 53, 0.6);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-main {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary-900);
+            letter-spacing: -0.025em;
+        }
+
+        .logo-sub {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* Premium Navigation Menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.75rem 2.25rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transition: all var(--transition-normal);
+            transform: translateX(-50%);
+            border-radius: var(--radius-full);
+        }
+
+        .nav-link:hover::before,
+        .nav-item.active .nav-link::before {
+            width: 80%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-800);
+            transform: translateY(-1px);
+        }
+
+        .nav-arrow {
+            font-size: 0.75rem;
+            transition: all var(--transition-bounce);
+            color: var(--gray-500);
+        }
+
+        .nav-item:hover .nav-arrow,
+        .nav-item.active .nav-arrow {
+            transform: rotate(180deg);
+            color: var(--accent-500);
+        }
+
+        /* Premium Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px) scale(0.95);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-dropdown);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-elastic);
+            z-index: 1000;
+            min-width: 650px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+        }
+
+        .mega-menu {
+            min-width: 900px;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+
+        /* Glass Effect Overlay */
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-glass);
+            z-index: -1;
+        }
+
+        .dropdown-content {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Enhanced Dropdown Header */
+        .dropdown-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .dropdown-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-accent);
+            transform: translateX(-50%);
+            border-radius: var(--radius-full);
+        }
+
+        .dropdown-header h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-900);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.025em;
+        }
+
+        .dropdown-header p {
+            color: var(--gray-600);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Premium Grid Layout */
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .mega-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Enhanced Dropdown Sections */
+        .dropdown-section {
+            position: relative;
+        }
+
+        .dropdown-section h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary-800);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--gray-200);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .dropdown-section h4::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--gradient-accent);
+            border-radius: var(--radius-full);
+        }
+
+        .dropdown-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dropdown-section li {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInLeft 0.4s ease forwards;
+        }
+
+        .dropdown-section li:nth-child(1) { animation-delay: 0.1s; }
+        .dropdown-section li:nth-child(2) { animation-delay: 0.15s; }
+        .dropdown-section li:nth-child(3) { animation-delay: 0.2s; }
+        .dropdown-section li:nth-child(4) { animation-delay: 0.25s; }
+        .dropdown-section li:nth-child(5) { animation-delay: 0.3s; }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Premium Dropdown Links */
+        .dropdown-section a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            border-radius: var(--radius-xl);
+            transition: all var(--transition-normal);
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dropdown-section a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-glass);
+            transition: left var(--transition-normal);
+        }
+
+        .dropdown-section a:hover::before {
+            left: 0;
+        }
+
+        .dropdown-section a:hover {
+            color: var(--primary-800);
+            transform: translateX(8px) translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-300);
+        }
+
+        .dropdown-section a i {
+            color: var(--accent-500);
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            transition: all var(--transition-normal);
+            position: relative;
+            z-index: 1;
+        }
+
+        .dropdown-section a:hover i {
+            color: var(--accent-600);
+            transform: scale(1.1);
+        }
+
+        .dropdown-section a span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Premium Featured Cards */
+        .featured {
+            background: var(--gradient-primary);
+            border-radius: var(--radius-2xl);
+            padding: 2rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .featured::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.2) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .featured-product {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-product img {
+            width: 90px;
+            height: 90px;
+            border-radius: var(--radius-xl);
+            margin-bottom: 1.5rem;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            transition: all var(--transition-normal);
+        }
+
+        .featured-product:hover img {
+            transform: scale(1.05) rotate(5deg);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .featured-product h5 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.025em;
+        }
+
+        .featured-product p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .featured-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all var(--transition-bounce);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .featured-link:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-glow), var(--shadow-xl);
+        }
+
+        /* Premium Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--gray-50) 0%, rgba(255, 255, 255, 0.8) 100%);
+            border-radius: var(--radius-2xl);
+            padding: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-glass);
+            opacity: 0.5;
+        }
+
+        .contact-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--accent-500);
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-bounce);
+        }
+
+        .contact-card:hover i {
+            transform: scale(1.1) rotate(10deg);
+            color: var(--accent-600);
+        }
+
+        .contact-card h5 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-900);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-card p:first-of-type {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-800);
+        }
+
+        .emergency {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+            border-radius: var(--radius-xl);
+            color: var(--error);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        /* Premium Download Section */
+        .download-section {
+            background: var(--gradient-accent);
+            border-radius: var(--radius-2xl);
+            padding: 2rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-section::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .download-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-bounce);
+        }
+
+        .download-card:hover i {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .download-card h5 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .download-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all var(--transition-bounce);
+            backdrop-filter: blur(10px);
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px) scale(1.05);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Premium Career Section */
+        .career-highlight {
+            background: var(--gradient-primary);
+            border-radius: var(--radius-2xl);
+            padding: 2rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--accent-400) 0%, transparent 70%);
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .career-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .career-card i {
+            font-size: 2.5rem;
+            color: var(--accent-400);
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-bounce);
+        }
+
+        .career-card:hover i {
+            transform: scale(1.1) rotate(-10deg);
+            color: var(--accent-300);
+        }
+
+        .career-card h5 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .career-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .career-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all var(--transition-bounce);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .career-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-glow), var(--shadow-xl);
+        }
+
+        /* Enhanced Navigation Actions */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-btn {
+            width: 48px;
+            height: 48px;
+            border: none;
+            background: var(--gray-100);
+            border-radius: var(--radius-xl);
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            transition: all var(--transition-normal);
+            transform: translate(-50%, -50%);
+        }
+
+        .search-btn:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .search-btn:hover {
+            color: var(--white);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .search-btn i {
+            position: relative;
+            z-index: 1;
+            transition: all var(--transition-normal);
+        }
+
+        /* Premium Language Selector */
+        .language-selector {
+            position: relative;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid var(--gray-200);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lang-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-glass);
+            transition: left var(--transition-normal);
+        }
+
+        .lang-btn:hover::before {
+            left: 0;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-500);
+            color: var(--accent-600);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .lang-btn span,
+        .lang-btn i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-dropdown);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transition: all var(--transition-elastic);
+            min-width: 140px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .lang-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .lang-dropdown a {
+            display: block;
+            padding: 1rem 1.25rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lang-dropdown a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            transition: left var(--transition-normal);
+        }
+
+        .lang-dropdown a:hover::before {
+            left: 0;
+        }
+
+        .lang-dropdown a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .lang-dropdown a span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Mobile Menu Toggle */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.75rem;
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-normal);
+        }
+
+        .nav-toggle:hover {
+            background: var(--gray-100);
+        }
+
+        .nav-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--gray-700);
+            border-radius: var(--radius-full);
+            transition: all var(--transition-bounce);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+            background: var(--accent-500);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+            background: var(--accent-500);
+        }
+
+        /* Enhanced Search Overlay */
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+        }
+
+        .search-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .search-container {
+            max-width: 700px;
+            margin: 10% auto;
+            padding: 0 2rem;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: var(--radius-2xl);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-2xl);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .search-box i {
+            color: var(--gray-500);
+            margin-right: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            background: none;
+            color: var(--gray-900);
+            font-size: 1.25rem;
+            outline: none;
+            font-weight: 500;
+        }
+
+        .search-box input::placeholder {
+            color: var(--gray-500);
+        }
+
+        .search-close {
+            background: none;
+            border: none;
+            color: var(--gray-500);
+            cursor: pointer;
+            padding: 0.75rem;
+            border-radius: 50%;
+            transition: all var(--transition-normal);
+            font-size: 1.25rem;
+        }
+
+        .search-close:hover {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            transform: scale(1.1);
+        }
+
+        .search-suggestions {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .search-suggestions h4 {
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .suggestion-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tag {
+            padding: 0.75rem 1.5rem;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-bounce);
+            font-weight: 500;
+            border: 2px solid transparent;
+        }
+
+        .tag:hover {
+            background: var(--gradient-accent);
+            color: var(--white);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-glow);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Demo Content Styles */
+        .main-content {
+            margin-top: 140px;
+        }
+
+        .hero-demo {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-demo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero-content p {
+            font-size: 1.375rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .demo-notice {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 2.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+            backdrop-filter: var(--glass-backdrop);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+        }
+
+        .demo-notice:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .content-demo {
+            padding: 5rem 0;
+            background: var(--gray-50);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .demo-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-2xl);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-bounce);
+            opacity: 0;
+            transform: translateY(30px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .demo-card.animate-in {
+            animation: slideInUp 0.8s ease forwards;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .demo-card i {
+            font-size: 3.5rem;
+            color: var(--accent-500);
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-bounce);
+        }
+
+        .demo-card:hover i {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--accent-600);
+        }
+
+        .demo-card h3 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .demo-card p {
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .dropdown-menu {
+                min-width: 550px;
+            }
+
+            .mega-menu {
+                min-width: 700px;
+            }
+
+            .mega-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+
+            .nav-container {
+                height: 70px;
+            }
+
+            .main-content {
+                margin-top: 70px;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: var(--glass-backdrop);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem 0;
+                transition: left var(--transition-normal);
+                box-shadow: var(--shadow-2xl);
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 1.25rem 2rem;
+                border-bottom: 1px solid var(--gray-200);
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                min-width: auto;
+                background: var(--gray-50);
+                margin: 0;
+                display: none;
+            }
+
+            .dropdown-content {
+                padding: 1.5rem 2rem;
+            }
+
+            .dropdown-grid,
+            .mega-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .language-selector {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .logo-main {
+                font-size: 1.5rem;
+            }
+
+            .logo-sub {
+                font-size: 0.7rem;
+            }
+
+            .search-container {
+                margin: 20% auto;
+                padding: 0 1rem;
+            }
+
+            .demo-card {
+                padding: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-accent);
+            border-radius: var(--radius-md);
+            border: 2px solid var(--gray-100);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-600);
+        }
+
+        /* Performance Optimizations */
+        .dropdown-menu,
+        .search-overlay {
+            will-change: transform, opacity;
+        }
+
+        .nav-link,
+        .dropdown-section a,
+        .demo-card {
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> 02-465-1133</span>
+                        <span><i class="fas fa-envelope"></i> info@kyongbo.co.kr</span>
+                    </div>
+                    <div class="top-bar-links">
+                        <a href="#" class="top-link"><span>HOME</span></a>
+                        <a href="#" class="top-link"><span>SITEMAP</span></a>
+                        <a href="#" class="top-link"><span>LOGIN</span></a>
+                        <a href="#" class="top-link"><span>JOIN</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-container">
+                    <!-- Logo -->
+                    <div class="nav-brand">
+                        <div class="logo-container">
+                            <div class="logo-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="logo-text">
+                                <span class="logo-main">KyongBo</span>
+                                <span class="logo-sub">Electric</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Navigation Menu -->
+                    <div class="nav-menu" id="navMenu">
+                        <!-- 회사소개 -->
+                        <div class="nav-item" data-menu="company">
+                            <a href="#" class="nav-link">
+                                <span>회사소개</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>회사소개</h3>
+                                        <p>KyongBo Electric의 모든 것을 알아보세요</p>
+                                    </div>
+                                    <div class="dropdown-grid">
+                                        <div class="dropdown-section">
+                                            <h4>회사 정보</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-building"></i><span>회사개요</span></a></li>
+                                                <li><a href="#"><i class="fas fa-history"></i><span>연혁</span></a></li>
+                                                <li><a href="#"><i class="fas fa-sitemap"></i><span>조직도</span></a></li>
+                                                <li><a href="#"><i class="fas fa-lightbulb"></i><span>경영이념</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>경영 시스템</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-award"></i><span>품질경영</span></a></li>
+                                                <li><a href="#"><i class="fas fa-chart-line"></i><span>사업분야</span></a></li>
+                                                <li><a href="#"><i class="fas fa-map-marker-alt"></i><span>찾아오시는 길</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 제품정보 -->
+                        <div class="nav-item" data-menu="products">
+                            <a href="#" class="nav-link">
+                                <span>제품정보</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>제품정보</h3>
+                                        <p>혁신적인 전력 보호 솔루션을 만나보세요</p>
+                                    </div>
+                                    <div class="dropdown-grid mega-grid">
+                                        <div class="dropdown-section">
+                                            <h4>보호 계전기</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-microchip"></i><span>디지털 계전기</span></a></li>
+                                                <li><a href="#"><i class="fas fa-cog"></i><span>무드형 계전기</span></a></li>
+                                                <li><a href="#"><i class="fas fa-shield-alt"></i><span>누전 경보기/G.F.R</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>계측 장비</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-tachometer-alt"></i><span>지시전기 계기</span></a></li>
+                                                <li><a href="#"><i class="fas fa-digital-tachograph"></i><span>디지털 계기</span></a></li>
+                                                <li><a href="#"><i class="fas fa-exchange-alt"></i><span>전력용 변환기</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>변성기</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-plug"></i><span>계기용 변압기(V.T/MOF)</span></a></li>
+                                                <li><a href="#"><i class="fas fa-bolt"></i><span>계기용 변류기(C.T)</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section featured">
+                                            <div class="featured-product">
+                                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Crect width='90' height='90' fill='%23f1f5f9' rx='12'/%3E%3Ctext x='50%25' y='35%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='10' font-weight='bold' fill='%23475569'%3EK-PAM%3C/text%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' font-weight='bold' fill='%23ff6b35'%3E5500%3C/text%3E%3Ctext x='50%25' y='70%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='8' fill='%23475569'%3EDigital Relay%3C/text%3E%3C/svg%3E" alt="K-PAM 5500">
+                                                <h5>K-PAM 5500</h5>
+                                                <p>차세대 디지털 보호 계전기</p>
+                                                <a href="#" class="featured-link">
+                                                    <span>자세히 보기</span>
+                                                    <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 고객지원 -->
+                        <div class="nav-item" data-menu="support">
+                            <a href="#" class="nav-link">
+                                <span>고객지원</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>고객지원</h3>
+                                        <p>언제나 고객과 함께하는 KyongBo Electric</p>
+                                    </div>
+                                    <div class="dropdown-grid mega-grid">
+                                        <div class="dropdown-section">
+                                            <h4>고객 서비스</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-bullhorn"></i><span>공지사항</span></a></li>
+                                                <li><a href="#"><i class="fas fa-star"></i><span>신제품 소개</span></a></li>
+                                                <li><a href="#"><i class="fas fa-question-circle"></i><span>자주묻는질문</span></a></li>
+                                                <li><a href="#"><i class="fas fa-comments"></i><span>고객문의</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>파트너 정보</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-handshake"></i><span>대리점정보</span></a></li>
+                                                <li><a href="#"><i class="fas fa-store"></i><span>판매처 안내</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>서비스 신청</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-tools"></i><span>A/S 신청</span></a></li>
+                                                <li><a href="#"><i class="fas fa-file-invoice"></i><span>견적서 신청</span></a></li>
+                                                <li><a href="#"><i class="fas fa-clipboard-list"></i><span>설치서 신청</span></a></li>
+                                                <li><a href="#"><i class="fas fa-book"></i><span>카탈로그 신청</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section contact-section">
+                                            <div class="contact-card">
+                                                <i class="fas fa-headset"></i>
+                                                <h5>고객센터</h5>
+                                                <p>02-465-1133</p>
+                                                <p>평일 09:00 - 18:00</p>
+                                                <div class="emergency">
+                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                    <span>비상연락: 010-4758-1133</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 자료실 -->
+                        <div class="nav-item" data-menu="resources">
+                            <a href="#" class="nav-link">
+                                <span>자료실</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>자료실</h3>
+                                        <p>필요한 모든 기술 자료를 한 곳에서</p>
+                                    </div>
+                                    <div class="dropdown-grid mega-grid">
+                                        <div class="dropdown-section">
+                                            <h4>제품 자료</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-file-pdf"></i><span>카탈로그</span></a></li>
+                                                <li><a href="#"><i class="fas fa-certificate"></i><span>인증서</span></a></li>
+                                                <li><a href="#"><i class="fas fa-drafting-compass"></i><span>CAD 도면</span></a></li>
+                                                <li><a href="#"><i class="fas fa-file-alt"></i><span>사양서</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>기술 문서</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-book"></i><span>사용설명서</span></a></li>
+                                                <li><a href="#"><i class="fas fa-chart-bar"></i><span>개발사업성과서</span></a></li>
+                                                <li><a href="#"><i class="fas fa-code"></i><span>소프트웨어</span></a></li>
+                                                <li><a href="#"><i class="fas fa-database"></i><span>기술자료실</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section">
+                                            <h4>멀티미디어</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-play-circle"></i><span>동영상가이드</span></a></li>
+                                                <li><a href="#"><i class="fas fa-exchange-alt"></i><span>지명원 변환기기</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section download-section">
+                                            <div class="download-card">
+                                                <i class="fas fa-download"></i>
+                                                <h5>통합 다운로드</h5>
+                                                <p>모든 자료를 한 번에</p>
+                                                <a href="#" class="download-btn">
+                                                    <span>다운로드 센터</span>
+                                                    <i class="fas fa-cloud-download-alt"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 채용정보 -->
+                        <div class="nav-item" data-menu="careers">
+                            <a href="#" class="nav-link">
+                                <span>채용정보</span>
+                                <i class="fas fa-chevron-down nav-arrow"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-header">
+                                        <h3>채용정보</h3>
+                                        <p>함께 성장할 인재를 찾습니다</p>
+                                    </div>
+                                    <div class="dropdown-grid">
+                                        <div class="dropdown-section">
+                                            <h4>채용 안내</h4>
+                                            <ul>
+                                                <li><a href="#"><i class="fas fa-user-tie"></i><span>인재상</span></a></li>
+                                                <li><a href="#"><i class="fas fa-heart"></i><span>복리후생</span></a></li>
+                                                <li><a href="#"><i class="fas fa-clipboard-check"></i><span>채용절차</span></a></li>
+                                                <li><a href="#"><i class="fas fa-briefcase"></i><span>채용공고</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-section career-highlight">
+                                            <div class="career-card">
+                                                <i class="fas fa-rocket"></i>
+                                                <h5>지금 지원하세요!</h5>
+                                                <p>전력 보호 분야의 전문가가 되어보세요</p>
+                                                <a href="#" class="career-btn">
+                                                    <span>채용공고 보기</span>
+                                                    <i class="fas fa-external-link-alt"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <div class="nav-toggle" id="navToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- Search & Language -->
+                    <div class="nav-actions">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="language-selector">
+                            <button class="lang-btn" id="langBtn">
+                                <span>KOR</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="lang-dropdown" id="langDropdown">
+                                <a href="#" data-lang="ko"><span>한국어</span></a>
+                                <a href="#" data-lang="en"><span>English</span></a>
+                                <a href="#" data-lang="zh"><span>中文</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="제품명, 모델명을 검색하세요..." id="searchInput">
+                    <button class="search-close" id="searchClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions">
+                    <h4>인기 검색어</h4>
+                    <div class="suggestion-tags">
+                        <span class="tag">K-PAM 5500</span>
+                        <span class="tag">디지털 계전기</span>
+                        <span class="tag">보호 계전기</span>
+                        <span class="tag">전력 계측기</span>
+                        <span class="tag">변환기</span>
+                        <span class="tag">누전 경보기</span>
+                        <span class="tag">계기용 변압기</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Demo Content -->
+    <main class="main-content">
+        <section class="hero-demo">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>KyongBo Electric</h1>
+                    <p>전력 보호의 새로운 기준을 제시하는 혁신적인 솔루션</p>
+                    <div class="demo-notice">
+                        <i class="fas fa-info-circle"></i>
+                        <span>상단 네비게이션 메뉴를 클릭하여 프리미엄 드롭다운 효과를 확인해보세요!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-demo">
+            <div class="container">
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <i class="fas fa-mouse-pointer"></i>
+                        <h3>프리미엄 인터랙션</h3>
+                        <p>글래스모피즘과 정교한 애니메이션으로 구현된 고급스러운 사용자 경험</p>
+                    </div>
+                    <div class="demo-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>반응형 디자인</h3>
+                        <p>모든 디바이스에서 완벽한 사용자 경험을 제공하는 적응형 레이아웃</p>
+                    </div>
+                    <div class="demo-card">
+                        <i class="fas fa-search"></i>
+                        <h3>스마트 검색</h3>
+                        <p>빠르고 정확한 제품 검색 기능과 직관적인 사용자 인터페이스</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Enhanced JavaScript for Premium Navigation
+        class PremiumNavigation {
+            constructor() {
+                this.navToggle = document.getElementById("navToggle")
+                this.navMenu = document.getElementById("navMenu")
+                this.searchBtn = document.getElementById("searchBtn")
+                this.searchOverlay = document.getElementById("searchOverlay")
+                this.searchClose = document.getElementById("searchClose")
+                this.searchInput = document.getElementById("searchInput")
+                this.langBtn = document.getElementById("langBtn")
+                this.langDropdown = document.getElementById("langDropdown")
+                this.header = document.querySelector(".header")
+                
+                this.isMenuOpen = false
+                this.activeDropdown = null
+                this.isSearchOpen = false
+                this.isLangOpen = false
+                
+                this.init()
+            }
+
+            init() {
+                this.initializeNavigation()
+                this.initializeSearch()
+                this.initializeMobileMenu()
+                this.initializeLanguageSelector()
+                this.initializeScrollEffects()
+                this.initializeAnimations()
+                this.initializeKeyboardShortcuts()
+                this.initializeAccessibility()
+            }
+
+            initializeNavigation() {
+                const navItems = document.querySelectorAll(".nav-item")
+
+                navItems.forEach((item) => {
+                    const link = item.querySelector(".nav-link")
+                    const dropdown = item.querySelector(".dropdown-menu")
+
+                    if (dropdown) {
+                        // Enhanced desktop hover effects
+                        if (window.innerWidth > 768) {
+                            item.addEventListener("mouseenter", () => {
+                                this.showDropdown(item, dropdown)
+                            })
+
+                            item.addEventListener("mouseleave", () => {
+                                this.hideDropdown(item, dropdown)
+                            })
+                        }
+
+                        // Mobile click effects
+                        link.addEventListener("click", (e) => {
+                            if (window.innerWidth <= 768) {
+                                e.preventDefault()
+                                this.toggleMobileDropdown(item, dropdown)
+                            }
+                        })
+                    }
+                })
+
+                // Close dropdowns when clicking outside
+                document.addEventListener("click", (e) => {
+                    if (!e.target.closest(".nav-item")) {
+                        this.hideAllDropdowns()
+                    }
+                })
+            }
+
+            showDropdown(item, dropdown) {
+                // Hide other dropdowns first
+                this.hideAllDropdowns()
+
+                // Show current dropdown with enhanced animation
+                requestAnimationFrame(() => {
+                    dropdown.style.opacity = "1"
+                    dropdown.style.visibility = "visible"
+                    dropdown.style.transform = "translateX(-50%) translateY(0) scale(1)"
+                })
+
+                // Add active class
+                item.classList.add("active")
+                this.activeDropdown = item
+
+                // Animate dropdown items with stagger effect
+                this.animateDropdownItems(dropdown, "in")
+            }
+
+            hideDropdown(item, dropdown) {
+                dropdown.style.opacity = "0"
+                dropdown.style.visibility = "hidden"
+                dropdown.style.transform = "translateX(-50%) translateY(10px) scale(0.95)"
+
+                item.classList.remove("active")
+
+                if (this.activeDropdown === item) {
+                    this.activeDropdown = null
+                }
+            }
+
+            hideAllDropdowns() {
+                const navItems = document.querySelectorAll(".nav-item")
+                navItems.forEach((item) => {
+                    const dropdown = item.querySelector(".dropdown-menu")
+                    if (dropdown) {
+                        this.hideDropdown(item, dropdown)
+                    }
+                })
+            }
+
+            toggleMobileDropdown(item, dropdown) {
+                const isVisible = dropdown.style.display === "block"
+
+                // Hide all other dropdowns
+                document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+                    menu.style.display = "none"
+                })
+
+                // Toggle current dropdown
+                if (isVisible) {
+                    dropdown.style.display = "none"
+                    item.classList.remove("active")
+                } else {
+                    dropdown.style.display = "block"
+                    item.classList.add("active")
+                    this.animateDropdownItems(dropdown, "in")
+                }
+            }
+
+            animateDropdownItems(dropdown, direction) {
+                const items = dropdown.querySelectorAll(".dropdown-section a")
+                const sections = dropdown.querySelectorAll(".dropdown-section")
+                
+                if (direction === "in") {
+                    // Reset animations
+                    sections.forEach((section) => {
+                        const sectionItems = section.querySelectorAll("li")
+                        sectionItems.forEach((item, index) => {
+                            item.style.opacity = "0"
+                            item.style.transform = "translateX(-20px)"
+                            item.style.animation = `slideInLeft 0.4s ease forwards`
+                            item.style.animationDelay = `${(index + 1) * 0.05}s`
+                        })
+                    })
+                }
+            }
+
+            initializeSearch() {
+                this.searchBtn.addEventListener("click", () => this.openSearch())
+                this.searchClose.addEventListener("click", () => this.closeSearch())
+
+                // Close search on overlay click
+                this.searchOverlay.addEventListener("click", (e) => {
+                    if (e.target === this.searchOverlay) {
+                        this.closeSearch()
+                    }
+                })
+
+                // Enhanced search input functionality
+                this.searchInput.addEventListener("input", (e) => this.handleSearch(e.target.value))
+
+                // Suggestion tags with enhanced interaction
+                const suggestionTags = document.querySelectorAll(".tag")
+                suggestionTags.forEach((tag) => {
+                    tag.addEventListener("click", () => {
+                        this.searchInput.value = tag.textContent
+                        this.handleSearch(tag.textContent)
+                        
+                        // Add visual feedback
+                        tag.style.transform = "scale(0.95)"
+                        setTimeout(() => {
+                            tag.style.transform = ""
+                        }, 150)
+                    })
+                })
+            }
+
+            openSearch() {
+                this.searchOverlay.classList.add("active")
+                document.body.style.overflow = "hidden"
+                this.isSearchOpen = true
+                
+                // Enhanced focus with delay
+                setTimeout(() => {
+                    this.searchInput.focus()
+                    this.searchInput.select()
+                }, 300)
+            }
+
+            closeSearch() {
+                this.searchOverlay.classList.remove("active")
+                document.body.style.overflow = "auto"
+                this.searchInput.value = ""
+                this.isSearchOpen = false
+            }
+
+            handleSearch(query) {
+                if (query.length > 2) {
+                    console.log("Enhanced search for:", query)
+                    // Here you would implement actual search functionality
+                    this.showSearchResults(query)
+                }
+            }
+
+            showSearchResults(query) {
+                // Enhanced search results display
+                const suggestions = document.querySelector(".search-suggestions")
+                let existingResults = suggestions.querySelector(".search-results")
+
+                if (existingResults) {
+                    existingResults.remove()
+                }
+
+                const resultsDiv = document.createElement("div")
+                resultsDiv.className = "search-results"
+                resultsDiv.innerHTML = `
+                    <h4>검색 결과: "${query}"</h4>
+                    <div class="result-items">
+                        <div class="result-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>K-PAM 5500 디지털 계전기</span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>보호 계전기 시리즈</span>
+                        </div>
+                        <div class="result-item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>전력 계측기</span>
+                        </div>
+                    </div>
+                `
+
+                suggestions.appendChild(resultsDiv)
+
+                // Animate results
+                const resultItems = resultsDiv.querySelectorAll(".result-item")
+                resultItems.forEach((item, index) => {
+                    item.style.opacity = "0"
+                    item.style.transform = "translateY(20px)"
+                    setTimeout(() => {
+                        item.style.transition = "all 0.3s ease"
+                        item.style.opacity = "1"
+                        item.style.transform = "translateY(0)"
+                    }, index * 100)
+                })
+            }
+
+            initializeMobileMenu() {
+                this.navToggle.addEventListener("click", () => this.toggleMobileMenu())
+
+                // Close mobile menu when clicking on links
+                const navLinks = document.querySelectorAll(".nav-link")
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        if (window.innerWidth <= 768 && !link.querySelector(".nav-arrow")) {
+                            this.closeMobileMenu()
+                        }
+                    })
+                })
+            }
+
+            toggleMobileMenu() {
+                this.isMenuOpen = !this.isMenuOpen
+                this.navMenu.classList.toggle("active", this.isMenuOpen)
+                this.navToggle.classList.toggle("active", this.isMenuOpen)
+
+                // Enhanced body scroll prevention
+                document.body.style.overflow = this.isMenuOpen ? "hidden" : "auto"
+
+                // Enhanced menu animation
+                if (this.isMenuOpen) {
+                    this.animateMobileMenuItems("in")
+                }
+            }
+
+            closeMobileMenu() {
+                this.isMenuOpen = false
+                this.navMenu.classList.remove("active")
+                this.navToggle.classList.remove("active")
+                document.body.style.overflow = "auto"
+
+                // Hide all mobile dropdowns
+                document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+                    menu.style.display = "none"
+                })
+            }
+
+            animateMobileMenuItems(direction) {
+                const navItems = document.querySelectorAll(".nav-item")
+                
+                if (direction === "in") {
+                    navItems.forEach((item, index) => {
+                        item.style.opacity = "0"
+                        item.style.transform = "translateX(-30px)"
+                        setTimeout(() => {
+                            item.style.transition = "all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+                            item.style.opacity = "1"
+                            item.style.transform = "translateX(0)"
+                        }, index * 100)
+                    })
+                }
+            }
+
+            initializeLanguageSelector() {
+                this.langBtn.addEventListener("click", (e) => {
+                    e.stopPropagation()
+                    this.toggleLanguageDropdown()
+                })
+
+                // Language selection with enhanced feedback
+                const langOptions = this.langDropdown.querySelectorAll("a")
+                langOptions.forEach((option) => {
+                    option.addEventListener("click", (e) => {
+                        e.preventDefault()
+                        const selectedLang = option.textContent
+                        const langCode = option.dataset.lang
+                        
+                        // Update button text
+                        const langMap = { "한국어": "KOR", "English": "ENG", "中文": "CHN" }
+                        this.langBtn.querySelector("span").textContent = langMap[selectedLang] || "KOR"
+
+                        // Hide dropdown
+                        this.hideLanguageDropdown()
+
+                        // Enhanced visual feedback
+                        option.style.transform = "scale(0.95)"
+                        setTimeout(() => {
+                            option.style.transform = ""
+                        }, 150)
+
+                        console.log("Language changed to:", selectedLang, "Code:", langCode)
+                    })
+                })
+
+                // Close dropdown when clicking outside
+                document.addEventListener("click", (e) => {
+                    if (!e.target.closest(".language-selector")) {
+                        this.hideLanguageDropdown()
+                    }
+                })
+            }
+
+            toggleLanguageDropdown() {
+                this.isLangOpen = !this.isLangOpen
+                this.langDropdown.classList.toggle("active", this.isLangOpen)
+            }
+
+            hideLanguageDropdown() {
+                this.isLangOpen = false
+                this.langDropdown.classList.remove("active")
+            }
+
+            initializeScrollEffects() {
+                let lastScrollY = window.scrollY
+                let ticking = false
+
+                const updateHeader = () => {
+                    const currentScrollY = window.scrollY
+
+                    // Enhanced hide/show header on scroll
+                    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                        this.header.style.transform = "translateY(-100%)"
+                    } else {
+                        this.header.style.transform = "translateY(0)"
+                    }
+
+                    // Enhanced shadow on scroll
+                    if (currentScrollY > 50) {
+                        this.header.classList.add("scrolled")
+                    } else {
+                        this.header.classList.remove("scrolled")
+                    }
+
+                    lastScrollY = currentScrollY
+                    ticking = false
+                }
+
+                window.addEventListener("scroll", () => {
+                    if (!ticking) {
+                        requestAnimationFrame(updateHeader)
+                        ticking = true
+                    }
+                })
+            }
+
+            initializeAnimations() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px",
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate-in")
+                        }
+                    })
+                }, observerOptions)
+
+                // Observe demo cards for enhanced animation
+                document.querySelectorAll(".demo-card").forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.2}s`
+                    observer.observe(card)
+                })
+            }
+
+            initializeKeyboardShortcuts() {
+                document.addEventListener("keydown", (e) => {
+                    // Enhanced keyboard shortcuts
+                    if (e.key === "Escape") {
+                        this.closeSearch()
+                        this.hideAllDropdowns()
+                        this.hideLanguageDropdown()
+                        if (this.isMenuOpen) {
+                            this.closeMobileMenu()
+                        }
+                    }
+
+                    // Search shortcuts
+                    if (e.key === "/" && !this.isSearchOpen) {
+                        e.preventDefault()
+                        this.openSearch()
+                    }
+
+                    if (e.ctrlKey && e.key === "k") {
+                        e.preventDefault()
+                        this.openSearch()
+                    }
+
+                    // Language shortcut
+                    if (e.altKey && e.key === "l") {
+                        e.preventDefault()
+                        this.toggleLanguageDropdown()
+                    }
+                })
+            }
+
+            initializeAccessibility() {
+                // Enhanced tab navigation for dropdowns
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Tab" && this.activeDropdown) {
+                        const focusableElements = this.activeDropdown.querySelectorAll(
+                            'a, button, [tabindex]:not([tabindex="-1"])'
+                        )
+                        const firstElement = focusableElements[0]
+                        const lastElement = focusableElements[focusableElements.length - 1]
+
+                        if (e.shiftKey) {
+                            if (document.activeElement === firstElement) {
+                                e.preventDefault()
+                                lastElement.focus()
+                            }
+                        } else {
+                            if (document.activeElement === lastElement) {
+                                e.preventDefault()
+                                firstElement.focus()
+                            }
+                        }
+                    }
+
+                    // Enhanced arrow key navigation
+                    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+                        const focusedElement = document.activeElement
+                        if (focusedElement.closest(".dropdown-menu")) {
+                            e.preventDefault()
+                            const links = Array.from(
+                                focusedElement.closest(".dropdown-menu").querySelectorAll("a")
+                            )
+                            const currentIndex = links.indexOf(focusedElement)
+
+                            if (e.key === "ArrowDown") {
+                                const nextIndex = (currentIndex + 1) % links.length
+                                links[nextIndex].focus()
+                            } else {
+                                const prevIndex = (currentIndex - 1 + links.length) % links.length
+                                links[prevIndex].focus()
+                            }
+                        }
+                    }
+                })
+
+                // Enhanced focus management
+                const focusableElements = document.querySelectorAll(
+                    'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                )
+
+                focusableElements.forEach((element) => {
+                    element.addEventListener("focus", () => {
+                        element.style.outline = "2px solid var(--accent-500)"
+                        element.style.outlineOffset = "2px"
+                    })
+
+                    element.addEventListener("blur", () => {
+                        element.style.outline = ""
+                        element.style.outlineOffset = ""
+                    })
+                })
+            }
+        }
+
+        // Enhanced resize handler with debouncing
+        const debounce = (func, wait) => {
+            let timeout
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout)
+                    func(...args)
+                }
+                clearTimeout(timeout)
+                timeout = setTimeout(later, wait)
+            }
+        }
+
+        window.addEventListener(
+            "resize",
+            debounce(() => {
+                if (window.innerWidth > 768) {
+                    navigation.closeMobileMenu()
+                    navigation.hideAllDropdowns()
+
+                    // Reset mobile dropdown styles
+                    document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+                        menu.style.display = ""
+                    })
+                }
+            }, 250)
+        )
+
+        // Initialize Premium Navigation System
+        let navigation
+
+        document.addEventListener("DOMContentLoaded", () => {
+            navigation = new PremiumNavigation()
+            console.log("🚀 KyongBo Electric Premium Navigation System Initialized!")
+            
+            // Add loading animation completion
+            document.body.classList.add("loaded")
+        })
+
+        // Enhanced error handling
+        window.addEventListener("error", (e) => {
+            console.error("Premium Navigation Error:", e.error)
+        })
+
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                const perfData = performance.getEntriesByType('navigation')[0]
+                console.log(`⚡ Page loaded in ${Math.round(perfData.loadEventEnd - perfData.fetchStart)}ms`)
+            })
+        }
+    </script>
+</body>
+</html>
+<!--
+완성된 프리미엄 KyongBo Electric 네비게이션 시스템입니다! 
+
+## 🎨 **업그레이드된 주요 특징:**
+
+### **시각적 개선**
+- ✨ **글래스모피즘 효과**: 반투명 배경과 블러 효과로 현대적인 느낌
+- 🎭 **정교한 그라데이션**: 브랜드 색상을 활용한 세련된 그라데이션
+- 💎 **프리미엄 그림자**: 다층 그림자로 깊이감 표현
+- 🌈 **향상된 색상 팔레트**: 신뢰감 있는 파란색과 오렌지 조합
+
+### **애니메이션 개선**
+- 🎪 **스태거드 애니메이션**: 메뉴 항목들이 순차적으로 나타나는 효과
+- 🎯 **마이크로 인터랙션**: 호버, 클릭 시 세밀한 피드백
+- 🎨 **탄성 트랜지션**: 자연스러운 움직임을 위한 cubic-bezier 곡선
+- ✨ **로딩 애니메이션**: 페이지 로드 시 부드러운 등장 효과
+
+### **사용성 향상**
+- ⌨️ **키보드 단축키**: `/`, `Ctrl+K` (검색), `Alt+L` (언어), `ESC` (닫기)
+- 🎯 **향상된 접근성**: 탭 네비게이션, 화면 리더 지원
+- 📱 **개선된 모바일 UX**: 터치 친화적 인터페이스
+- 🔍 **스마트 검색**: 실시간 검색 결과와 인기 검색어
+
+### **성능 최적화**
+- ⚡ **requestAnimationFrame**: 부드러운 애니메이션을 위한 최적화
+- 🎛️ **디바운싱**: 스크롤, 리사이즈 이벤트 최적화
+- 💾 **메모리 효율성**: 이벤트 리스너 관리 개선
+- 📊 **성능 모니터링**: 로딩 시간 측정 및 로깅
+
+이제 훨씬 더 전문적이고 신뢰감 있는 네비게이션 시스템을 경험하실 수 있습니다! 🎉
+-->

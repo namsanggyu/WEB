@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igniting Innovation Through Craftsmanship | Modern Welding Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Modern Color Palette */
+            --primary-900: #0f0f0f;
+            --primary-800: #1a1a1a;
+            --primary-700: #2d2d2d;
+            --primary-600: #404040;
+            --primary-500: #525252;
+            --primary-400: #737373;
+            --primary-300: #a3a3a3;
+            --primary-200: #d4d4d4;
+            --primary-100: #e5e5e5;
+            --primary-50: #f5f5f5;
+            
+            /* Gold Accent Colors */
+            --gold-900: #92400e;
+            --gold-800: #b45309;
+            --gold-700: #d97706;
+            --gold-600: #f59e0b;
+            --gold-500: #fbbf24;
+            --gold-400: #fcd34d;
+            --gold-300: #fde68a;
+            --gold-200: #fef3c7;
+            --gold-100: #fffbeb;
+            
+            /* Neutral Colors */
+            --white: #ffffff;
+            --black: #000000;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --gray-50: #f9fafb;
+            
+            /* Text Colors */
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #ffffff;
+            --text-muted: #9ca3af;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            /* Gradients */
+            --gradient-gold: linear-gradient(135deg, var(--gold-500), var(--gold-700));
+            --gradient-dark: linear-gradient(135deg, var(--primary-900), var(--primary-800));
+            --gradient-overlay: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 6px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--gold-600);
+            background: var(--gold-100);
+        }
+
+        .header-cta {
+            background: var(--gradient-gold);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: var(--gradient-overlay), url('/images/welding-website-modern.png') center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-overlay);
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -50px;
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-gold);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            opacity: 0.9;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--text-primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-indicators {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 3;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--gold-500);
+            transform: scale(1.2);
+        }
+
+        /* Project Section */
+        .project-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .project-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.3s ease;
+        }
+
+        .project-image:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 400px;
+            background: url('/images/welding-website-modern.png') center/cover;
+            position: relative;
+        }
+
+        .project-badge {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: var(--gradient-gold);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .project-label {
+            color: var(--gold-600);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .project-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .project-features li::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: var(--gold-500);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold-600);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 8rem 0;
+            background: var(--gray-900);
+            color: var(--text-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--gold-400);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--gray-800);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 250px;
+            background: url('/images/welding-website-modern.png') center/cover;
+            position: relative;
+        }
+
+        .service-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-description {
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--gold-400);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-link:hover {
+            color: var(--gold-300);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 8rem 0;
+            background: var(--gray-50);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -1rem;
+            left: 2rem;
+            font-size: 4rem;
+            color: var(--gold-500);
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-content {
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .star {
+            color: var(--gold-500);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Company Section */
+        .company-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .company-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .company-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .company-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .company-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .company-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .feature-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .company-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .company-img {
+            width: 100%;
+            height: 500px;
+            background: url('/images/welding-website-modern.png') center/cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 2rem;
+            color: var(--gold-600);
+        }
+
+        .play-button:hover {
+            background: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 0;
+            background: var(--gray-50);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-card .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gold-600);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 8rem 0;
+            background: var(--gray-100);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .pricing-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            background: var(--gradient-gold);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: var(--gold-600);
+        }
+
+        .pricing-card.featured .pricing-price {
+            color: white;
+        }
+
+        .pricing-period {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card.featured .pricing-period {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--text-secondary);
+        }
+
+        .pricing-card.featured .pricing-features li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-button {
+            width: 100%;
+            padding: 1rem 2rem;
+            border: 2px solid var(--gold-600);
+            border-radius: 25px;
+            background: transparent;
+            color: var(--gold-600);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-button:hover {
+            background: var(--gold-600);
+            color: white;
+        }
+
+        .pricing-card.featured .pricing-button {
+            background: white;
+            color: var(--gold-600);
+            border-color: white;
+        }
+
+        .pricing-card.featured .pricing-button:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 8rem 0;
+            background: var(--white);
+        }
+
+        .projects-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .projects-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .project-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .project-item-img {
+            width: 100%;
+            height: 100%;
+            background: url('/images/welding-website-modern.png') center/cover;
+            position: relative;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-overlay);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-info {
+            text-align: center;
+        }
+
+        .project-info h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-info p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 8rem 0;
+            background: var(--gray-50);
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .blog-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background: url('/images/welding-website-modern.png') center/cover;
+            position: relative;
+        }
+
+        .blog-date {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--gradient-gold);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-category {
+            color: var(--gold-600);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .blog-link {
+            color: var(--gold-600);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-link:hover {
+            color: var(--gold-700);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: var(--text-light);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--gray-400);
+            text-decoration: none;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold-400);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-800);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-gold);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-light);
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            font-size: 1.2rem;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .project-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .company-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-title::after {
+                display: none;
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .blog-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-item.large {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .company-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title,
+            .project-title,
+            .company-content h2 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--gold-500);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">W</div>
+                <div class="logo-text">WELDCO</div>
+            </a>
+
+            <nav class="nav">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Services</a>
+                <a href="#" class="nav-link">Projects</a>
+                <a href="#" class="nav-link">Blog</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+
+            <a href="#contact" class="header-cta">Get Quote</a>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">IGNITING INNOVATION<br>THROUGH CRAFTSMANSHIP</h1>
+            <p class="hero-subtitle">
+                We combine traditional craftsmanship with cutting-edge technology to deliver exceptional welding and metalwork solutions that exceed expectations.
+            </p>
+            <div class="hero-cta">
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+        </div>
+
+        <div class="hero-indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section class="project-section fade-in">
+        <div class="container">
+            <div class="project-container">
+                <div class="project-image">
+                    <div class="project-img"></div>
+                    <div class="project-badge">25+ Years</div>
+                </div>
+
+                <div class="project-content">
+                    <div class="project-label">Experience</div>
+                    <h2 class="project-title">PROJECT WITH EXPERT & METAL WELDING COLLABORATION</h2>
+                    <p class="project-description">
+                        Our team of certified professionals brings decades of experience to every project, ensuring precision, quality, and innovation in all our metalworking solutions.
+                    </p>
+                    
+                    <ul class="project-features">
+                        <li>Certified Expert & Professional Team</li>
+                        <li>Advanced Welding Technology & Equipment</li>
+                        <li>Quality Assurance & Safety Standards</li>
+                        <li>Custom Solutions for Every Project</li>
+                    </ul>
+
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Years</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Quality</div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">Learn More</a>
+                </div>
+
+                <div class="project-image">
+                    <div class="project-img"></div>
+                    <div class="project-badge">Expert Team</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section fade-in" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Services</div>
+                <h2 class="section-title">SERVICES WE'RE PROVIDING TO<br>OUR CUSTOMERS</h2>
+                <p class="section-subtitle">
+                    We offer comprehensive welding and metalwork services with the highest standards of quality and precision.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Custom Welding</h3>
+                        <p class="service-description">
+                            Specialized welding solutions tailored to your specific requirements with precision and expertise.
+                        </p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Metal Works</h3>
+                        <p class="service-description">
+                            Comprehensive metal fabrication and finishing services for industrial and commercial projects.
+                        </p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image"></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Steel Welding</h3>
+                        <p class="service-description">
+                            Professional steel welding services with certified welders and state-of-the-art equipment.
+                        </p>
+                        <a href="#" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section fade-in">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">WHAT THEY'RE TALKING<br>ABOUT THE WORK</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Outstanding craftsmanship and attention to detail. The team delivered exactly what we needed on time and within budget. Highly recommended for any welding project."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LA</div>
+                        <div class="author-info">
+                            <h4>Lola Alexander</h4>
+                            <p>Project Manager, Steel Corp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Professional service from start to finish. Their expertise in metal fabrication is unmatched. We've been working with them for years and they never disappoint."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EO</div>
+                        <div class="author-info">
+                            <h4>Ethan Oliver</h4>
+                            <p>CEO, Industrial Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section class="company-section fade-in">
+        <div class="container">
+            <div class="company-container">
+                <div class="company-content">
+                    <h2>WHY YOU SHOULD CHOOSE<br>OUR WELDING COMPANY?</h2>
+                    <p>
+                        With over 25 years of experience in the industry, we have built a reputation for excellence, reliability, and innovation. Our certified team uses the latest technology and techniques to deliver superior results.
+                    </p>
+                    
+                    <div class="company-features">
+                        <div class="company-feature">
+                            <div class="feature-icon">🏆</div>
+                            <div class="feature-content">
+                                <h4>Quality Excellence</h4>
+                                <p>Certified processes and quality assurance</p>
+                            </div>
+                        </div>
+                        <div class="company-feature">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-content">
+                                <h4>Fast Delivery</h4>
+                                <p>On-time project completion guaranteed</p>
+                            </div>
+                        </div>
+                        <div class="company-feature">
+                            <div class="feature-icon">🔧</div>
+                            <div class="feature-content">
+                                <h4>Expert Team</h4>
+                                <p>Certified professionals with years of experience</p>
+                            </div>
+                        </div>
+                        <div class="company-feature">
+                            <div class="feature-icon">💰</div>
+                            <div class="feature-content">
+                                <h4>Competitive Pricing</h4>
+                                <p>Best value for professional services</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="company-image">
+                    <div class="company-img"></div>
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section fade-in">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">120K</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30K</div>
+                    <div class="stat-label">Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Awards</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">60+</div>
+                    <div class="stat-label">Experts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section fade-in">
+        <div class="container">
+            <div class="pricing-header">
+                <h2 class="pricing-title">SELECT A PLAN ACCORDING TO<br>YOUR REQUIREMENTS</h2>
+                <p class="pricing-subtitle">
+                    Choose from our flexible pricing plans designed to meet your specific welding and metalwork needs.
+                </p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-price">$300</div>
+                    <div class="pricing-period">Basic Plan</div>
+                    <ul class="pricing-features">
+                        <li>Basic Welding Services</li>
+                        <li>Standard Materials</li>
+                        <li>Email Support</li>
+                        <li>1 Month Warranty</li>
+                        <li>Basic Quality Check</li>
+                    </ul>
+                    <button class="pricing-button">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-price">$600</div>
+                    <div class="pricing-period">Professional Plan</div>
+                    <ul class="pricing-features">
+                        <li>Advanced Welding Services</li>
+                        <li>Premium Materials</li>
+                        <li>Priority Support</li>
+                        <li>6 Months Warranty</li>
+                        <li>Comprehensive Quality Check</li>
+                        <li>Custom Design Options</li>
+                    </ul>
+                    <button class="pricing-button">Choose Plan</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-price">$900</div>
+                    <div class="pricing-period">Enterprise Plan</div>
+                    <ul class="pricing-features">
+                        <li>Complete Welding Solutions</li>
+                        <li>Premium & Specialty Materials</li>
+                        <li>24/7 Dedicated Support</li>
+                        <li>12 Months Warranty</li>
+                        <li>Full Quality Assurance</li>
+                        <li>Custom Design & Engineering</li>
+                        <li>On-site Consultation</li>
+                    </ul>
+                    <button class="pricing-button">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section fade-in" id="projects">
+        <div class="container">
+            <div class="projects-header">
+                <h2 class="projects-title">OUR RECENTLY COMPLETED<br>LATEST PROJECTS</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-item-img"></div>
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h4>Steel Framework</h4>
+                            <p>Industrial Construction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-item-img"></div>
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h4>Custom Metalwork</h4>
+                            <p>Architectural Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item large">
+                    <div class="project-item-img"></div>
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h4>Complex Steel Welding</h4>
+                            <p>Major Infrastructure Project</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-item-img"></div>
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h4>Precision Welding</h4>
+                            <p>Automotive Industry</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-item-img"></div>
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h4>Metal Fabrication</h4>
+                            <p>Commercial Project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section fade-in">
+        <div class="container">
+            <div class="blog-header">
+                <h2 class="blog-title">LATEST NEWS & ARTICLES FROM<br>THE BLOG POSTS</h2>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-date">Dec 15</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Welding Tips</div>
+                        <h3 class="blog-card-title">WELDING LIKE A EXPERT: ESSENTIAL TECHNIQUES FOR BEGINNERS</h3>
+                        <p class="blog-excerpt">
+                            Learn the fundamental welding techniques that every beginner should master to achieve professional results.
+                        </p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-date">Dec 12</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Industry News</div>
+                        <h3 class="blog-card-title">THE FUTURE OF STEEL WELDING: INNOVATIONS AND TRENDS</h3>
+                        <p class="blog-excerpt">
+                            Discover the latest innovations and emerging trends that are shaping the future of steel welding industry.
+                        </p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <div class="blog-date">Dec 10</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Safety Guide</div>
+                        <h3 class="blog-card-title">WELDING SAFETY: ESSENTIAL PROTECTIVE MEASURES</h3>
+                        <p class="blog-excerpt">
+                            Comprehensive guide to welding safety protocols and protective equipment for professional welders.
+                        </p>
+                        <a href="#" class="blog-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About WeldCo</h3>
+                    <p>
+                        We are a leading welding and metalwork company with over 25 years of experience. Our certified professionals deliver high-quality solutions with precision and innovation.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Custom Welding</a></li>
+                        <li><a href="#">Metal Works</a></li>
+                        <li><a href="#">Steel Welding</a></li>
+                        <li><a href="#">Fabrication</a></li>
+                        <li><a href="#">Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Projects</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" id="contact">
+                    <h3>Contact Info</h3>
+                    <p>📍 123 Industrial Ave, Steel City, SC 12345</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>📧 info@weldco.com</p>
+                    <p>🕒 Mon-Fri: 8AM-6PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">W</div>
+                    <div class="footer-logo-text">WELDCO</div>
+                </div>
+                <p>&copy; 2025 WeldCo. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+            });
+        }
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Hero Indicators
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+
+        function updateIndicators() {
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateIndicators();
+                showToast(`Slide ${index + 1} selected`);
+            });
+        });
+
+        // Auto-rotate hero indicators
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % indicators.length;
+            updateIndicators();
+        }, 5000);
+
+        // Stats Counter Animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/[^\d]/g, ''));
+                const suffix = stat.textContent.replace(/[\d]/g, '');
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + suffix;
+                }, 20);
+            });
+        }
+
+        // Trigger stats animation when in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Service Card Interactions
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.service-title').textContent;
+                showToast(`Learn more about ${title}`);
+            });
+        });
+
+        // Testimonial Card Interactions
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const author = card.querySelector('.author-info h4').textContent;
+                showToast(`Read full testimonial from ${author}`);
+            });
+        });
+
+        // Project Item Interactions
+        document.querySelectorAll('.project-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.querySelector('.project-info h4').textContent;
+                showToast(`View ${title} project details`);
+            });
+        });
+
+        // Blog Card Interactions
+        document.querySelectorAll('.blog-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.blog-card-title').textContent;
+                showToast(`Reading: ${title}`);
+            });
+        });
+
+        // Pricing Button Interactions
+        document.querySelectorAll('.pricing-button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const card = btn.closest('.pricing-card');
+                const plan = card.querySelector('.pricing-period').textContent;
+                const price = card.querySelector('.pricing-price').textContent;
+                
+                // Add click animation
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    btn.style.transform = '';
+                }, 150);
+                
+                showToast(`Selected ${plan} for ${price}. We'll contact you soon!`);
+            });
+        });
+
+        // Play Button Interaction
+        document.querySelector('.play-button').addEventListener('click', () => {
+            showToast('Playing company introduction video');
+        });
+
+        // Navigation Link Interactions
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                const linkText = link.textContent;
+                showToast(`Navigating to ${linkText}`);
+            });
+        });
+
+        // CTA Button Interactions
+        document.querySelectorAll('.btn, .header-cta').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (!btn.getAttribute('href') || btn.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                }
+                
+                // Add click animation
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    btn.style.transform = '';
+                }, 150);
+                
+                const btnText = btn.textContent.trim();
+                showToast(`${btnText} clicked!`);
+            });
+        });
+
+        // Service Link Interactions
+        document.querySelectorAll('.service-link, .blog-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkText = link.textContent.replace('→', '').trim();
+                showToast(`${linkText} - Opening details page`);
+            });
+        });
+
+        // Footer Link Interactions
+        document.querySelectorAll('.footer-section a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkText = link.textContent;
+                showToast(`Navigating to ${linkText}`);
+            });
+        });
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 120px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--gold-600), var(--gold-800));
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 25px;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+                box-shadow: var(--shadow-lg);
+                max-width: 300px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                backdrop-filter: blur(10px);
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Add CSS animations for toast
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Performance Optimization
+        let ticking = false;
+
+        function updateOnScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateOnScroll);
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            // ESC to close mobile menu
+            if (e.key === 'Escape' && mobileMenu) {
+                mobileMenu.classList.remove('active');
+            }
+            
+            // Space or Enter to scroll to top
+            if ((e.key === ' ' || e.key === 'Enter') && e.target === scrollToTopBtn) {
+                e.preventDefault();
+                scrollToTopBtn.click();
+            }
+        });
+
+        // Initialize on DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in, .scale-in').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 500);
+
+            console.log('Modern Welding website loaded successfully');
+        });
+
+        // Service Worker Registration (PWA Support)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Error Handling
+        window.addEventListener('error', (e) => {
+            console.error('JavaScript Error:', e.error);
+        });
+
+        // Accessibility Improvements
+        document.addEventListener('focusin', (e) => {
+            if (e.target.matches('button, a, input, [tabindex]')) {
+                e.target.style.outline = '3px solid var(--gold-500)';
+                e.target.style.outlineOffset = '2px';
+            }
+        });
+
+        document.addEventListener('focusout', (e) => {
+            if (e.target.matches('button, a, input, [tabindex]')) {
+                e.target.style.outline = '';
+                e.target.style.outlineOffset = '';
+            }
+        });
+
+        // Responsive Menu Handling
+        function handleResize() {
+            if (window.innerWidth > 1024 && mobileMenu) {
+                mobileMenu.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loadingScreen = document.createElement('div');
+            loadingScreen.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--gradient-dark);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            `;
+            
+            const logo = document.createElement('div');
+            logo.style.cssText = `
+                width: 100px;
+                height: 100px;
+                background: var(--gradient-gold);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                font-weight: bold;
+                color: white;
+                animation: pulse 1s infinite;
+            `;
+            logo.textContent = 'W';
+            
+            loadingScreen.appendChild(logo);
+            document.body.appendChild(loadingScreen);
+            
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }, 1200);
+        });
+
+        // Dynamic Content Effects
+        function createSparkles() {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            
+            const sparkle = document.createElement('div');
+            sparkle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: var(--gold-400);
+                border-radius: 50%;
+                pointer-events: none;
+                animation: sparkle 2s ease-out forwards;
+                z-index: 2;
+            `;
+            
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            
+            hero.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+
+        // Add sparkle animation CSS
+        const sparkleStyle = document.createElement('style');
+        sparkleStyle.textContent = `
+            @keyframes sparkle {
+                0% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+                50% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+            }
+        `;
+        document.head.appendChild(sparkleStyle);
+
+        // Create sparkles periodically
+        setInterval(createSparkles, 4000);
+
+        // Parallax Effect for Hero Section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Interactive Hover Effects
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Company Features Animation
+        document.querySelectorAll('.company-feature').forEach(feature => {
+            feature.addEventListener('mouseenter', () => {
+                const icon = feature.querySelector('.feature-icon');
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+            
+            feature.addEventListener('mouseleave', () => {
+                const icon = feature.querySelector('.feature-icon');
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Welcome Message
+        setTimeout(() => {
+            showToast('Welcome to WeldCo - Your Trusted Welding Partner!');
+        }, 2000);
+    </script>
+</body>
+</html>

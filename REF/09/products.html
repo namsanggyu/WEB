@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품정보 - KyongBo Electric</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="container">
+            <div class="top-nav-links">
+                <a href="index.html">HOME</a>
+                <a href="#">SITE MAP</a>
+                <a href="#">LOGIN</a>
+                <a href="#">JOIN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">KyongBo</span>
+                        <span class="logo-sub">Kyongbo Electric Co., Ltd.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="#company" class="nav-link">
+                        <span class="nav-text">회사소개</span>
+                    </a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="products.html" class="nav-link active">
+                        <span class="nav-text">제품정보</span>
+                    </a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#support" class="nav-link">
+                        <span class="nav-text">고객지원</span>
+                    </a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#resources" class="nav-link">
+                        <span class="nav-text">자료실</span>
+                    </a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#careers" class="nav-link">
+                        <span class="nav-text">채용정보</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-toggle" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Solar Panels Background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>ABOUT <span class="highlight">PRODUCT</span></h1>
+                <p>최신의 기술, 최고의 품질을 자랑하는 경보전기의 제품입니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="content-layout">
+                <!-- Left Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h3>제품정보</h3>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">디지털 계전기</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">유도형 계전기</a>
+                                <ul class="sub-nav">
+                                    <li><a href="#" class="sub-link active">전류 계전기</a></li>
+                                    <li><a href="#" class="sub-link">방향성 계전기</a></li>
+                                    <li><a href="#" class="sub-link">전압 계전기</a></li>
+                                    <li><a href="#" class="sub-link">전력 계전기</a></li>
+                                    <li><a href="#" class="sub-link">주파수 계전기</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">전류 계전기</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">누전 경보기/G.F.R</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">지시전기 계기</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">디지털 계기</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">전력용 변환기</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">계기용 변압기(V.T/MOF)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">계기용 변류기(C.T)</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Download Section -->
+                    <div class="download-section">
+                        <div class="download-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="download-info">
+                                <h4>계기용 변류기(C.T)</h4>
+                                <p>최신제품 전체목록 TYPE 선정표</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h4>고객센터</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>02-465-1133</strong>
+                                <p>FAX : 02-465-1333</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Info -->
+                    <div class="company-info">
+                        <h4>품목허가 관련 바로가기</h4>
+                    </div>
+                </aside>
+
+                <!-- Main Content Area -->
+                <main class="main-area">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb">
+                        <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+                        <span>></span>
+                        <a href="#">제품정보</a>
+                        <span>></span>
+                        <a href="#">유도형계전기</a>
+                        <span>></span>
+                        <span>전류 계전기</span>
+                    </nav>
+
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <h1>유도형 계전기</h1>
+                        <p>최신의 기술, 최고의 품질을 자랑하는 경보전기의 제품입니다.</p>
+                        <div class="print-btn">
+                            <button class="btn-print">
+                                <i class="fas fa-print"></i>
+                                인쇄
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Categories -->
+                    <div class="product-categories">
+                        <button class="category-btn active">전류 계전기</button>
+                        <button class="category-btn">전압 계전기</button>
+                        <button class="category-btn">방향성 계전기</button>
+                        <button class="category-btn">주파 계전기</button>
+                        <button class="category-btn">전력 계전기</button>
+                        <button class="category-btn">비율차동 계전기</button>
+                        <button class="category-btn">유도형 계전기 대체 제품</button>
+                    </div>
+
+                    <!-- Search Section -->
+                    <div class="search-section">
+                        <div class="search-controls">
+                            <span>검색 내 재검색</span>
+                            <select class="search-select">
+                                <option>전체</option>
+                                <option>제품명</option>
+                                <option>모델명</option>
+                            </select>
+                            <div class="search-input-group">
+                                <input type="text" placeholder="검색어를 입력하세요" class="search-input">
+                                <button class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product List -->
+                    <div class="product-list">
+                        <!-- Product Item 1 -->
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=120&width=120" alt="GCO-CI Series">
+                            </div>
+                            <div class="product-info">
+                                <h3>순시순수형 과전류계전기(GCO-CI Series)</h3>
+                                <h4 class="product-model">GCO-CI Series</h4>
+                                <p class="product-description">
+                                    동작값 Tap 변경식 GCO-C 형과 같은 구조, 순시동작으로 한 CT에 사용 시...
+                                </p>
+                                <p class="product-specs">
+                                    동작특성시간 > 전류 계전기 > 순시순수형 과전류계전기(GCO-CI Series)
+                                </p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-catalog">
+                                    <i class="fas fa-file-pdf"></i>
+                                    카탈로그
+                                </button>
+                                <button class="btn-cad">
+                                    <i class="fas fa-drafting-compass"></i>
+                                    CAD도면
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 2 -->
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=120&width=120" alt="GCO-CICL Series">
+                            </div>
+                            <div class="product-info">
+                                <h3>정시한 순시순수형 과전류계전기(GCO-CIL Series)</h3>
+                                <h4 class="product-model">GCO-CICL Series</h4>
+                                <p class="product-description">
+                                    동작값 GCO-C 형과 같은 구조이 대용량 시간동작이 아닌 CIL에 따라서...
+                                </p>
+                                <p class="product-specs">
+                                    동작특성시간 > 전류 계전기 > 정시한 순시순수형 과전류계전기(GCO-CIL Series)
+                                </p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-catalog">
+                                    <i class="fas fa-file-pdf"></i>
+                                    카탈로그
+                                </button>
+                                <button class="btn-cad">
+                                    <i class="fas fa-drafting-compass"></i>
+                                    CAD도면
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 3 -->
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=120&width=120" alt="GCO-CIH Series">
+                            </div>
+                            <div class="product-info">
+                                <h3>순시순수형 과전류계전기(GCO-CIH Series)</h3>
+                                <h4 class="product-model">GCO-CIH Series</h4>
+                                <p class="product-description">
+                                    GCO-CIH 형과 같은 구조 GCO 순간 동작하여 대용량...
+                                </p>
+                                <p class="product-specs">
+                                    동작특성시간 > 전류 계전기 > 순시순수형 과전류계전기(GCO-CIH Series)
+                                </p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-catalog">
+                                    <i class="fas fa-file-pdf"></i>
+                                    카탈로그
+                                </button>
+                                <button class="btn-cad">
+                                    <i class="fas fa-drafting-compass"></i>
+                                    CAD도면
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 4 -->
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=120&width=120" alt="GCO-CH Series">
+                            </div>
+                            <div class="product-info">
+                                <h3>과전류계전기(GCO-CH Series)</h3>
+                                <h4 class="product-model">GCO-CH Series</h4>
+                                <p class="product-description">
+                                    GCO-CH형 동작값 같은 구조 동작 시간 대용량 동작 특성 동작 시간특성...
+                                </p>
+                                <p class="product-specs">
+                                    동작특성시간 > 전류 계전기 > 과전류계전기(GCO-CH Series)
+                                </p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-catalog">
+                                    <i class="fas fa-file-pdf"></i>
+                                    카탈로그
+                                </button>
+                                <button class="btn-cad">
+                                    <i class="fas fa-drafting-compass"></i>
+                                    CAD도면
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 5 -->
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=120&width=120" alt="GCO-CI Series">
+                            </div>
+                            <div class="product-info">
+                                <h3>순시순수형 과전류계전기(GCO-CI Series)</h3>
+                                <h4 class="product-model">GCO-CI Series</h4>
+                                <p class="product-description">
+                                    GCO-C형과 동일한 구조이 특성 동작 시간 순시동작이 되도록 동일 전류...
+                                </p>
+                                <p class="product-specs">
+                                    동작특성시간 > 전류 계전기 > 순시순수형 과전류계전기(GCO-CI Series)
+                                </p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-catalog">
+                                    <i class="fas fa-file-pdf"></i>
+                                    카탈로그
+                                </button>
+                                <button class="btn-cad">
+                                    <i class="fas fa-drafting-compass"></i>
+                                    CAD도면
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 6 -->
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="/placeholder.svg?height=120&width=120" alt="GCO-C Series">
+                            </div>
+                            <div class="product-info">
+                                <h3>과전류계전기(GCO-C Series)</h3>
+                                <h4 class="product-model">GCO-C Series</h4>
+                                <p class="product-description">
+                                    정확한 역상한 전류가 입력시 동작 과전류 계전기가 동작하여 회로기를 TripLAT...
+                                </p>
+                                <p class="product-specs">
+                                    동작특성시간 > 전류 계전기 > 과전류계전기(GCO-C Series)
+                                </p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-catalog">
+                                    <i class="fas fa-file-pdf"></i>
+                                    카탈로그
+                                </button>
+                                <button class="btn-cad">
+                                    <i class="fas fa-drafting-compass"></i>
+                                    CAD도면
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn">처음</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">마지막</button>
+                    </div>
+                </main>
+
+                <!-- Right Sidebar -->
+                <aside class="quick-menu">
+                    <div class="quick-header">
+                        <h3>QUICK MENU</h3>
+                    </div>
+                    <div class="quick-items">
+                        <a href="#" class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <span>견적문의</span>
+                        </a>
+                        <a href="#" class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <span>설치문의</span>
+                        </a>
+                        <a href="#" class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <span>A/S 신청</span>
+                        </a>
+                        <a href="#" class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>온라인문의</span>
+                        </a>
+                        <a href="#" class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <span>카탈로그 신청</span>
+                        </a>
+                        <a href="#" class="quick-item">
+                            <div class="quick-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <span>대리점 신청</span>
+                        </a>
+                    </div>
+                    <div class="quick-top">
+                        <button class="btn-top">
+                            <i class="fas fa-arrow-up"></i>
+                            TOP
+                        </button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-container">
+                        <div class="logo-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-main">KyongBo</span>
+                            <span class="logo-sub">Electric</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        경보전기(주) 서울시 성동구 성수동로 127번길 31(성수동2가 277)
+                    </p>
+                    <div class="footer-contact">
+                        <p>고객센터 Tel : 02-465-1133 &nbsp;&nbsp; Fax : 02-465-1333</p>
+                        <p>개인정보책임자 : 홍길동 &nbsp;&nbsp; Email : webmaster@kyongbo.co.kr</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">개인정보취급방침</a>
+                    <a href="#">책임의 한계와 법적고지</a>
+                    <a href="#">이메일 이용문의</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright 2013 kyongbo electric co.,ltd. All rights reserved.</p>
+                <div class="certifications">
+                    <img src="/placeholder.svg?height=30&width=40" alt="ISO">
+                    <img src="/placeholder.svg?height=30&width=40" alt="KS">
+                    <img src="/placeholder.svg?height=30&width=40" alt="CE">
+                    <img src="/placeholder.svg?height=30&width=40" alt="Certification">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+</body>
+</html>
