@@ -7,7 +7,7 @@
 <!-- Hero Section -->
 <section class="product-hero">
     <div class="hero-background">
-        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Solar Panels Background">
+        <img src="/images/hero/hero02.png" alt="Solar Panels Background">
         <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
