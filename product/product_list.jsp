@@ -5,25 +5,15 @@
 <!--[e] gnb -->
 
 <!-- Hero Section -->
-<section class="product-hero">
-    <div class="hero-background">
-        <img src="/images/hero/hero02.png" alt="Solar Panels Background">
-        <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1>ABOUT <span class="highlight">PRODUCT</span></h1>
-            <p>최신의 기술, 최고의 품질을 자랑하는 경보전기의 제품입니다.</p>
-        </div>
-    </div>
-</section>
+<%@ include file="/common/inc_product_hero.jsp" %>
+<!-- Hero Section End -->
 
 <!-- Main Content -->
 <div class="product-main-content">
     <div class="container">
         <div class="content-layout">
             <!-- Left Sidebar -->
-            <%@ include file="/sidebar.jsp" %>
+            <%@ include file="/common/inc_product_sidebar.jsp" %>
             <!-- Left Sidebar End -->
 
             <!-- Main Content Area -->
