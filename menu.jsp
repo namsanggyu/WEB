@@ -156,9 +156,9 @@
                                         <div class="dropdown-section">
                                             <h4>보호 계전기</h4>
                                             <ul>
-                                                <li><a href="javascript:link0202('A0202');"><i class="fas fa-microchip"></i>디지털 계전기</a></li>      <!-- 디지털 계전기 -->
-                                                <li><a href="javascript:link0202('A0203');"><i class="fas fa-cog"></i>유도형 계전기</a></li>           <!-- 유도형 계전기 -->
-                                                <li><a href="javascript:link0202('A0204');"><i class="fas fa-shield-alt"></i>누전 경보기/G.F.R</a></li> <!-- 누전 경보기/G.F.R -->
+                                                <li><a href="javascript:link0203('A0201');"><i class="fas fa-microchip"></i>디지털 계전기</a></li>      <!-- 디지털 계전기 -->
+                                                <li><a href="javascript:link0204('A0301');"><i class="fas fa-cog"></i>유도형 계전기</a></li>           <!-- 유도형 계전기 -->
+                                                <li><a href="javascript:link0206('A0501');"><i class="fas fa-shield-alt"></i>누전 경보기/G.F.R</a></li> <!-- 누전 경보기/G.F.R -->
                                             </ul>
                                         </div>
                                         
@@ -167,9 +167,9 @@
                                         <div class="dropdown-section">
                                             <h4>계측 장비</h4>
                                             <ul>
-                                                <li><a href="javascript:link0203('A0205');"><i class="fas fa-tachometer-alt"></i>지시전기 계기</a></li> <!-- 지시전기 계기 -->
-                                                <li><a href="javascript:link0203('A0206');"><i class="fas fa-calculator"></i>디지털 계기</a></li>       <!-- 디지털 계기 -->
-                                                <li><a href="javascript:link0209('A0207');"><i class="fas fa-exchange-alt"></i>전력용 변환기</a></li>    <!-- 전력용 변환기 -->
+                                                <li><a href="javascript:link0207('A0601');"><i class="fas fa-tachometer-alt"></i>지시전기 계기</a></li> <!-- 지시전기 계기 -->
+                                                <li><a href="javascript:link0208('A0701');"><i class="fas fa-calculator"></i>디지털 계기</a></li>       <!-- 디지털 계기 -->
+                                                <li><a href="javascript:link0209('A0801');"><i class="fas fa-exchange-alt"></i>전력용 변환기</a></li>    <!-- 전력용 변환기 -->
                                             </ul>
                                         </div>
                                         
@@ -178,8 +178,8 @@
                                         <div class="dropdown-section">
                                             <h4>변성기</h4>
                                             <ul>
-                                                <li><a href="javascript:link0208('A0208');"><i class="fas fa-plug"></i>계기용 변압기(V.T/MOF)</a></li>  <!-- 계기용 변압기(V.T/MOF) -->
-                                                <li><a href="javascript:link0208('A0209');"><i class="fas fa-bolt"></i>계기용 변류기(C.T)</a></li>      <!-- 전류 변환기 -->
+                                                <li><a href="javascript:link0210('A0901');"><i class="fas fa-plug"></i>계기용 변압기(V.T/MOF)</a></li>  <!-- 계기용 변압기(V.T/MOF) -->
+                                                <li><a href="javascript:link0211('A1001');"><i class="fas fa-bolt"></i>계기용 변류기(C.T)</a></li>      <!-- 전류 변환기 -->
                                             </ul>
                                         </div>
                                         

@@ -3889,6 +3889,14 @@
     transition: all 0.3s ease;
 }
 
+.product-nav-link.expandable.active {
+    background: #6E6F73;    
+    color: white;
+    font-weight: 700;
+    border-left: 8px solid #BFBFBF;
+    transition: all 0.3s ease;
+}
+
 .product-nav-link.expandable .expand-icon{
     font-size: 10px;
     transition: transform 0.2s ease;
@@ -3897,7 +3905,8 @@
 }
 
 .product-nav-link.expandable:hover .expand-icon,
-.product-nav-link.expandable.expanded .expand-icon{
+.product-nav-link.expandable.expanded .expand-icon,
+.product-nav-link.expandable.active .expand-icon{
     transform: rotate(180deg);
     color: white;
 }
@@ -3911,7 +3920,8 @@
 }
 
 .product-nav-link.expandable:hover i:first-child,
-.product-nav-link.expandable.expanded i:first-child{
+.product-nav-link.expandable.expanded i:first-child,
+.product-nav-link.expandable.active i:first-child{
     color: white;
 }
 
@@ -3969,10 +3979,33 @@
     font-size: 13px;
     font-weight: 500;
     transition: all 0.3s ease;
+}
 
+.product-sub-link.active:hover{
+    background: #F2D541;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .product-sub-link:hover::before{
+    opacity: 1;
+    color: #F2441D;
+}
+
+.product-sub-link.active:hover::before{
+    opacity: 1;
+    color: #F2441D;
+}
+
+.product-sub-link.active{
+    background: #F2D541;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.product-sub-link.active::before{
     opacity: 1;
     color: #F2441D;
 }

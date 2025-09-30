@@ -1040,20 +1040,6 @@ function initProductSidebar() {
             }
         });
     });
-    
-    // 서브메뉴 링크 클릭 이벤트
-    const subLinks = document.querySelectorAll('.product-sub-link');
-    subLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('🔗 서브메뉴 클릭:', this.textContent);
-            
-            // 여기에 실제 페이지 이동 또는 콘텐츠 로드 로직 추가
-            // 예: window.location.href = this.href;
-        });
-    });
-    
-    console.log('✅ 제품 사이드바 메뉴가 준비되었습니다!');
-    console.log(`   📁 메인 카테고리: ${expandableLinks.length}개`);
-    console.log(`   🔗 서브 메뉴: ${subLinks.length}개`);
+  
+
 }
