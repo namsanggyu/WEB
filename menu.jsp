@@ -77,7 +77,7 @@
                     <!-- 마치 회사의 이름표와 같은 역할 -->
                      <div class="nav-brand">
                         <a href="javascript:link0000()" class="logo-container">  <!-- 로고 클릭하면 홈페이지로 이동 -->
-                            <img src="/images/KBLOGO.png" alt="KyongBo Electric" class="logo-image">  <!-- 회사 로고 이미지 -->
+                            <img src="/images/hero/hero01.png" alt="KyongBo Electric" class="logo-image">  <!-- 회사 로고 이미지 -->
                         </a>
                     </div>
 
@@ -92,7 +92,7 @@
                         <!-- 🏢 회사소개 메뉴 -->
                         <!-- 마치 회사 안내 책자와 같은 역할 - 회사에 대한 모든 정보 제공 -->
                         <div class="nav-item" data-menu="company">
-                            <a href="#" class="nav-link">
+                            <a href="javascript:link0101();" class="nav-link">
                                 <span>회사소개</span>
                                 <i class="fas fa-chevron-down nav-arrow"></i>  <!-- 아래 화살표 (하위 메뉴 있다는 표시) -->
                             </a>
@@ -200,7 +200,7 @@
 
                         <!-- 고객지원 -->
                         <div class="nav-item" data-menu="support">
-                            <a href="#" class="nav-link">
+                            <a href="javascript:link0301();" class="nav-link">
                                 <span>고객지원</span>
                                 <i class="fas fa-chevron-down nav-arrow"></i>
                             </a>
@@ -256,7 +256,7 @@
 
                         <!-- 자료실 -->
                         <div class="nav-item" data-menu="resources">
-                            <a href="#" class="nav-link">
+                            <a href="javascript:link0401();" class="nav-link">
                                 <span>자료실</span>
                                 <i class="fas fa-chevron-down nav-arrow"></i>
                             </a>
@@ -310,7 +310,7 @@
 
                         <!-- 채용정보 -->
                         <div class="nav-item" data-menu="careers">
-                            <a href="#" class="nav-link">
+                            <a href="javascript:link0501();" class="nav-link">
                                 <span>채용정보</span>
                                 <i class="fas fa-chevron-down nav-arrow"></i>
                             </a>
@@ -357,7 +357,7 @@
                     <!-- Mobile Menu -->
                     <div class="mobile-menu" id="mobileMenu">
                         <div class="mobile-menu-header">
-                            <img src="/IMAGES/KBLOGO.png" alt="KyongBo Electric" class="mobile-logo">
+                            <img src="/images/hero/hero01.png" alt="KyongBo Electric" class="mobile-logo">
                             <button class="mobile-close" id="mobileClose">
                                 <i class="fas fa-times"></i>
                             </button>
@@ -423,7 +423,7 @@
                                     </div>
                                     <div class="mobile-featured">
                                         <div class="mobile-featured-product">
-                                            <img src="/IMAGES/5500TS.png" alt="K-PAM 5500">
+                                            <img src="/images/hero/hero02.png" alt="K-PAM 5500">
                                             <h5>K-PAM 5500</h5>
                                             <p>차세대 디지털 보호 계전기</p>
                                             <a href="javascript:link0202('A020101');" class="mobile-featured-btn">자세히 보기</a>

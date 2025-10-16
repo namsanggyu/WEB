@@ -92,4 +92,6 @@
                 </div>
 
             </aside>
-            <!-- Data Sidebar End -->    
+            <!-- Data Sidebar End -->
+
+            <script src="/common/inc_sidebar_common.js" defer></script>    

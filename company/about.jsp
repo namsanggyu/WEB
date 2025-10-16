@@ -58,5 +58,3 @@
 <!-- Main Content End -->
 
 <%@ include file="/footer.jsp" %>
-
-<script src="/quick_move.js" defer></script>

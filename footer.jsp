@@ -60,14 +60,14 @@
                     <div class="footer-section">
                         <h3>제품 카테고리</h3>
                         <ul>
-                            <li><a href="javascript:link0202();"><i class="fas fa-microchip"></i>디지털 계전기</a></li>
-                            <li><a href="javascript:link0203();"><i class="fas fa-cogs"></i>유도형 계전기</a></li>
-                            <li><a href="javascript:link0204();"><i class="fas fa-exclamation-triangle"></i>누전 경보기/G.F.R</a></li>
-                            <li><a href="javascript:link0205();"><i class="fas fa-tachometer-alt"></i>지시전기 계기</a></li>
-                            <li><a href="javascript:link0206();"><i class="fas fa-calculator"></i>디지털 계기</a></li>
-                            <li><a href="javascript:link0207();"><i class="fas fa-sync-alt"></i>전력용 변환기</a></li>
-                            <li><a href="javascript:link0208();"><i class="fas fa-plug"></i>계기용 변압기</a></li>
-                            <li><a href="javascript:link0209();"><i class="fas fa-bolt"></i>계기용 변류기</a></li>
+                            <li><a href="javascript:link0203('A0201');"><i class="fas fa-microchip"></i>디지털 계전기</a></li>
+                            <li><a href="javascript:link0204('A0301');"><i class="fas fa-cogs"></i>유도형 계전기</a></li>
+                            <li><a href="javascript:link0206('A0501');"><i class="fas fa-exclamation-triangle"></i>누전 경보기/G.F.R</a></li>
+                            <li><a href="javascript:link0207('A0601');"><i class="fas fa-tachometer-alt"></i>지시전기 계기</a></li>
+                            <li><a href="javascript:link0208('A0701');"><i class="fas fa-calculator"></i>디지털 계기</a></li>
+                            <li><a href="javascript:link0209('A0801');"><i class="fas fa-sync-alt"></i>전력용 변환기</a></li>
+                            <li><a href="javascript:link0210('A0901');"><i class="fas fa-plug"></i>계기용 변압기(VT/MOF)</a></li>
+                            <li><a href="javascript:link0211('A1001');"><i class="fas fa-bolt"></i>계기용 변류기(C.T)</a></li>
                         </ul>
                     </div>
 

@@ -1,6 +1,6 @@
 <!-- ############################################################ -->
 <!-- 작업내용 : 채용정보 사이드바 영역 인클루드 -->
-<!-- 작업일자 : 2025.09.29 -->
+<!-- 작업일자 : 2025.01.27 -->
 <!-- 작업자 : 남상규 -->
 <!-- ############################################################ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -19,19 +19,19 @@
                         </li>
                         <li class="common-nav-item">
                             <a href="javascript:link0502();" class="common-nav-link">
-                                <i class="fas fa-gift"></i>
+                                <i class="fas fa-heart"></i>
                                 복리후생
                             </a>
                         </li>
                         <li class="common-nav-item">
                             <a href="javascript:link0503();" class="common-nav-link">
-                                <i class="fas fa-clipboard-list"></i>
+                                <i class="fas fa-clipboard-check"></i>
                                 채용절차
                             </a>
                         </li>
                         <li class="common-nav-item">
                             <a href="javascript:link0504();" class="common-nav-link">
-                                <i class="fas fa-bullhorn"></i>
+                                <i class="fas fa-briefcase"></i>
                                 채용공고
                             </a>
                         </li>
@@ -57,3 +57,4 @@
 
             </aside>
             <!-- Recruit Sidebar End -->
+            <script src="/common/inc_sidebar_common.js" defer></script>

@@ -1,10 +1,10 @@
 <!-- ############################################################ -->
 <!-- 작업내용 : 고객지원 사이드바 영역 인클루드 -->
-<!-- 작업일자 : 2025.09.29 -->
+<!-- 작업일자 : 2025.01.27 -->
 <!-- 작업자 : 남상규 -->
 <!-- ############################################################ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-            <!-- Notice Sidebar -->
+            <!-- Customer Sidebar -->
             <aside class="common-sidebar">
                 <div class="common-sidebar-header">
                     <h3>고객지원</h3>
@@ -18,63 +18,63 @@
                             </a>
                         </li>
                         <li class="common-nav-item">
-                            <a href="javascript:link0302();" class="common-nav-link expandable">
-                                <i class="fas fa-lightbulb"></i>
+                            <a href="javascript:link0302();" class="common-nav-link">
+                                <i class="fas fa-star"></i>
                                 신제품소개
                             </a>
                         </li>
                         <li class="common-nav-item">
-                            <a href="javascript:link0303();" class="common-nav-link expandable">
+                            <a href="javascript:link0303();" class="common-nav-link">
                                 <i class="fas fa-question-circle"></i>
                                 자주묻는질문
                             </a>
                         </li>
                         <li class="common-nav-item">
-                            <a href="javascript:link0304();" class="common-nav-link expandable">
-                                <i class="fas fa-headset"></i>
+                            <a href="javascript:link0304();" class="common-nav-link">
+                                <i class="fas fa-comments"></i>
                                 고객문의
                             </a>
                         </li>
                         <li class="common-nav-item">
-                            <a href="javascript:link0311();" class="common-nav-link expandable">
-                                <i class="fas fa-shopping-cart"></i>
-                                구매신청
-                            </a>
-                        </li>
-                        <li class="common-nav-item">
-                            <a href="javascript:link0305();" class="common-nav-link expandable">
+                            <a href="javascript:link0305();" class="common-nav-link">
                                 <i class="fas fa-tools"></i>
                                 A/S신청
                             </a>
                         </li>
                         <li class="common-nav-item">
-                            <a href="javascript:link0306();" class="common-nav-link expandable">
-                                <i class="fas fa-calculator"></i>
-                                견적서 신청
+                            <a href="javascript:link0306();" class="common-nav-link">
+                                <i class="fas fa-file-invoice"></i>
+                                견적서신청
                             </a>
                         </li>
                         <li class="common-nav-item">
-                            <a href="javascript:link0307();" class="common-nav-link expandable">
-                                <i class="fas fa-file-alt"></i>
-                                성적서 신청
+                            <a href="javascript:link0307();" class="common-nav-link">
+                                <i class="fas fa-clipboard-list"></i>
+                                성적서신청
                             </a>
                         </li>
                         <li class="common-nav-item">
-                            <a href="javascript:link0308();" class="common-nav-link expandable">
+                            <a href="javascript:link0308();" class="common-nav-link">
                                 <i class="fas fa-book"></i>
-                                카탈로그 신청
+                                카탈로그신청
                             </a>
                         </li>
                         <li class="common-nav-item">
-                            <a href="javascript:link0309();" class="common-nav-link expandable">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                생산중지 제품
+                            <a href="javascript:link0309();" class="common-nav-link">
+                                <i class="fas fa-drafting-compass"></i>
+                                생산중지품목
                             </a>
                         </li>
                         <li class="common-nav-item">
-                                <a href="javascript:link0310();" class="common-nav-link expandable">
-                                <i class="fas fa-map-marker-alt"></i>
-                                판매처 안내
+                            <a href="javascript:link0310();" class="common-nav-link">
+                                <i class="fas fa-store"></i>
+                                판매처
+                            </a>
+                        </li>
+                        <li class="common-nav-item">
+                            <a href="javascript:link0311();" class="common-nav-link">
+                                <i class="fas fa-shopping-cart"></i>
+                                구매신청
                             </a>
                         </li>
                     </ul>
@@ -98,4 +98,6 @@
                 </div>
 
             </aside>
-            <!-- Notice Sidebar End -->
+            <!-- Customer Sidebar End -->
+
+            <script src="/common/inc_sidebar_common.js" defer></script>

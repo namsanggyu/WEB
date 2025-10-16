@@ -140,10 +140,9 @@ class RandomVideoPlayer {
     
     // 🚀 초기화 함수 - 영상 플레이어를 사용할 준비를 하는 함수
     init() {
-        // ❗ 영상 태그가 없으면 에러 메시지 출력하고 종료
+        // ❗ 영상 태그가 없으면 조용히 종료 (오류 메시지 제거)
         if (!this.videoElement) {
-            console.error('🚨 영상 태그를 찾을 수 없습니다! ID: heroVideo');
-            console.log('🔍 현재 페이지의 video 태그들:', document.querySelectorAll('video'));
+            console.log('ℹ️ 이 페이지에는 비디오 요소가 없습니다. (정상)');
             return;
         }
         

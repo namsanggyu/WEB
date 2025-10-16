@@ -58,5 +58,3 @@
 <!-- Main Content End -->
 
 <%@ include file="/footer.jsp" %>
-
-<script src="/quick_move.js" defer></script>  <!-- link.js 파일 연결 (모든 JavaScript 기능 포함) -->
